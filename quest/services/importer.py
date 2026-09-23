@@ -21,7 +21,14 @@ def parse_rows(raw, section, schema, csv_mode=False):
     try:
         text = raw.decode("utf-8-sig") if isinstance(raw, bytes) else raw
         if csv_mode:
-            rows = list(csv.DictReader(io.StringIO(text)))
+            reader = csv.DictReader(io.StringIO(text))
+            columns = reader.fieldnames or []
+            expected = set(schema.model_fields)
+            if len(columns) != len(expected) or set(columns) != expected:
+                raise ImportFailure(
+                    "История: неверный CSV-заголовок. Используйте столбцы activity_history.csv из стартового набора."
+                )
+            rows = list(reader)
             rows = [
                 {
                     k: (None if v == "" and k in {"due_date", "score", "feedback_rating"} else v)
@@ -126,6 +133,32 @@ def prepare_dataset(*, employees=None, history=None, skills=None, events=None):
             or old.pk.startswith("PLAN_")
         ):
             raise ImportFailure(f"{h['record_id']}: конфликт с существующей записью")
+    # Validate the effective history after upserts, including rows already in the database.
+    mandatory = dict(Event.objects.values_list("event_id", "mandatory"))
+    mandatory.update({v["event_id"]: v["mandatory"] for v in vrows})
+
+    def completion_key(employee_id, event_id, day):
+        return employee_id, event_id, str(day) if event_id == "EV_036" else None
+
+    incoming_ids = [h["record_id"] for h in hrows]
+    existing_completed = Participation.objects.filter(
+        employee_id__in={h["employee_id"] for h in hrows}, status="completed"
+    ).exclude(record_id__in=incoming_ids)
+    completed_keys = {
+        completion_key(employee_id, event_id, day)
+        for employee_id, event_id, day in existing_completed.values_list("employee_id", "event_id", "date")
+        if not mandatory[event_id]
+    }
+    for h in hrows:
+        if h["status"] != "completed" or mandatory[h["event_id"]]:
+            continue
+        key = completion_key(h["employee_id"], h["event_id"], h["date"])
+        if key in completed_keys:
+            raise ImportFailure(
+                f"{h['record_id']}: повторное завершение {h['event_id']} для {h['employee_id']} недопустимо. "
+                "Клуб EV_036 можно завершать повторно только в разные даты."
+            )
+        completed_keys.add(key)
     groups = [
         (Skill, srows, ("skill_id",)),
         (Event, vrows, ("event_id",)),

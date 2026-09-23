@@ -592,3 +592,107 @@ class CareerQuestTests(TestCase):
         result = get_recommendations(ctx)
         self.assertEqual(result["steps"], [])
         self.assertIn("Требования выбранного профиля по навыкам выполнены", result["notice"])
+
+    def audit_history(self, rows):
+        header = "record_id,employee_id,event_id,date,due_date,status,completion_pct,score,feedback_rating,assigned_by\n"
+        return (header + "".join(
+            f"{record},{employee},{event},{day},,completed,100,90,5,self\n"
+            for record, employee, event, day in rows
+        )).encode()
+
+    def test_csv_header_validated_even_without_rows(self):
+        before = DatasetState.objects.get().revision
+        for raw in [b"", b"not_a_dataset\n", b"record_id,record_id\n",
+                    self.audit_history([]).replace(b"assigned_by", b"unknown")]:
+            with self.subTest(raw=raw):
+                with self.assertRaisesMessage(ImportFailure, "CSV-заголовок"):
+                    preview_dataset(history=raw)
+                with self.assertRaises(ImportFailure):
+                    import_dataset(history=raw)
+        self.assertEqual(DatasetState.objects.get().revision, before)
+        self.assertEqual(preview_dataset(history=self.audit_history([]))["counts"]["Participation"]["processed"], 0)
+
+    def test_duplicate_nonrepeatable_completed_bundle_is_atomic(self):
+        employee = copy.deepcopy(json.loads(self.files["employees"])["employees"][27])
+        employee["employee_id"] = "QA_DUPLICATE"
+        history = self.audit_history([
+            ("DUP_1", "QA_DUPLICATE", "EV_009", "2026-09-20"),
+            ("DUP_2", "QA_DUPLICATE", "EV_009", "2026-09-21"),
+        ])
+        revision = DatasetState.objects.get().revision
+        with self.assertRaisesMessage(ImportFailure, "повторное завершение"):
+            import_dataset(employees=json.dumps({"employees": [employee]}), history=history)
+        self.assertFalse(Employee.objects.filter(pk="QA_DUPLICATE").exists())
+        self.assertFalse(Participation.objects.filter(pk__in=["DUP_1", "DUP_2"]).exists())
+        self.assertEqual(DatasetState.objects.get().revision, revision)
+
+    def test_duplicate_completion_checks_database_and_allows_same_id_reimport(self):
+        first = self.audit_history([("DUP_EXISTING", "E0028", "EV_009", "2026-09-20")])
+        import_dataset(history=first)
+        import_dataset(history=first)
+        self.assertEqual(profile_context(self.employee)["levels"]["SK_CLOUD"], 2)
+        with self.assertRaisesMessage(ImportFailure, "повторное завершение"):
+            import_dataset(history=self.audit_history([("DUP_NEW", "E0028", "EV_009", "2026-09-21")]))
+        self.assertFalse(Participation.objects.filter(pk="DUP_NEW").exists())
+
+    def test_club_repeats_on_different_dates_only(self):
+        import_dataset(history=self.audit_history([
+            ("CLUB_1", "E0028", "EV_036", "2026-09-20"),
+            ("CLUB_2", "E0028", "EV_036", "2026-09-21"),
+        ]))
+        with self.assertRaisesMessage(ImportFailure, "повторное завершение"):
+            import_dataset(history=self.audit_history([("CLUB_3", "E0028", "EV_036", "2026-09-21")]))
+        self.assertEqual(Participation.objects.filter(pk__in=["CLUB_1", "CLUB_2"]).count(), 2)
+
+    def test_legacy_duplicate_history_does_not_award_twice(self):
+        for number in [1, 2]:
+            Participation.objects.create(record_id=f"LEGACY_DUP_{number}", employee=self.employee,
+                event_id="EV_009", date=date(2026, 9, 20 + number), status="completed",
+                completion_pct=100, assigned_by="self")
+        ctx = profile_context(self.employee)
+        self.assertEqual(ctx["levels"]["SK_CLOUD"], 2)
+        self.assertEqual(sum(x["event_id"] == "EV_009" for x in ctx["applied"]), 1)
+
+    def test_completion_non_object_json_returns_400(self):
+        before = Participation.objects.count()
+        for value in [[], "bad", 42, True, None]:
+            with self.subTest(value=value):
+                response = self.client.post("/api/people/E0028/complete/EV_009/",
+                    json.dumps(value), content_type="application/json")
+                self.assertEqual(response.status_code, 400)
+                self.assertIn("JSON-объектом", response.json()["detail"])
+        self.assertEqual(Participation.objects.count(), before)
+
+    def test_hr_no_step_filter_tracks_goal_and_planned_steps(self):
+        self.client.force_login(self.hr_user)
+        page = self.client.get("/hr/", {"q": "E0028", "no_step": "1"})
+        self.assertEqual(page.context["count"], 0)
+        for event in ["EV_009", "EV_010", "EV_037"]:
+            DevelopmentPlanItem.objects.create(employee=self.employee, event_id=event, status="planned")
+        page = self.client.get("/hr/", {"q": "E0028", "no_step": "1"})
+        self.assertEqual(page.context["count"], 1)
+        self.assertEqual(page.context["no_step_count"], 1)
+        self.assertContains(page, "Есть шаги в личном плане")
+        self.employee.skills = {key: 5 for key in Skill.objects.values_list("pk", flat=True)}
+        self.employee.save()
+        page = self.client.get("/hr/", {"q": "E0028", "no_step": "1"})
+        self.assertEqual(page.context["count"], 1)
+        self.assertContains(page, "Требования цели по навыкам выполнены")
+
+    def test_hr_participation_counts_same_filtered_employees(self):
+        self.client.force_login(self.hr_user)
+        page = self.client.get("/hr/", {"grade": "Middle", "skill": "SK_CLOUD", "attention": "1"})
+        selected = {p["employee"].pk for p in page.context["profiles"]}
+        rows = list(Participation.objects.filter(employee_id__in=selected,
+            date__gte=date(2026, 10, 1) - timedelta(days=90), date__lte=date(2026, 10, 1)))
+        self.assertGreater(len(rows), 0)
+        summary = page.context["event_participation"]
+        self.assertEqual(sum(item["records"] for item in summary), len(rows))
+        for item in summary:
+            event_rows = [r for r in rows if r.event_id == item["event"].pk]
+            self.assertEqual(item["people"], len({r.employee_id for r in event_rows}))
+            for status in ["completed", "in_progress", "dropped", "no_show", "declined", "overdue"]:
+                self.assertEqual(item[status], sum(r.status == status for r in event_rows))
+        empty = self.client.get("/hr/", {"q": "NO_SUCH_PERSON"})
+        self.assertEqual(empty.context["event_participation"], [])
+        self.assertContains(empty, "нет записей участия за 90 дней")

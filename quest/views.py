@@ -104,6 +104,7 @@ def hr_dashboard(request):
     department = request.GET.get("department", "")
     grade = request.GET.get("grade", "")
     attention = request.GET.get("attention") == "1"
+    no_step = request.GET.get("no_step") == "1"
     skill_id = request.GET.get("skill", "")
     query = request.GET.get("q", "").strip()
     departments = list(
@@ -117,7 +118,7 @@ def hr_dashboard(request):
         employees = employees.filter(
             Q(full_name__icontains=query) | Q(employee_id__icontains=query) | Q(role__icontains=query)
         )
-    ctx = hr_summary(employees, attention_only=attention, skill_id=skill_id)
+    ctx = hr_summary(employees, attention_only=attention, skill_id=skill_id, no_step_only=no_step)
     for deficit in ctx["deficits"]:
         params = request.GET.copy()
         params["skill"] = deficit["skill_id"]
@@ -129,6 +130,7 @@ def hr_dashboard(request):
         grades=GRADES,
         grade=grade,
         attention=attention,
+        no_step=no_step,
         selected_skill=skill_id,
         skill_options=Skill.objects.order_by("name"),
         query=query,
@@ -353,6 +355,8 @@ def complete_api(request, employee_id, event_id):
         return Response(
             {"detail": "Демонстрация выполнения доступна только владельцу профиля в демо-режиме."}, status=403
         )
+    if not isinstance(request.data, dict):
+        return Response({"detail": "Тело запроса должно быть JSON-объектом с request_id."}, status=400)
     try:
         request_id = uuid.UUID(str(request.data.get("request_id", "")))
     except ValueError:

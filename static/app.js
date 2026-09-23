@@ -19,6 +19,7 @@ async function postJSON(url, data = {}) {
     return payload;
   } catch (error) {
     if (error.name === "AbortError") throw new Error("Запрос занял слишком много времени. Попробуй ещё раз.");
+    if (error instanceof TypeError) throw new Error("Не удалось связаться с сервером. Проверь соединение и попробуй ещё раз.");
     throw error;
   } finally { clearTimeout(timer); }
 }

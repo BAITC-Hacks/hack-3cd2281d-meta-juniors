@@ -38,7 +38,15 @@ def apply_gain(levels, event):
 def current_skills(employee, history, today):
     levels = dict(employee.skills)
     applied = []
+    seen_completions = set()
     for row in sorted(history, key=lambda r: (r.date, r.record_id)):
+        if row.status != "completed" or row.date > today:
+            continue
+        if not row.event.mandatory:
+            key = (row.event_id, row.date if row.event_id == "EV_036" else None)
+            if key in seen_completions:
+                continue
+            seen_completions.add(key)
         after_review = row.date > employee.last_review_date or (
             row.request_id and row.date == employee.last_review_date
         )
@@ -132,14 +140,14 @@ def profile_context(employee, cat=None, history=None):
     }
 
 
-def candidates_for(ctx, include_planned=False):
+def candidates_for(ctx, include_planned=False, planned_event_ids=None):
     employee, cat, levels, history = ctx["employee"], ctx["cat"], ctx["levels"], ctx["history"]
     gaps = {g["skill_id"]: g for g in ctx["gaps"] if g["gap"]}
     candidates, exclusions = [], Counter()
     planned = (
         set()
         if include_planned
-        else set(
+        else set(planned_event_ids) if planned_event_ids is not None else set(
             DevelopmentPlanItem.objects.filter(employee=employee, status="planned").values_list(
                 "event_id", flat=True
             )
@@ -237,10 +245,17 @@ def candidates_for(ctx, include_planned=False):
     return candidates, dict(exclusions), uncovered
 
 
-def hr_summary(employees, *, attention_only=False, skill_id=""):
+def hr_summary(employees, *, attention_only=False, skill_id="", no_step_only=False):
     cat = catalog()
+    employees = list(employees)
+    active_plans = {}
+    for employee_id, event_id, status in DevelopmentPlanItem.objects.filter(
+        employee_id__in=[e.pk for e in employees], status__in=["planned", "in_progress"]
+    ).values_list("employee_id", "event_id", "status"):
+        active_plans.setdefault(employee_id, []).append((event_id, status))
     profiles = []
     deficits = {}
+    participation = {}
     for employee in employees:
         ctx = profile_context(employee, cat, list(employee.history.all()))
         recent = [r for r in ctx["voluntary"] if (cat["today"] - r.date).days <= 90]
@@ -251,6 +266,32 @@ def hr_summary(employees, *, attention_only=False, skill_id=""):
             continue
         if skill_id and not any(g["skill_id"] == skill_id for g in ctx["open_gaps"]):
             continue
+        plan = active_plans.get(employee.pk, [])
+        candidates, _, _ = candidates_for(
+            ctx, planned_event_ids={event_id for event_id, status in plan if status == "planned"}
+        )
+        has_next_step = bool(candidates)
+        if no_step_only and has_next_step:
+            continue
+        if not ctx["target"]:
+            no_step_reason = "Нужно выбрать карьерную цель"
+        elif not ctx["open_gaps"]:
+            no_step_reason = "Требования цели по навыкам выполнены"
+        elif plan:
+            no_step_reason = "Есть шаги в личном плане; новых рекомендаций нет"
+        else:
+            no_step_reason = "Нет доступной активности для текущих разрывов"
+        for row in ctx["history"]:
+            if not 0 <= (cat["today"] - row.date).days <= 90:
+                continue
+            entry = participation.setdefault(
+                row.event_id,
+                {"event": row.event, "people": set(), "records": 0,
+                 **{status: 0 for status in STATUS_NAMES}},
+            )
+            entry["people"].add(employee.pk)
+            entry["records"] += 1
+            entry[row.status] += 1
         for g in ctx["open_gaps"]:
             entry = deficits.setdefault(
                 g["skill_id"],
@@ -274,17 +315,24 @@ def hr_summary(employees, *, attention_only=False, skill_id=""):
                 "attention": attention,
                 "completed90": completed,
                 "unfinished90": unfinished,
+                "has_next_step": has_next_step,
+                "no_step_reason": no_step_reason if not has_next_step else "",
             }
         )
     deficits = sorted(deficits.values(), key=lambda d: (-d["critical_people"], -d["people"], d["name"]))
     count = len(profiles)
     for d in deficits:
         d["width"] = round(d["people"] / count * 100) if count else 0
+    event_participation = sorted(participation.values(), key=lambda item: item["event"].pk)
+    for item in event_participation:
+        item["people"] = len(item["people"])
     return {
         "profiles": profiles,
         "deficits": deficits[:10],
         "count": count,
         "attention_count": sum(p["attention"] for p in profiles),
+        "no_step_count": sum(not p["has_next_step"] for p in profiles),
+        "event_participation": event_participation,
         "average_coverage": round(
             sum(p["coverage"] for p in profiles if p["target"])
             / max(1, sum(bool(p["target"]) for p in profiles))
