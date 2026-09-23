@@ -37,6 +37,20 @@ docker compose down
 
 Если порт занят, задайте `APP_PORT=8001` в `.env` и откройте http://localhost:8001. `down` сохраняет данные; не добавляйте `-v`, если хотите их сохранить.
 
+## Архитектура
+
+### Общая схема программы
+
+![Общая архитектура Career Quest](docs/images/prog_arch.png)
+
+### Сценарий сотрудника
+
+![Сценарий сотрудника](docs/images/employee_arch.png)
+
+### Сценарий HR
+
+![Сценарий HR](docs/images/HR_arch.png)
+
 ## Подключение AI
 
 Скопировать `.env.example` в `.env` (в PowerShell: `Copy-Item .env.example .env`). Указать локально:
