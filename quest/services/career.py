@@ -67,6 +67,8 @@ def target_for(employee, cat):
 
 def eligibility(employee, event, levels, history, today):
     reasons = []
+    if event.for_employee_id and event.for_employee_id != employee.pk:
+        reasons.append("Индивидуальная практика другого сотрудника")
     if event.mandatory:
         reasons.append("Обязательное мероприятие")
     if employee.role not in event.target_roles:

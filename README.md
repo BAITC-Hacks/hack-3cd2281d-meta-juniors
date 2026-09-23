@@ -224,6 +224,8 @@ Django Templates + JavaScript
 
 ## Документация
 
+- [Discovery Matrix — исходный анализ](docs/analytics/Discovery%20Matrix%20AS-IS.xlsx)
+- [Solution Validation Matrix — реализация и доказательства](docs/analytics/Solution_Validation_Matrix.xlsx)
 - [Архитектура, формулы и принятые решения](docs/ARCHITECTURE.md)
 - [Сценарий защиты](docs/DEMO.md)
 - [Результаты проверок и измерений](docs/VERIFICATION.md)

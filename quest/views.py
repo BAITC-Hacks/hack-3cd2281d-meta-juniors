@@ -18,7 +18,6 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 
 from .models import (
-    DevelopmentPlanItem,
     Employee,
     Event,
     ImportDraft,
@@ -40,7 +39,9 @@ from .services.career import (
 )
 from .services.importer import ImportFailure, import_dataset, preview_dataset
 from .services.plans import PlanConflict, change_plan
+from .services.practice import brief_for
 from .services.recommendations import get_recommendations
+from .services.trajectory import trajectory_for
 
 
 def is_hr(user):
@@ -64,6 +65,12 @@ class AppLoginView(LoginView):
             ctx["demo_password"] = settings.DEMO_PASSWORD
         return ctx
 
+    def get_success_url(self):
+        # Demo role selection always opens that role's home, even from a stale ?next= link.
+        if settings.DEMO_MODE and self.request.POST.get("demo_entry") == "1":
+            return "/"
+        return super().get_success_url()
+
 
 @login_required
 def home(request):
@@ -84,9 +91,9 @@ def profile(request, employee_id):
         options[r.role].append(r.grade)
     ctx["goal_options"] = dict(options)
     ctx["page"] = "profile"
-    ctx["can_complete"] = employee.user_id == request.user.id and settings.DEMO_MODE
     ctx["can_manage"] = employee.user_id == request.user.id
-    ctx["plan_count"] = employee.plan_items.filter(status__in=["planned", "in_progress"]).count()
+    ctx["trajectory"] = trajectory_for(ctx)
+    ctx["plan_count"] = ctx["trajectory"]["active_count"]
     ctx["history_rows"] = [
         {"record": h, "label": STATUS_NAMES.get(h.status, h.status)}
         for h in sorted(ctx["history"], key=lambda r: (r.date, r.record_id), reverse=True)
@@ -217,14 +224,15 @@ def development_plan(request, employee_id):
         {"status": s, "title": title, "items": []}
         for s, title in [
             ("planned", "Запланировано"),
-            ("in_progress", "В процессе"),
+            ("in_progress", "В работе"),
+            ("submitted", "На проверке"),
             ("completed", "Завершено"),
         ]
     ]
     by_status = {c["status"]: c["items"] for c in columns}
     for item in employee.plan_items.select_related("event", "participation").exclude(status="cancelled"):
         item.can_start = item.event_id in eligible
-        by_status[item.status].append(item)
+        by_status["in_progress" if item.status == "needs_revision" else item.status].append(item)
     total = sum(len(c["items"]) for c in columns)
     completed = len(by_status["completed"])
     ctx.update(
@@ -233,8 +241,8 @@ def development_plan(request, employee_id):
         plan_total=total,
         plan_completed=completed,
         plan_progress=round(completed / total * 100) if total else 0,
+        trajectory=trajectory_for(ctx),
         can_manage=employee.user_id == request.user.id,
-        can_complete=employee.user_id == request.user.id and settings.DEMO_MODE,
     )
     return render(request, "quest/plan.html", ctx)
 
@@ -242,7 +250,9 @@ def development_plan(request, employee_id):
 @login_required
 def event_detail(request, employee_id, event_id):
     employee = accessible_employee(request.user, employee_id)
-    event = get_object_or_404(Event, pk=event_id)
+    event = get_object_or_404(
+        Event.objects.filter(Q(for_employee__isnull=True) | Q(for_employee=employee)), pk=event_id
+    )
     ctx = profile_context(employee)
     candidates, _, _ = candidates_for(ctx, include_planned=True)
     candidate = next((c for c in candidates if c["event_id"] == event_id), None)
@@ -272,6 +282,7 @@ def event_detail(request, employee_id, event_id):
     ctx.update(
         page="event",
         event=event,
+        brief=brief_for(event),
         candidate=candidate,
         effects=effects,
         prerequisites=prerequisites,
@@ -291,8 +302,6 @@ def plan_api(request, employee_id, event_id, action):
         return Response({"detail": "План изменяет сам сотрудник."}, status=403)
     if action not in {"add", "start", "cancel"}:
         return Response({"detail": "Неизвестное действие."}, status=400)
-    if action == "start" and not settings.DEMO_MODE:
-        return Response({"detail": "Запуск учебной активности доступен в демо-режиме."}, status=403)
     with transaction.atomic():
         employee = Employee.objects.select_for_update().get(pk=employee.pk)
         event = get_object_or_404(Event, pk=event_id)
@@ -349,67 +358,12 @@ def goal_api(request, employee_id):
 @api_view(["POST"])
 def complete_api(request, employee_id, event_id):
     employee = accessible_employee(request.user, employee_id)
-    if employee.user_id != request.user.id or not settings.DEMO_MODE:
-        return Response(
-            {"detail": "Демонстрация выполнения доступна только владельцу профиля в демо-режиме."}, status=403
-        )
-    try:
-        request_id = uuid.UUID(str(request.data.get("request_id", "")))
-    except ValueError:
-        return Response({"detail": "Нужен request_id в формате UUID."}, status=400)
-    with transaction.atomic():
-        employee = Employee.objects.select_for_update().get(pk=employee.pk)
-        previous = Participation.objects.filter(request_id=request_id).first()
-        if previous:
-            if previous.employee_id != employee.pk or previous.event_id != event_id:
-                return Response({"detail": "request_id уже используется другой операцией."}, status=409)
-            return Response({"completed": True, "already_completed": True, "record_id": previous.pk})
-        event = get_object_or_404(Event, pk=event_id)
-        ctx = profile_context(employee)
-        item = (
-            DevelopmentPlanItem.objects.filter(employee=employee, event=event, status="in_progress")
-            .select_related("participation")
-            .first()
-        )
-        if (
-            not item
-            or not item.participation
-            or item.participation.status != "in_progress"
-            or event.mandatory
-        ):
-            return Response(
-                {"detail": "Завершить можно активность со статусом «В процессе» в личном плане."},
-                status=409,
-            )
-        completed = Participation.objects.filter(employee=employee, event=event, status="completed")
-        if (
-            completed.filter(date=ctx["cat"]["today"]).exists()
-            if event.pk == "EV_036"
-            else completed.exists()
-        ):
-            return Response({"detail": "Эта активность уже учтена как завершённая."}, status=409)
-        record = item.participation
-        record.request_id, record.status, record.completion_pct = request_id, "completed", 100
-        record.date = ctx["cat"]["today"]
-        record.save(update_fields=["request_id", "status", "completion_pct", "date"])
-        item.status = "completed"
-        item.save(update_fields=["status", "updated_at"])
-        RecommendationCache.objects.filter(employee=employee).delete()
-        updated = profile_context(employee)
-        return Response(
-            {
-                "completed": True,
-                "already_completed": False,
-                "record_id": record.pk,
-                "coverage_before": ctx["coverage"],
-                "coverage_after": updated["coverage"],
-                "changes": {
-                    k: [ctx["levels"].get(k, 0), v]
-                    for k, v in updated["levels"].items()
-                    if v != ctx["levels"].get(k, 0)
-                },
-            }
-        )
+    if employee.user_id != request.user.id:
+        return Response({"detail": "Результат отправляет сам сотрудник."}, status=403)
+    return Response(
+        {"detail": "Открой задание и отправь результат на проверку HR. Прямое завершение отключено."},
+        status=409,
+    )
 
 
 @require_GET

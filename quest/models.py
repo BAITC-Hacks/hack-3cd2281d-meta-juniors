@@ -69,6 +69,9 @@ class Event(models.Model):
     develops_skills = models.JSONField(default=list)
     prerequisites = models.JSONField(default=dict)
     upcoming_sessions = models.JSONField(default=list)
+    for_employee = models.ForeignKey(
+        Employee, null=True, blank=True, on_delete=models.PROTECT, related_name="personal_events"
+    )
 
     def __str__(self):
         return self.title
@@ -100,9 +103,17 @@ class RecommendationCache(models.Model):
 
 
 class DevelopmentPlanItem(models.Model):
+    STATUS_CHOICES = [
+        ("planned", "Запланировано"),
+        ("in_progress", "В работе"),
+        ("submitted", "На проверке"),
+        ("needs_revision", "На доработке"),
+        ("completed", "Завершено"),
+        ("cancelled", "Убрано из плана"),
+    ]
     employee = models.ForeignKey(Employee, related_name="plan_items", on_delete=models.CASCADE)
     event = models.ForeignKey(Event, on_delete=models.PROTECT)
-    status = models.CharField(max_length=20, default="planned")
+    status = models.CharField(max_length=20, default="planned", choices=STATUS_CHOICES)
     participation = models.OneToOneField(
         Participation, null=True, blank=True, on_delete=models.SET_NULL, related_name="plan_item"
     )
@@ -114,7 +125,16 @@ class DevelopmentPlanItem(models.Model):
         constraints = [
             models.UniqueConstraint(fields=["employee", "event"], name="unique_employee_plan_event"),
             models.CheckConstraint(
-                condition=models.Q(status__in=["planned", "in_progress", "completed", "cancelled"]),
+                condition=models.Q(
+                    status__in=[
+                        "planned",
+                        "in_progress",
+                        "submitted",
+                        "needs_revision",
+                        "completed",
+                        "cancelled",
+                    ]
+                ),
                 name="valid_plan_status",
             ),
         ]
@@ -127,3 +147,80 @@ class ImportDraft(models.Model):
     preview = models.JSONField()
     created_at = models.DateTimeField(auto_now_add=True)
     confirmed_at = models.DateTimeField(null=True, blank=True)
+
+
+class DevelopmentRequest(models.Model):
+    employee = models.ForeignKey(Employee, on_delete=models.CASCADE, related_name="development_requests")
+    skill = models.ForeignKey(Skill, on_delete=models.PROTECT)
+    target = models.JSONField()
+    current_level = models.PositiveSmallIntegerField()
+    required_level = models.PositiveSmallIntegerField()
+    note = models.TextField(blank=True)
+    status = models.CharField(
+        max_length=20,
+        default="open",
+        choices=[
+            ("open", "Ожидает HR"),
+            ("proposed", "Практика подготовлена"),
+            ("completed", "Результат подтверждён"),
+            ("closed", "Закрыт с ответом"),
+        ],
+    )
+    response = models.TextField(blank=True)
+    event = models.OneToOneField(
+        Event, null=True, blank=True, on_delete=models.PROTECT, related_name="development_request"
+    )
+    handled_by = models.ForeignKey(settings.AUTH_USER_MODEL, null=True, blank=True, on_delete=models.SET_NULL)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ["-created_at", "-pk"]
+        constraints = [
+            models.UniqueConstraint(
+                fields=["employee", "skill"],
+                condition=models.Q(status__in=["open", "proposed"]),
+                name="one_active_development_request",
+            )
+        ]
+
+
+class PracticeBrief(models.Model):
+    event = models.OneToOneField(Event, on_delete=models.CASCADE, related_name="practice_brief")
+    instructions = models.TextField()
+    deliverable = models.TextField()
+    criteria = models.JSONField()
+    approved_by = models.ForeignKey(settings.AUTH_USER_MODEL, null=True, on_delete=models.SET_NULL)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+
+class WorkSubmission(models.Model):
+    plan_item = models.ForeignKey(DevelopmentPlanItem, on_delete=models.CASCADE, related_name="submissions")
+    attempt = models.PositiveIntegerField()
+    body = models.TextField()
+    artifact_url = models.URLField(max_length=1000, blank=True)
+    criteria = models.JSONField()
+    status = models.CharField(
+        max_length=20,
+        default="pending",
+        choices=[
+            ("pending", "На проверке"),
+            ("changes_requested", "Нужна доработка"),
+            ("approved", "Подтверждено"),
+        ],
+    )
+    feedback = models.TextField(blank=True)
+    checked_criteria = models.JSONField(default=list)
+    reviewer = models.ForeignKey(settings.AUTH_USER_MODEL, null=True, blank=True, on_delete=models.SET_NULL)
+    submitted_at = models.DateTimeField(auto_now_add=True)
+    reviewed_at = models.DateTimeField(null=True, blank=True)
+    result = models.JSONField(default=dict)
+
+    class Meta:
+        ordering = ["-attempt"]
+        constraints = [
+            models.UniqueConstraint(fields=["plan_item", "attempt"], name="unique_submission_attempt"),
+            models.UniqueConstraint(
+                fields=["plan_item"], condition=models.Q(status="pending"), name="one_pending_submission"
+            ),
+        ]

@@ -16,7 +16,7 @@ from quest.models import RecommendationCache
 from .career import candidates_for
 
 logger = logging.getLogger(__name__)
-POLICY_VERSION = "career-quest-v1"
+POLICY_VERSION = "career-quest-v2"
 AI_EXECUTOR = ThreadPoolExecutor(max_workers=4, thread_name_prefix="career-ai")
 
 
@@ -75,15 +75,26 @@ def get_recommendations(ctx):
         payload.update(
             mode="empty",
             mode_label="Нужна карьерная цель",
+            empty_reason="no_goal",
             notice="Выберите целевую роль и грейд, чтобы получить рекомендации.",
         )
     elif not candidates:
+        has_plan = (
+            ctx["employee"]
+            .plan_items.filter(status__in=["planned", "in_progress", "submitted", "needs_revision"])
+            .exists()
+        )
         payload.update(
             mode="empty",
-            mode_label="Нет подходящих активностей",
-            notice="Новых подходящих шагов нет. Проверьте личный план: часть активностей может быть уже запланирована или начата. Остальные разрывы обсудите с HR."
+            mode_label="Каталог проверен" if ctx["open_gaps"] else "Требования достигнуты",
+            empty_reason=("plan_active" if has_plan else "catalog_gap") if ctx["open_gaps"] else "goal_met",
+            notice=(
+                "Продолжи шаги в своём плане. Для оставшихся разрывов можно обсудить индивидуальную практику."
+                if has_plan
+                else "Оставшиеся разрывы не закрываются доступными мероприятиями. Можно запросить индивидуальную практику и согласовать её с координатором развития."
+            )
             if ctx["open_gaps"]
-            else "Требования выбранного профиля по навыкам выполнены. Это не является решением о повышении.",
+            else "Требования выбранного профиля по навыкам выполнены. Следующую цель и возможность повышения обсуди с руководителем.",
         )
     else:
         digest_data = {

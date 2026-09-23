@@ -77,6 +77,7 @@ LOGIN_URL = "login"
 LOGIN_REDIRECT_URL = "home"
 LOGOUT_REDIRECT_URL = "login"
 REST_FRAMEWORK = {
+    "EXCEPTION_HANDLER": "quest.http_errors.api_exception_handler",
     "DEFAULT_AUTHENTICATION_CLASSES": ["rest_framework.authentication.SessionAuthentication"],
     "DEFAULT_PERMISSION_CLASSES": ["rest_framework.permissions.IsAuthenticated"],
     "DEFAULT_RENDERER_CLASSES": ["rest_framework.renderers.JSONRenderer"],
@@ -91,3 +92,4 @@ DEMO_PASSWORD = os.getenv("DEMO_PASSWORD", "career-demo-2026")
 SESSION_COOKIE_HTTPONLY = True
 X_FRAME_OPTIONS = "DENY"
 SECURE_CONTENT_TYPE_NOSNIFF = True
+CSRF_FAILURE_VIEW = "quest.http_errors.csrf_failure"

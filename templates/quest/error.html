@@ -1,0 +1,3 @@
+{% extends 'base.html' %}{% block title %}{{ error_title }} — Career Quest{% endblock %}{% block shell %}
+<main class="error-page"><a class="brand" href="{% url 'home' %}"><span class="brand-mark">cq↗</span><span>Career Quest</span></a><section class="panel"><span class="eyebrow">{{ error_code }}</span><h1>{{ error_title }}</h1><p>{{ error_text }}</p><a class="button primary" href="{% url 'home' %}">{% if request.user.is_authenticated %}В мой кабинет ↗{% else %}Войти в кабинет ↗{% endif %}</a></section></main>
+{% endblock %}

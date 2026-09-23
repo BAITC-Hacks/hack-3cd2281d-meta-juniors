@@ -15,6 +15,8 @@ def sync_plan_history(rows):
     for row in rows.filter(Q(status="in_progress") | Q(plan_item__isnull=False)):
         item = DevelopmentPlanItem.objects.filter(participation=row).first()
         if item:
+            if row.status == "in_progress" and item.status in {"submitted", "needs_revision"}:
+                continue
             item.status = row.status if row.status in {"in_progress", "completed"} else "cancelled"
             item.save(update_fields=["status", "updated_at"])
         elif row.status == "in_progress" and not row.event.mandatory:
@@ -27,7 +29,7 @@ def sync_plan_history(rows):
 def change_plan(employee, event, action):
     """Caller must hold the employee row lock for every state transition."""
     item = DevelopmentPlanItem.objects.filter(employee=employee, event=event).first()
-    if action == "add" and item and item.status in {"planned", "in_progress"}:
+    if action == "add" and item and item.status in {"planned", "in_progress", "submitted", "needs_revision"}:
         return item
     if action == "start" and item and item.status == "in_progress":
         return item

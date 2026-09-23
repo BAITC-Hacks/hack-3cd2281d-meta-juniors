@@ -7,7 +7,16 @@ from datetime import date
 from django.db import transaction
 from pydantic import ValidationError
 
-from quest.models import DatasetState, Employee, Event, Participation, RoleProfile, Skill
+from quest.models import (
+    DatasetState,
+    Employee,
+    Event,
+    Participation,
+    PracticeBrief,
+    RoleProfile,
+    Skill,
+    WorkSubmission,
+)
 from quest.schemas import EmployeeInput, EventInput, HistoryInput, RoleInput, SkillInput
 
 
@@ -106,19 +115,35 @@ def prepare_dataset(*, employees=None, history=None, skills=None, events=None):
             raise ImportFailure(f"{e['employee_id']}: неизвестный manager_id")
         if date.fromisoformat(e["last_review_date"]) > state.as_of_date:
             raise ImportFailure(f"{e['employee_id']}: аттестация позже даты среза")
+    practice_events = set(PracticeBrief.objects.values_list("event_id", flat=True))
     for v in vrows:
+        if v["event_id"] in practice_events:
+            raise ImportFailure(
+                f"{v['event_id']}: индивидуальная практика утверждена HR и защищена от перезаписи импортом"
+            )
         check_skills(v["prerequisites"], v["event_id"])
         check_skills([x["skill_id"] for x in v["develops_skills"]], v["event_id"])
         unique(v["develops_skills"], "skill_id")
     existing = {
         p.record_id: p for p in Participation.objects.filter(record_id__in=[r["record_id"] for r in hrows])
     }
+    reviewed_records = set(
+        WorkSubmission.objects.filter(plan_item__participation_id__in=existing).values_list(
+            "plan_item__participation_id", flat=True
+        )
+    )
     for h in hrows:
         if h["employee_id"] not in known_employees or h["event_id"] not in known_events:
             raise ImportFailure(f"{h['record_id']}: неизвестный сотрудник или мероприятие")
         if date.fromisoformat(h["date"]) > state.as_of_date:
             raise ImportFailure(f"{h['record_id']}: история позже даты среза")
+        if h["event_id"] in practice_events:
+            raise ImportFailure(
+                f"{h['record_id']}: результат индивидуальной практики подтверждается через проверку HR"
+            )
         old = existing.get(h["record_id"])
+        if h["record_id"] in reviewed_records:
+            raise ImportFailure(f"{h['record_id']}: для активности уже отправлена работа на проверку")
         if old and (
             old.employee_id != h["employee_id"]
             or old.event_id != h["event_id"]

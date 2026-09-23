@@ -12,4 +12,3 @@ def plural_ru(number, forms):
     if number % 10 == 1:
         return one
     return few if 2 <= number % 10 <= 4 else many
-
