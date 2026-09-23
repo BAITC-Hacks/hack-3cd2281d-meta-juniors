@@ -1,0 +1,27 @@
+Independent observed result, 2026-09-23.
+Commit: 0534bf797be825d2cfb04ec56604792a5d72f78d
+Compose project: career-quest-code-review
+Database backend: PostgreSQL
+This is a compact result transcription from tool output, not the full stdout log.
+
+Command:
+docker compose exec -T -e OPENAI_API_KEY= web python manage.py test quest --verbosity 2 --noinput
+
+Observed output:
+Found 30 test(s).
+Creating test database for alias 'default' ('test_career_quest')...
+System check identified no issues (0 silenced).
+Ran 30 tests in 60.492s
+OK
+Destroying test database for alias 'default' ('test_career_quest')...
+Exit code: 0
+
+Command:
+docker compose exec -T -e OPENAI_API_KEY= web python manage.py check
+
+Observed output:
+System check identified no issues (0 silenced).
+Exit code: 0
+
+Application code and normal application database were not modified by the tests.
+Provider calls in the original suite are controlled by test mocks; no live API key was supplied.

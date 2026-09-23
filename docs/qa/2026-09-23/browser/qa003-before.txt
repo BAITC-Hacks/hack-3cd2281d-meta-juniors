@@ -1,0 +1,177 @@
+- complementary:
+  - link "cq ↗ Career Quest РАСТИ ОСОЗНАННО":
+    - /url: /
+    - text: cq
+    - generic: ↗
+    - text: Career Quest
+    - generic: РАСТИ ОСОЗНАННО
+  - generic: РАБОЧЕЕ ПРОСТРАНСТВО
+  - navigation "Главное меню":
+    - link "Моё развитие":
+      - /url: /
+      - text: Моё развитие
+    - link "Следующие шаги":
+      - /url: /#next-steps
+      - text: Следующие шаги
+    - link "История активностей":
+      - /url: /#history
+      - text: История активностей
+  - generic: ↗
+  - strong:
+    - text: Маленькие шаги.
+    - text: Заметный рост.
+  - paragraph: Твой путь развития начинается с понятного следующего шага.
+  - generic: Я
+  - strong: Личный кабинет
+  - text: qa_caps_20260923
+  - button "Выйти": ↪
+- banner:
+  - text: Рабочее пространство /
+  - strong: Развитие
+  - generic: Демо · синтетические данные
+- main:
+  - generic: МОЁ РАЗВИТИЕ
+  - heading "QA Synthetic Skill Caps." [level=1]
+  - paragraph: Backend Engineer · Senior · Backend Development
+  - text: Срез на 01.10.2026
+  - generic: ТВОЯ КАРЬЕРНАЯ ТРАЕКТОРИЯ
+  - heading "Следующая точка — Lead" [level=2]
+  - paragraph: Backend Engineer. Каждый шаг приближает тебя к навыкам целевого профиля.
+  - generic: Senior
+  - generic: Lead ↗
+  - strong: 97%
+  - generic: навыков к цели
+  - text: Покрытие требований,
+  - text: не вероятность повышения
+  - generic "Изменить карьерную цель ↗":
+    - text: Изменить карьерную цель
+    - generic: ↗
+  - option "Backend Engineer" [selected]
+  - option "Frontend Engineer"
+  - option "Data Analyst"
+  - option "QA Engineer"
+  - option "Product Manager"
+  - option "HR Business Partner"
+  - option "Sales Manager"
+  - option "Customer Support Specialist"
+  - option "Junior"
+  - option "Middle"
+  - option "Senior"
+  - option "Lead" [selected]
+  - article:
+    - generic: Критичные разрывы
+    - strong: 1навык
+    - paragraph: Важны для выбранной цели
+  - article:
+    - generic: Завершено добровольно
+    - strong: 0активностей
+    - paragraph: За весь период истории
+  - article:
+    - generic: После аттестации
+    - strong: 0завершений
+    - paragraph: Уже учтены в текущих навыках
+  - generic: ОТ ЦЕЛИ К ДЕЙСТВИЮ
+  - heading "Твои следующие шаги" [level=2]:
+    - text: Твои следующие шаги
+  - paragraph: С учётом навыков, карьерной цели и истории участия.
+  - button "Обновить подбор ↻"
+  - status:
+    - generic: Подбор по правилам
+    - generic: AI-ключ ещё не подключён. Показан резервный многофакторный подбор по правилам.
+    - generic: 0.03 с
+  - article:
+    - generic: ↗
+    - generic: ШАГ 01
+    - heading "Designing High-Load Systems" [level=3]
+    - generic: очно
+    - generic: ·
+    - generic: 12 ч
+    - generic: · EV_006
+    - paragraph: "Приоритет: критичный навык для карьерной цели"
+    - list:
+      - listitem: "System Design: 4 → 5 при требуемых 5. Критично для целевого грейда."
+      - listitem: За 180 дней нет истории активностей такого типа и формата; предпочтение пока неизвестно.
+      - listitem: "Observability: 3 → 4 при требуемых 4."
+      - listitem: "Нагрузка: 12 ч. Формат: очно."
+    - paragraph: "Ближайшая возможность: 2026-10-07"
+    - button "Завершить в демо ✓":
+      - text: Завершить в демо
+      - generic: ✓
+  - paragraph: «Завершить в демо» моделирует выполнение на дату среза и сразу пересчитывает навыки. Это не подтверждение реального прохождения обучения.
+  - generic: КАРТА РАЗВИТИЯ
+  - heading "Что уже есть. Что впереди." [level=2]
+  - generic: Сейчас
+  - generic: Нужно для цели
+  - strong: System Design
+  - text: Критичный
+  - generic: 4 / 5
+  - generic: Ещё 1
+  - strong: Leadership
+  - text: Критичный
+  - generic: 4 / 4
+  - generic: Достигнут ✓
+  - strong: Mentoring
+  - text: Критичный
+  - generic: 4 / 4
+  - generic: Достигнут ✓
+  - strong: Observability
+  - generic: 3 / 4
+  - generic: Ещё 1
+  - strong: API Design
+  - generic: 5 / 4
+  - generic: Достигнут ✓
+  - strong: Application Security
+  - generic: 4 / 4
+  - generic: Достигнут ✓
+  - strong: CI/CD
+  - generic: 3 / 3
+  - generic: Достигнут ✓
+  - strong: Cloud Platforms
+  - generic: 4 / 4
+  - generic: Достигнут ✓
+  - strong: Communication
+  - generic: 4 / 4
+  - generic: Достигнут ✓
+  - strong: Containers & Orchestration
+  - generic: 3 / 3
+  - generic: Достигнут ✓
+  - strong: Problem Solving
+  - generic: 4 / 4
+  - generic: Достигнут ✓
+  - strong: Public Speaking
+  - generic: 3 / 3
+  - generic: Достигнут ✓
+  - strong: Python
+  - generic: 4 / 4
+  - generic: Достигнут ✓
+  - strong: SQL
+  - generic: 4 / 4
+  - generic: Достигнут ✓
+  - strong: Stakeholder Management
+  - generic: 4 / 4
+  - generic: Достигнут ✓
+  - strong: Teamwork
+  - generic: 4 / 4
+  - generic: Достигнут ✓
+  - paragraph: Шкала 0–5. Прогресс = сумма min(текущий, требуемый) / сумма требуемых уровней. Навык растёт по gain и max_level из каталога.
+  - generic: ТВОЙ ОПЫТ
+  - heading "История активностей" [level=2]
+  - generic: 1 записей
+  - table:
+    - rowgroup:
+      - row "Активность Дата Тип участия Результат":
+        - columnheader "Активность"
+        - columnheader "Дата"
+        - columnheader "Тип участия"
+        - columnheader "Результат"
+    - rowgroup:
+      - row "New Employee Onboarding EV_004 · QA_H003 10.10.2024 Обязательная Завершено":
+        - cell "New Employee Onboarding EV_004 · QA_H003":
+          - strong: New Employee Onboarding
+          - generic: EV_004 · QA_H003
+        - cell "10.10.2024"
+        - cell "Обязательная"
+        - cell "Завершено"
+- contentinfo:
+  - text: Career Quest
+  - generic: HackAlem AI · Meta Juniors · Halyk Bank case

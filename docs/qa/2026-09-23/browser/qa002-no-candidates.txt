@@ -1,0 +1,142 @@
+- complementary:
+  - link "cq ↗ Career Quest РАСТИ ОСОЗНАННО":
+    - /url: /
+    - text: cq
+    - generic: ↗
+    - text: Career Quest
+    - generic: РАСТИ ОСОЗНАННО
+  - generic: РАБОЧЕЕ ПРОСТРАНСТВО
+  - navigation "Главное меню":
+    - link "Обзор команды":
+      - /url: /hr/
+      - text: Обзор команды
+    - link "Загрузка данных":
+      - /url: /hr/import/
+      - text: Загрузка данных
+  - generic: ↗
+  - strong:
+    - text: Маленькие шаги.
+    - text: Заметный рост.
+  - paragraph: Твой путь развития начинается с понятного следующего шага.
+  - generic: HR
+  - strong: HR-пространство
+  - text: hr
+  - button "Выйти": ↪
+- banner:
+  - text: Рабочее пространство /
+  - strong: Развитие
+  - generic: Демо · синтетические данные
+- main:
+  - generic: МОЁ РАЗВИТИЕ
+  - heading "QA Synthetic No Gaps." [level=1]
+  - paragraph: Backend Engineer · Middle · Backend Development
+  - text: Срез на 01.10.2026
+  - generic: Просмотр профиля сотрудника для HR. Карьерную цель и выполнение активностей меняет сам сотрудник.
+  - generic: ТВОЯ КАРЬЕРНАЯ ТРАЕКТОРИЯ
+  - heading "Следующая точка — Senior" [level=2]
+  - paragraph: Backend Engineer. Каждый шаг приближает тебя к навыкам целевого профиля.
+  - generic: Middle
+  - generic: Senior ↗
+  - strong: 100%
+  - generic: навыков к цели
+  - text: Покрытие требований,
+  - text: не вероятность повышения
+  - article:
+    - generic: Критичные разрывы
+    - strong: 0навыков
+    - paragraph: Важны для выбранной цели
+  - article:
+    - generic: Завершено добровольно
+    - strong: 0активностей
+    - paragraph: За весь период истории
+  - article:
+    - generic: После аттестации
+    - strong: 0завершений
+    - paragraph: Уже учтены в текущих навыках
+  - generic: ОТ ЦЕЛИ К ДЕЙСТВИЮ
+  - heading "Твои следующие шаги" [level=2]:
+    - text: Твои следующие шаги
+  - paragraph: С учётом навыков, карьерной цели и истории участия.
+  - button "Обновить подбор ↻"
+  - status:
+    - generic: Нет подходящих активностей
+    - generic: Требования выбранного профиля по навыкам выполнены. Это не является решением о повышении.
+    - generic: 0.00 с
+  - strong: Нет подходящих активностей
+  - text: Требования выбранного профиля по навыкам выполнены. Это не является решением о повышении.
+  - generic: КАРТА РАЗВИТИЯ
+  - heading "Что уже есть. Что впереди." [level=2]
+  - generic: Сейчас
+  - generic: Нужно для цели
+  - strong: API Design
+  - text: Критичный
+  - generic: 5 / 4
+  - generic: Достигнут ✓
+  - strong: System Design
+  - text: Критичный
+  - generic: 5 / 4
+  - generic: Достигнут ✓
+  - strong: Application Security
+  - generic: 5 / 3
+  - generic: Достигнут ✓
+  - strong: CI/CD
+  - generic: 5 / 3
+  - generic: Достигнут ✓
+  - strong: Cloud Platforms
+  - generic: 5 / 3
+  - generic: Достигнут ✓
+  - strong: Communication
+  - generic: 5 / 3
+  - generic: Достигнут ✓
+  - strong: Containers & Orchestration
+  - generic: 5 / 3
+  - generic: Достигнут ✓
+  - strong: Leadership
+  - generic: 5 / 2
+  - generic: Достигнут ✓
+  - strong: Mentoring
+  - generic: 5 / 3
+  - generic: Достигнут ✓
+  - strong: Observability
+  - generic: 5 / 3
+  - generic: Достигнут ✓
+  - strong: Problem Solving
+  - generic: 5 / 4
+  - generic: Достигнут ✓
+  - strong: Public Speaking
+  - generic: 5 / 2
+  - generic: Достигнут ✓
+  - strong: Python
+  - generic: 5 / 4
+  - generic: Достигнут ✓
+  - strong: SQL
+  - generic: 5 / 4
+  - generic: Достигнут ✓
+  - strong: Stakeholder Management
+  - generic: 5 / 2
+  - generic: Достигнут ✓
+  - strong: Teamwork
+  - generic: 5 / 3
+  - generic: Достигнут ✓
+  - paragraph: Шкала 0–5. Прогресс = сумма min(текущий, требуемый) / сумма требуемых уровней. Навык растёт по gain и max_level из каталога.
+  - generic: ТВОЙ ОПЫТ
+  - heading "История активностей" [level=2]
+  - generic: 1 записей
+  - table:
+    - rowgroup:
+      - row "Активность Дата Тип участия Результат":
+        - columnheader "Активность"
+        - columnheader "Дата"
+        - columnheader "Тип участия"
+        - columnheader "Результат"
+    - rowgroup:
+      - row "New Employee Onboarding EV_004 · QA_H002 10.10.2024 Обязательная Завершено":
+        - cell "New Employee Onboarding EV_004 · QA_H002":
+          - strong: New Employee Onboarding
+          - generic: EV_004 · QA_H002
+        - cell "10.10.2024"
+        - cell "Обязательная"
+        - cell "Завершено"
+- contentinfo:
+  - text: Career Quest
+  - generic: HackAlem AI · Meta Juniors · Halyk Bank case

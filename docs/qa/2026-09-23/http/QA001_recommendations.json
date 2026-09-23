@@ -1,0 +1,198 @@
+{
+  "status": 200,
+  "http_elapsed_ms": 37.45,
+  "payload": {
+    "steps": [
+      {
+        "event_id": "EV_007",
+        "title": "Architecture Review Circle",
+        "description": "Small-group sessions where a senior architect reviews participants' real design decisions.",
+        "format": "онлайн",
+        "type": "mentoring",
+        "duration_hours": 8.0,
+        "next_session": "2026-10-23",
+        "benefits": [
+          {
+            "skill_id": "SK_SYSTEM_DESIGN",
+            "name": "System Design",
+            "before": 2,
+            "after": 3,
+            "required": 4,
+            "critical": true,
+            "closes": 1
+          }
+        ],
+        "facts": [
+          {
+            "id": "EV_007:gap0",
+            "category": "gap",
+            "text": "System Design: 2 → 3 при требуемых 4. Критично для целевого грейда."
+          },
+          {
+            "id": "EV_007:history",
+            "category": "history",
+            "text": "За 180 дней нет истории активностей такого типа и формата; предпочтение пока неизвестно."
+          },
+          {
+            "id": "EV_007:effort",
+            "category": "effort",
+            "text": "Нагрузка: 8 ч. Формат: онлайн."
+          }
+        ],
+        "score": 41.6,
+        "critical_benefit": 1,
+        "history_records": [],
+        "same_event_failures": 0,
+        "explanation": [
+          {
+            "id": "EV_007:gap0",
+            "category": "gap",
+            "text": "System Design: 2 → 3 при требуемых 4. Критично для целевого грейда."
+          },
+          {
+            "id": "EV_007:history",
+            "category": "history",
+            "text": "За 180 дней нет истории активностей такого типа и формата; предпочтение пока неизвестно."
+          },
+          {
+            "id": "EV_007:effort",
+            "category": "effort",
+            "text": "Нагрузка: 8 ч. Формат: онлайн."
+          }
+        ],
+        "priority": "Приоритет: критичный навык для карьерной цели"
+      },
+      {
+        "event_id": "EV_006",
+        "title": "Designing High-Load Systems",
+        "description": "Hands-on architecture workshop on scaling, resilience and monitoring of production services.",
+        "format": "очно",
+        "type": "workshop",
+        "duration_hours": 12.0,
+        "next_session": "2026-10-07",
+        "benefits": [
+          {
+            "skill_id": "SK_SYSTEM_DESIGN",
+            "name": "System Design",
+            "before": 2,
+            "after": 3,
+            "required": 4,
+            "critical": true,
+            "closes": 1
+          }
+        ],
+        "facts": [
+          {
+            "id": "EV_006:gap0",
+            "category": "gap",
+            "text": "System Design: 2 → 3 при требуемых 4. Критично для целевого грейда."
+          },
+          {
+            "id": "EV_006:history",
+            "category": "history",
+            "text": "За 180 дней нет истории активностей такого типа и формата; предпочтение пока неизвестно."
+          },
+          {
+            "id": "EV_006:effort",
+            "category": "effort",
+            "text": "Нагрузка: 12 ч. Формат: очно."
+          }
+        ],
+        "score": 41.4,
+        "critical_benefit": 1,
+        "history_records": [],
+        "same_event_failures": 0,
+        "explanation": [
+          {
+            "id": "EV_006:gap0",
+            "category": "gap",
+            "text": "System Design: 2 → 3 при требуемых 4. Критично для целевого грейда."
+          },
+          {
+            "id": "EV_006:history",
+            "category": "history",
+            "text": "За 180 дней нет истории активностей такого типа и формата; предпочтение пока неизвестно."
+          },
+          {
+            "id": "EV_006:effort",
+            "category": "effort",
+            "text": "Нагрузка: 12 ч. Формат: очно."
+          }
+        ],
+        "priority": "Приоритет: критичный навык для карьерной цели"
+      },
+      {
+        "event_id": "EV_005",
+        "title": "System Design Fundamentals",
+        "description": "Core building blocks of distributed systems: caching, queues, databases, APIs.",
+        "format": "онлайн",
+        "type": "course",
+        "duration_hours": 16.0,
+        "next_session": "2026-11-23",
+        "benefits": [
+          {
+            "skill_id": "SK_SYSTEM_DESIGN",
+            "name": "System Design",
+            "before": 2,
+            "after": 3,
+            "required": 4,
+            "critical": true,
+            "closes": 1
+          }
+        ],
+        "facts": [
+          {
+            "id": "EV_005:gap0",
+            "category": "gap",
+            "text": "System Design: 2 → 3 при требуемых 4. Критично для целевого грейда."
+          },
+          {
+            "id": "EV_005:history",
+            "category": "history",
+            "text": "За 180 дней нет истории активностей такого типа и формата; предпочтение пока неизвестно."
+          },
+          {
+            "id": "EV_005:effort",
+            "category": "effort",
+            "text": "Нагрузка: 16 ч. Формат: онлайн."
+          }
+        ],
+        "score": 41.2,
+        "critical_benefit": 1,
+        "history_records": [],
+        "same_event_failures": 0,
+        "explanation": [
+          {
+            "id": "EV_005:gap0",
+            "category": "gap",
+            "text": "System Design: 2 → 3 при требуемых 4. Критично для целевого грейда."
+          },
+          {
+            "id": "EV_005:history",
+            "category": "history",
+            "text": "За 180 дней нет истории активностей такого типа и формата; предпочтение пока неизвестно."
+          },
+          {
+            "id": "EV_005:effort",
+            "category": "effort",
+            "text": "Нагрузка: 16 ч. Формат: онлайн."
+          }
+        ],
+        "priority": "Приоритет: критичный навык для карьерной цели"
+      }
+    ],
+    "uncovered": [],
+    "exclusions": {
+      "Обязательное мероприятие": 4,
+      "Уже завершено": 1,
+      "Не сокращает разрыв к цели": 10,
+      "Не подходит текущая роль": 21,
+      "Не подходит текущий грейд": 1
+    },
+    "cached": false,
+    "mode": "rules",
+    "mode_label": "Подбор по правилам",
+    "notice": "AI-ключ ещё не подключён. Показан резервный многофакторный подбор по правилам.",
+    "elapsed_ms": 16
+  }
+}

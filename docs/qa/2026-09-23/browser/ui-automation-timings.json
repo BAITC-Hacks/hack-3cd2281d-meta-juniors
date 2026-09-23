@@ -1,0 +1,72 @@
+{
+  "method": "Wall clock around browser goto/click + DOM snapshot; includes automation overhead, not pure rendering latency",
+  "completion_ev009_ms": 3854,
+  "profile_ms": [
+    {
+      "ms": 1218,
+      "profileReady": true
+    },
+    {
+      "ms": 881,
+      "profileReady": true
+    },
+    {
+      "ms": 461,
+      "profileReady": true
+    },
+    {
+      "ms": 635,
+      "profileReady": true
+    },
+    {
+      "ms": 738,
+      "profileReady": true
+    }
+  ],
+  "recommendation_refresh_ms": [
+    {
+      "ms": 399,
+      "ready": true
+    },
+    {
+      "ms": 378,
+      "ready": true
+    },
+    {
+      "ms": 363,
+      "ready": true
+    },
+    {
+      "ms": 385,
+      "ready": true
+    },
+    {
+      "ms": 455,
+      "ready": true
+    }
+  ],
+  "recovery_completion_note": "Immediate first snapshot preceded navigation; discarded as incomplete timing sample.",
+  "qa003_completion_ms": 390,
+  "hr_ms": [
+    {
+      "ms": 4374,
+      "hrReady": true
+    },
+    {
+      "ms": 848,
+      "hrReady": true
+    },
+    {
+      "ms": 780,
+      "hrReady": true
+    },
+    {
+      "ms": 709,
+      "hrReady": true
+    },
+    {
+      "ms": 668,
+      "hrReady": true
+    }
+  ]
+}

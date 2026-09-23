@@ -1,0 +1,8 @@
+{
+  "status": 200,
+  "elapsed_ms": 21.49,
+  "messages": [
+    "QA_NEG_UNKNOWN_EVENT: неизвестный сотрудник или мероприятие"
+  ],
+  "result_text": ""
+}

@@ -1,0 +1,8 @@
+{
+  "status": 200,
+  "elapsed_ms": 14.69,
+  "messages": [
+    "employees, запись 1, skills.SK_SYSTEM_DESIGN: Input should be less than or equal to 5"
+  ],
+  "result_text": ""
+}

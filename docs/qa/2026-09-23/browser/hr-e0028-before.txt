@@ -1,0 +1,129 @@
+- complementary:
+  - link "cq ↗ Career Quest РАСТИ ОСОЗНАННО":
+    - /url: /
+    - text: cq
+    - generic: ↗
+    - text: Career Quest
+    - generic: РАСТИ ОСОЗНАННО
+  - generic: РАБОЧЕЕ ПРОСТРАНСТВО
+  - navigation "Главное меню":
+    - link "Обзор команды":
+      - /url: /hr/
+      - text: Обзор команды
+    - link "Загрузка данных":
+      - /url: /hr/import/
+      - text: Загрузка данных
+  - generic: ↗
+  - strong:
+    - text: Маленькие шаги.
+    - text: Заметный рост.
+  - paragraph: Твой путь развития начинается с понятного следующего шага.
+  - generic: HR
+  - strong: HR-пространство
+  - text: hr
+  - button "Выйти": ↪
+- banner:
+  - text: Рабочее пространство /
+  - strong: Команда
+  - generic: Демо · синтетические данные
+- main:
+  - generic: HR-ПРОСТРАНСТВО
+  - heading "Развитие команды." [level=1]
+  - paragraph: Компетенции, которым нужна поддержка. Люди, с которыми стоит поговорить.
+  - link "Загрузить данные":
+    - /url: /hr/import/
+    - text: Загрузить данные
+  - generic: Подразделение
+  - combobox "Подразделение":
+    - option "Все подразделения" [selected]
+    - option "Backend Development"
+    - option "Customer Support"
+    - option "Data & Analytics"
+    - option "Frontend Development"
+    - option "Human Resources"
+    - option "Product Management"
+    - option "Quality Assurance"
+    - option "Sales"
+  - button "Показать"
+  - generic: Срез на 01.10.2026
+  - article:
+    - generic: В выбранной группе
+    - strong: 200сотрудников
+    - paragraph: Профили из загруженного набора
+  - article:
+    - generic: Среднее покрытие цели
+    - strong: 59% навыков
+    - paragraph: Среди сотрудников с целевым профилем
+  - article:
+    - generic: Повод для разговора
+    - strong: 113сотрудников
+    - paragraph: Сигнал поддержки, не оценка человека
+  - generic: ПРИОРИТЕТЫ ОБУЧЕНИЯ
+  - heading "Где команде нужна поддержка" [level=2]
+  - paragraph: Число сотрудников с разрывом относительно их карьерной цели.
+  - strong: Leadership
+  - generic: 97 чел.
+  - generic: Критичен для 43
+  - strong: Mentoring
+  - generic: 121 чел.
+  - generic: Критичен для 30
+  - strong: System Design
+  - generic: 30 чел.
+  - generic: Критичен для 22
+  - strong: API Design
+  - generic: 41 чел.
+  - generic: Критичен для 18
+  - strong: Statistics
+  - generic: 25 чел.
+  - generic: Критичен для 17
+  - strong: Negotiation
+  - generic: 22 чел.
+  - generic: Критичен для 17
+  - strong: Product Discovery
+  - generic: 22 чел.
+  - generic: Критичен для 13
+  - strong: Technical Troubleshooting
+  - generic: 19 чел.
+  - generic: Критичен для 13
+  - strong: Stakeholder Management
+  - generic: 101 чел.
+  - generic: Критичен для 12
+  - strong: Account Management
+  - generic: 19 чел.
+  - generic: Критичен для 12
+  - generic: ИНДИВИДУАЛЬНАЯ ПОДДЕРЖКА
+  - heading "Профили сотрудников" [level=2]
+  - searchbox "Поиск сотрудника" [active]: E0028
+  - table:
+    - rowgroup:
+      - row "Сотрудник Цель Покрытие За 90 дней Поддержка":
+        - columnheader "Сотрудник"
+        - columnheader "Цель"
+        - columnheader "Покрытие"
+        - columnheader "За 90 дней"
+        - columnheader "Поддержка"
+        - columnheader
+    - rowgroup:
+      - 'row "Akmaral Ismailova E0028 · Backend Engineer · Middle Backend Engineer Senior 72% Критичных разрывов: 1 3 завершено 0 пропусков / отказов / прерываний Есть участие Профиль Akmaral Ismailova"':
+        - cell "Akmaral Ismailova E0028 · Backend Engineer · Middle":
+          - strong: Akmaral Ismailova
+          - generic: E0028 · Backend Engineer · Middle
+        - cell "Backend Engineer Senior":
+          - text: Backend Engineer
+          - generic: Senior
+        - 'cell "72% Критичных разрывов: 1"':
+          - strong: 72%
+          - generic: "Критичных разрывов: 1"
+        - cell "3 завершено 0 пропусков / отказов / прерываний":
+          - text: 3 завершено
+          - generic: 0 пропусков / отказов / прерываний
+        - cell "Есть участие":
+          - generic: Есть участие
+        - cell "Профиль Akmaral Ismailova":
+          - link "Профиль Akmaral Ismailova":
+            - /url: /people/E0028/
+            - text: ↗
+  - paragraph: "Сигнал: за 90 дней нет завершённых добровольных активностей или есть ≥2 пропуска, отказа или прерывания. Причины неизвестны; это повод предложить помощь. Список отсортирован по ID, а не результативности."
+- contentinfo:
+  - text: Career Quest
+  - generic: HackAlem AI · Meta Juniors · Halyk Bank case

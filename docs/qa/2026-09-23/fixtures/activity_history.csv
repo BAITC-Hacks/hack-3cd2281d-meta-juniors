@@ -1,0 +1,7 @@
+record_id,employee_id,event_id,date,due_date,status,completion_pct,score,feedback_rating,assigned_by
+QA_H001,QA001,EV_004,2024-10-10,,completed,100,,,hr
+QA_H002,QA002,EV_004,2024-10-10,,completed,100,,,hr
+QA_H003,QA003,EV_004,2024-10-10,,completed,100,,,hr
+QA_H004,QA001,EV_036,2026-07-09,,no_show,0,,,self
+QA_H005,QA001,EV_036,2026-08-06,,no_show,0,,,self
+QA_H006,QA001,EV_036,2026-09-03,,no_show,0,,,self

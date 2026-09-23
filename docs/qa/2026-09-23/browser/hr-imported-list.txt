@@ -1,0 +1,167 @@
+- complementary:
+  - link "cq ↗ Career Quest РАСТИ ОСОЗНАННО":
+    - /url: /
+    - text: cq
+    - generic: ↗
+    - text: Career Quest
+    - generic: РАСТИ ОСОЗНАННО
+  - generic: РАБОЧЕЕ ПРОСТРАНСТВО
+  - navigation "Главное меню":
+    - link "Обзор команды":
+      - /url: /hr/
+      - text: Обзор команды
+    - link "Загрузка данных":
+      - /url: /hr/import/
+      - text: Загрузка данных
+  - generic: ↗
+  - strong:
+    - text: Маленькие шаги.
+    - text: Заметный рост.
+  - paragraph: Твой путь развития начинается с понятного следующего шага.
+  - generic: HR
+  - strong: HR-пространство
+  - text: hr
+  - button "Выйти": ↪
+- banner:
+  - text: Рабочее пространство /
+  - strong: Команда
+  - generic: Демо · синтетические данные
+- main:
+  - generic: HR-ПРОСТРАНСТВО
+  - heading "Развитие команды." [level=1]
+  - paragraph: Компетенции, которым нужна поддержка. Люди, с которыми стоит поговорить.
+  - link "Загрузить данные":
+    - /url: /hr/import/
+    - text: Загрузить данные
+  - generic: Подразделение
+  - combobox "Подразделение":
+    - option "Все подразделения" [selected]
+    - option "Backend Development"
+    - option "Customer Support"
+    - option "Data & Analytics"
+    - option "Frontend Development"
+    - option "Human Resources"
+    - option "Product Management"
+    - option "Quality Assurance"
+    - option "Sales"
+  - button "Показать"
+  - generic: Срез на 01.10.2026
+  - article:
+    - generic: В выбранной группе
+    - strong: 203сотрудников
+    - paragraph: Профили из загруженного набора
+  - article:
+    - generic: Среднее покрытие цели
+    - strong: 60% навыков
+    - paragraph: Среди сотрудников с целевым профилем
+  - article:
+    - generic: Повод для разговора
+    - strong: 116сотрудников
+    - paragraph: Сигнал поддержки, не оценка человека
+  - generic: ПРИОРИТЕТЫ ОБУЧЕНИЯ
+  - heading "Где команде нужна поддержка" [level=2]
+  - paragraph: Число сотрудников с разрывом относительно их карьерной цели.
+  - strong: Leadership
+  - generic: 97 чел.
+  - generic: Критичен для 43
+  - strong: Mentoring
+  - generic: 121 чел.
+  - generic: Критичен для 30
+  - strong: System Design
+  - generic: 32 чел.
+  - generic: Критичен для 24
+  - strong: API Design
+  - generic: 41 чел.
+  - generic: Критичен для 18
+  - strong: Statistics
+  - generic: 25 чел.
+  - generic: Критичен для 17
+  - strong: Negotiation
+  - generic: 22 чел.
+  - generic: Критичен для 17
+  - strong: Product Discovery
+  - generic: 22 чел.
+  - generic: Критичен для 13
+  - strong: Technical Troubleshooting
+  - generic: 19 чел.
+  - generic: Критичен для 13
+  - strong: Stakeholder Management
+  - generic: 101 чел.
+  - generic: Критичен для 12
+  - strong: Account Management
+  - generic: 19 чел.
+  - generic: Критичен для 12
+  - generic: ИНДИВИДУАЛЬНАЯ ПОДДЕРЖКА
+  - heading "Профили сотрудников" [level=2]
+  - searchbox "Поиск сотрудника" [active]: QA00
+  - table:
+    - rowgroup:
+      - row "Сотрудник Цель Покрытие За 90 дней Поддержка":
+        - columnheader "Сотрудник"
+        - columnheader "Цель"
+        - columnheader "Покрытие"
+        - columnheader "За 90 дней"
+        - columnheader "Поддержка"
+        - columnheader
+    - rowgroup:
+      - 'row "QA Synthetic Counterexample QA001 · Backend Engineer · Middle Backend Engineer Senior 92% Критичных разрывов: 1 0 завершено 3 пропусков / отказов / прерываний Обсудить развитие Профиль QA Synthetic Counterexample"':
+        - cell "QA Synthetic Counterexample QA001 · Backend Engineer · Middle":
+          - strong: QA Synthetic Counterexample
+          - generic: QA001 · Backend Engineer · Middle
+        - cell "Backend Engineer Senior":
+          - text: Backend Engineer
+          - generic: Senior
+        - 'cell "92% Критичных разрывов: 1"':
+          - strong: 92%
+          - generic: "Критичных разрывов: 1"
+        - cell "0 завершено 3 пропусков / отказов / прерываний":
+          - text: 0 завершено
+          - generic: 3 пропусков / отказов / прерываний
+        - cell "Обсудить развитие":
+          - generic: Обсудить развитие
+        - cell "Профиль QA Synthetic Counterexample":
+          - link "Профиль QA Synthetic Counterexample":
+            - /url: /people/QA001/
+            - text: ↗
+      - 'row "QA Synthetic No Gaps QA002 · Backend Engineer · Middle Backend Engineer Senior 100% Критичных разрывов: 0 0 завершено 0 пропусков / отказов / прерываний Обсудить развитие Профиль QA Synthetic No Gaps"':
+        - cell "QA Synthetic No Gaps QA002 · Backend Engineer · Middle":
+          - strong: QA Synthetic No Gaps
+          - generic: QA002 · Backend Engineer · Middle
+        - cell "Backend Engineer Senior":
+          - text: Backend Engineer
+          - generic: Senior
+        - 'cell "100% Критичных разрывов: 0"':
+          - strong: 100%
+          - generic: "Критичных разрывов: 0"
+        - cell "0 завершено 0 пропусков / отказов / прерываний":
+          - text: 0 завершено
+          - generic: 0 пропусков / отказов / прерываний
+        - cell "Обсудить развитие":
+          - generic: Обсудить развитие
+        - cell "Профиль QA Synthetic No Gaps":
+          - link "Профиль QA Synthetic No Gaps":
+            - /url: /people/QA002/
+            - text: ↗
+      - 'row "QA Synthetic Skill Caps QA003 · Backend Engineer · Senior Backend Engineer Lead 97% Критичных разрывов: 1 0 завершено 0 пропусков / отказов / прерываний Обсудить развитие Профиль QA Synthetic Skill Caps"':
+        - cell "QA Synthetic Skill Caps QA003 · Backend Engineer · Senior":
+          - strong: QA Synthetic Skill Caps
+          - generic: QA003 · Backend Engineer · Senior
+        - cell "Backend Engineer Lead":
+          - text: Backend Engineer
+          - generic: Lead
+        - 'cell "97% Критичных разрывов: 1"':
+          - strong: 97%
+          - generic: "Критичных разрывов: 1"
+        - cell "0 завершено 0 пропусков / отказов / прерываний":
+          - text: 0 завершено
+          - generic: 0 пропусков / отказов / прерываний
+        - cell "Обсудить развитие":
+          - generic: Обсудить развитие
+        - cell "Профиль QA Synthetic Skill Caps":
+          - link "Профиль QA Synthetic Skill Caps":
+            - /url: /people/QA003/
+            - text: ↗
+  - paragraph: "Сигнал: за 90 дней нет завершённых добровольных активностей или есть ≥2 пропуска, отказа или прерывания. Причины неизвестны; это повод предложить помощь. Список отсортирован по ID, а не результативности."
+- contentinfo:
+  - text: Career Quest
+  - generic: HackAlem AI · Meta Juniors · Halyk Bank case

@@ -1,0 +1,137 @@
+Found 25 test(s).
+Creating test database for alias 'default' ('test_career_quest')...
+Operations to perform:
+  Synchronize unmigrated apps: messages, rest_framework, staticfiles
+  Apply all migrations: admin, auth, contenttypes, quest, sessions
+Synchronizing apps without migrations:
+  Creating tables...
+    Running deferred SQL...
+Running migrations:
+  Applying contenttypes.0001_initial... OK
+  Applying auth.0001_initial... OK
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying admin.0003_logentry_add_action_flag_choices... OK
+  Applying contenttypes.0002_remove_content_type_name... OK
+  Applying auth.0002_alter_permission_name_max_length... OK
+  Applying auth.0003_alter_user_email_max_length... OK
+  Applying auth.0004_alter_user_username_opts... OK
+  Applying auth.0005_alter_user_last_login_null... OK
+  Applying auth.0006_require_contenttypes_0002... OK
+  Applying auth.0007_alter_validators_add_error_messages... OK
+  Applying auth.0008_alter_user_username_max_length... OK
+  Applying auth.0009_alter_user_last_name_max_length... OK
+  Applying auth.0010_alter_group_name_max_length... OK
+  Applying auth.0011_update_proxy_permissions... OK
+  Applying auth.0012_alter_user_first_name_max_length... OK
+  Applying quest.0001_initial... OK
+  Applying sessions.0001_initial... OK
+System check identified no issues (0 silenced).
+test_ai_malformed_unknown_duplicate_and_unsupported_evidence_fall_back (qa_backend_extra.IndependentBackendAudit.test_ai_malformed_unknown_duplicate_and_unsupported_evidence_fall_back) ... AI fallback: AttributeError
+AI fallback: AttributeError
+AI fallback: ValueError
+AI fallback: ValueError
+AI fallback: ValueError
+ok
+test_ai_provider_failure_fallback_and_no_false_ai_label (qa_backend_extra.IndependentBackendAudit.test_ai_provider_failure_fallback_and_no_false_ai_label) ... AI fallback: RuntimeError
+ok
+test_ai_timeout_mock_falls_back_with_explicit_timeout_budget (qa_backend_extra.IndependentBackendAudit.test_ai_timeout_mock_falls_back_with_explicit_timeout_budget) ... AI fallback: TimeoutError
+AUDIT_MOCK_TIMEOUT 51 ms; no real waiting/provider call
+ok
+test_completion_disabled_outside_demo (qa_backend_extra.IndependentBackendAudit.test_completion_disabled_outside_demo) ... ok
+test_completion_idempotency_exact_gain_cache_and_conflicts (qa_backend_extra.IndependentBackendAudit.test_completion_idempotency_exact_gain_cache_and_conflicts) ... ok
+AUDIT_NON_OBJECT [] 500 AttributeError("'list' object has no attribute 'get'")
+test_completion_non_object_json_is_client_error_not_server_error (qa_backend_extra.IndependentBackendAudit.test_completion_non_object_json_is_client_error_not_server_error) ...
+  test_completion_non_object_json_is_client_error_not_server_error (qa_backend_extra.IndependentBackendAudit.test_completion_non_object_json_is_client_error_not_server_error) (data=[]) ... FAIL
+AUDIT_NON_OBJECT 'bad' 500 AttributeError("'str' object has no attribute 'get'")
+  test_completion_non_object_json_is_client_error_not_server_error (qa_backend_extra.IndependentBackendAudit.test_completion_non_object_json_is_client_error_not_server_error) (data='bad') ... FAIL
+AUDIT_NON_OBJECT 42 500 AttributeError("'int' object has no attribute 'get'")
+  test_completion_non_object_json_is_client_error_not_server_error (qa_backend_extra.IndependentBackendAudit.test_completion_non_object_json_is_client_error_not_server_error) (data=42) ... FAIL
+AUDIT_NON_OBJECT True 500 AttributeError("'bool' object has no attribute 'get'")
+  test_completion_non_object_json_is_client_error_not_server_error (qa_backend_extra.IndependentBackendAudit.test_completion_non_object_json_is_client_error_not_server_error) (data=True) ... FAIL
+AUDIT_NON_OBJECT None 500 AttributeError("'NoneType' object has no attribute 'get'")
+  test_completion_non_object_json_is_client_error_not_server_error (qa_backend_extra.IndependentBackendAudit.test_completion_non_object_json_is_client_error_not_server_error) (data=None) ... FAIL
+test_completion_rejects_capped_wrong_audience_and_missing_prerequisite (qa_backend_extra.IndependentBackendAudit.test_completion_rejects_capped_wrong_audience_and_missing_prerequisite) ... ok
+test_completion_rejects_missing_invalid_uuid_and_unknown_event (qa_backend_extra.IndependentBackendAudit.test_completion_rejects_missing_invalid_uuid_and_unknown_event) ... ok
+test_csrf_control_rejects_missing_and_accepts_valid_token (qa_backend_extra.IndependentBackendAudit.test_csrf_control_rejects_missing_and_accepts_valid_token) ... ok
+test_employee_cannot_import_with_valid_csrf (qa_backend_extra.IndependentBackendAudit.test_employee_cannot_import_with_valid_csrf) ... ok
+test_employee_cannot_mutate_other_profile_with_valid_csrf (qa_backend_extra.IndependentBackendAudit.test_employee_cannot_mutate_other_profile_with_valid_csrf) ... ok
+test_history_and_critical_target_counterexample (qa_backend_extra.IndependentBackendAudit.test_history_and_critical_target_counterexample) ... ok
+AUDIT_WRONG_CSV_HEADER http 200 revision_before 1 revision_after 2
+test_history_with_wrong_header_is_rejected (qa_backend_extra.IndependentBackendAudit.test_history_with_wrong_header_is_rejected) ... FAIL
+test_hr_cannot_change_goal_or_complete_with_valid_csrf (qa_backend_extra.IndependentBackendAudit.test_hr_cannot_change_goal_or_complete_with_valid_csrf) ... ok
+test_hr_summary_updates_after_completion (qa_backend_extra.IndependentBackendAudit.test_hr_summary_updates_after_completion) ... ok
+test_invalid_employee_references_reject_entire_upload (qa_backend_extra.IndependentBackendAudit.test_invalid_employee_references_reject_entire_upload) ... ok
+test_invalid_goals_rejected_without_mutation (qa_backend_extra.IndependentBackendAudit.test_invalid_goals_rejected_without_mutation) ... ok
+test_judge_profile_and_history_import_via_http_valid_csrf (qa_backend_extra.IndependentBackendAudit.test_judge_profile_and_history_import_via_http_valid_csrf) ... ok
+test_malformed_history_rolls_back_valid_employee (qa_backend_extra.IndependentBackendAudit.test_malformed_history_rolls_back_valid_employee) ... ok
+test_malformed_json_utf8_and_invalid_rows_are_atomic (qa_backend_extra.IndependentBackendAudit.test_malformed_json_utf8_and_invalid_rows_are_atomic) ... ok
+AUDIT_DOUBLE_COMPLETION baseline_cloud 1 after_cloud 3 records 2
+test_nonrepeatable_event_cannot_gain_twice_from_imported_history (qa_backend_extra.IndependentBackendAudit.test_nonrepeatable_event_cannot_gain_twice_from_imported_history) ... FAIL
+test_rules_recommendations_use_gap_history_target_requirement (qa_backend_extra.IndependentBackendAudit.test_rules_recommendations_use_gap_history_target_requirement) ... ok
+test_storage_failure_returns_no_success_and_rolls_back (qa_backend_extra.IndependentBackendAudit.test_storage_failure_returns_no_success_and_rolls_back) ... ok
+test_unknown_history_employee_rolls_back_upload_via_http (qa_backend_extra.IndependentBackendAudit.test_unknown_history_employee_rolls_back_upload_via_http) ... ok
+test_unknown_history_event_rolls_back_upload_via_http (qa_backend_extra.IndependentBackendAudit.test_unknown_history_event_rolls_back_upload_via_http) ... ok
+
+======================================================================
+FAIL: test_completion_non_object_json_is_client_error_not_server_error (qa_backend_extra.IndependentBackendAudit.test_completion_non_object_json_is_client_error_not_server_error) (data=[])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/qa_backend_extra.py", line 146, in test_completion_non_object_json_is_client_error_not_server_error
+    self.assertEqual(response.status_code, 400)
+AssertionError: 500 != 400
+
+======================================================================
+FAIL: test_completion_non_object_json_is_client_error_not_server_error (qa_backend_extra.IndependentBackendAudit.test_completion_non_object_json_is_client_error_not_server_error) (data='bad')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/qa_backend_extra.py", line 146, in test_completion_non_object_json_is_client_error_not_server_error
+    self.assertEqual(response.status_code, 400)
+AssertionError: 500 != 400
+
+======================================================================
+FAIL: test_completion_non_object_json_is_client_error_not_server_error (qa_backend_extra.IndependentBackendAudit.test_completion_non_object_json_is_client_error_not_server_error) (data=42)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/qa_backend_extra.py", line 146, in test_completion_non_object_json_is_client_error_not_server_error
+    self.assertEqual(response.status_code, 400)
+AssertionError: 500 != 400
+
+======================================================================
+FAIL: test_completion_non_object_json_is_client_error_not_server_error (qa_backend_extra.IndependentBackendAudit.test_completion_non_object_json_is_client_error_not_server_error) (data=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/qa_backend_extra.py", line 146, in test_completion_non_object_json_is_client_error_not_server_error
+    self.assertEqual(response.status_code, 400)
+AssertionError: 500 != 400
+
+======================================================================
+FAIL: test_completion_non_object_json_is_client_error_not_server_error (qa_backend_extra.IndependentBackendAudit.test_completion_non_object_json_is_client_error_not_server_error) (data=None)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/qa_backend_extra.py", line 146, in test_completion_non_object_json_is_client_error_not_server_error
+    self.assertEqual(response.status_code, 400)
+AssertionError: 500 != 400
+
+======================================================================
+FAIL: test_history_with_wrong_header_is_rejected (qa_backend_extra.IndependentBackendAudit.test_history_with_wrong_header_is_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/qa_backend_extra.py", line 268, in test_history_with_wrong_header_is_rejected
+    self.assertContains(response, 'class="notice error"')
+AssertionError: False is not true : Couldn't find 'class="notice error"' in the following response
+b'<!doctype html>\n<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">\n<title>Career Quest \xe2\x80\x94 \xd1\x81\xd0\xbb\xd0\xb5\xd0\xb4\xd1\x83\xd1\x8e\xd1\x89\xd0\xb8\xd0\xb9 \xd1\x88\xd0\xb0\xd0\xb3</title>\n<link rel="stylesheet" href="/static/app.css"><script defer src="/static/app.js"></script>\n</head><body>\n<svg class="svg-defs" xmlns="http://www.w3.org/2000/svg"><symbol id="i-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="2"/><rect x="14" y="3" width="7" height="7" rx="2"/><rect x="3" y="14" width="7" height="7" rx="2"/><rect x="14" y="14" width="7" height="7" rx="2"/></symbol><symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></symbol><symbol id="i-spark" viewBox="0 0 24 24"><path d="m12 3 2.7 6.3L21 12l-6.3 2.7L12 21l-2.7-6.3L3 12l6.3-2.7L12 3Z"/></symbol><symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3 21v-3a6 6 0 0 1 12 0v3m1-16a3 3 0 0 1 0 6m2 4a5 5 0 0 1 3 5"/></symbol><symbol id="i-upload" viewBox="0 0 24 24"><path d="M12 16V3m-5 5 5-5 5 5M3 15v6h18v-6"/></symbol><symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol><symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol></svg>\n\n<aside class="sidebar">\n<a class="brand" href="/"><span class="brand-mark">cq<span>\xe2\x86\x97</span></span><span>Career Quest<small>\xd0\xa0\xd0\x90\xd0\xa1\xd0\xa2\xd0\x98 \xd0\x9e\xd0\xa1\xd0\x9e\xd0\x97\xd0\x9d\xd0\x90\xd0\x9d\xd0\x9d\xd0\x9e</small></span></a>\n<div class="workspace-label">\xd0\xa0\xd0\x90\xd0\x91\xd0\x9e\xd0\xa7\xd0\x95\xd0\x95 \xd0\x9f\xd0\xa0\xd0\x9e\xd0\xa1\xd0\xa2\xd0\xa0\xd0\x90\xd0\x9d\xd0\xa1\xd0\xa2\xd0\x92\xd0\x9e</div>\n<nav aria-label="\xd0\x93\xd0\xbb\xd0\xb0\xd0\xb2\xd0\xbd\xd0\xbe\xd0\xb5 \xd0\xbc\xd0\xb5\xd0\xbd\xd1\x8e">\n<a class="nav-link " href="/hr/"><svg><use href="#i-grid"/></svg>\xd0\x9e\xd0\xb1\xd0\xb7\xd0\xbe\xd1\x80 \xd0\xba\xd0\xbe\xd0\xbc\xd0\xb0\xd0\xbd\xd0\xb4\xd1\x8b</a><a class="nav-link active" href="/hr/import/"><svg><use href="#i-upload"/></svg>\xd0\x97\xd0\xb0\xd0\xb3\xd1\x80\xd1\x83\xd0\xb7\xd0\xba\xd0\xb0 \xd0\xb4\xd0\xb0\xd0\xbd\xd0\xbd\xd1\x8b\xd1\x85</a>\n</nav>\n<div class="sidebar-note"><span class="leaf">\xe2\x86\x97</span><strong>\xd0\x9c\xd0\xb0\xd0\xbb\xd0\xb5\xd0\xbd\xd1\x8c\xd0\xba\xd0\xb8\xd0\xb5 \xd1\x88\xd0\xb0\xd0\xb3\xd0\xb8.<br>\xd0\x97\xd0\xb0\xd0\xbc\xd0\xb5\xd1\x82\xd0\xbd\xd1\x8b\xd0\xb9 \xd1\x80\xd0\xbe\xd1\x81\xd1\x82.</strong><p>\xd0\xa2\xd0\xb2\xd0\xbe\xd0\xb9 \xd0\xbf\xd1\x83\xd1\x82\xd1\x8c \xd1\x80\xd0\xb0\xd0\xb7\xd0\xb2\xd0\xb8\xd1\x82\xd0\xb8\xd1\x8f \xd0\xbd\xd0\xb0\xd1\x87\xd0\xb8\xd0\xbd\xd0\xb0\xd0\xb5\xd1\x82\xd1\x81\xd1\x8f \xd1\x81 \xd0\xbf\xd0\xbe\xd0\xbd\xd1\x8f\xd1\x82\xd0\xbd\xd0\xbe\xd0\xb3\xd0\xbe \xd1\x81\xd0\xbb\xd0\xb5\xd0\xb4\xd1\x83\xd1\x8e\xd1\x89\xd0\xb5\xd0\xb3\xd0\xbe \xd1\x88\xd0\xb0\xd0\xb3\xd0\xb0.</p></div>\n<div class="sidebar-bottom"><span class="avatar small">HR</span><div><strong>HR-\xd0\xbf\xd1\x80\xd0\xbe\xd1\x81\xd1\x82\xd1\x80\xd0\xb0\xd0\xbd\xd1\x81\xd1\x82\xd0\xb2\xd0\xbe</strong><small>hr-tester</small></div><form method="post" action="/logout/"><input type="hidden" name="csrfmiddlewaretoken" value="[REDACTED_TEST_CSRF]"><button class="icon-button" title="\xd0\x92\xd1\x8b\xd0\xb9\xd1\x82\xd0\xb8" aria-label="\xd0\x92\xd1\x8b\xd0\xb9\xd1\x82\xd0\xb8">\xe2\x86\xaa</button></form></div>\n</aside>\n<div class="main-shell"><header class="topbar"><span>\xd0\xa0\xd0\xb0\xd0\xb1\xd0\xbe\xd1\x87\xd0\xb5\xd0\xb5 \xd0\xbf\xd1\x80\xd0\xbe\xd1\x81\xd1\x82\xd1\x80\xd0\xb0\xd0\xbd\xd1\x81\xd1\x82\xd0\xb2\xd0\xbe <span class="divider">/</span> <strong>\xd0\x94\xd0\xb0\xd0\xbd\xd0\xbd\xd1\x8b\xd0\xb5</strong></span><span class="tag muted"><span class="dot"></span> \xd0\x94\xd0\xb5\xd0\xbc\xd0\xbe \xc2\xb7 \xd1\x81\xd0\xb8\xd0\xbd\xd1\x82\xd0\xb5\xd1\x82\xd0\xb8\xd1\x87\xd0\xb5\xd1\x81\xd0\xba\xd0\xb8\xd0\xb5 \xd0\xb4\xd0\xb0\xd0\xbd\xd0\xbd\xd1\x8b\xd0\xb5</span></header>\n<main class="content"><div class="notice success" role="status">\xd0\x94\xd0\xb0\xd0\xbd\xd0\xbd\xd1\x8b\xd0\xb5 \xd0\xb7\xd0\xb0\xd0\xb3\xd1\x80\xd1\x83\xd0\xb6\xd0\xb5\xd0\xbd\xd1\x8b. \xd0\x9d\xd0\xbe\xd0\xb2\xd1\x8b\xd0\xb5 \xd0\xbf\xd1\x80\xd0\xbe\xd1\x84\xd0\xb8\xd0\xbb\xd0\xb8 \xd0\xb4\xd0\xbe\xd1\x81\xd1\x82\xd1\x83\xd0\xbf\xd0\xbd\xd1\x8b \xd0\xbd\xd0\xb0 HR-\xd1\x8d\xd0\xba\xd1\x80\xd0\xb0\xd0\xbd\xd0\xb5.</div><div class="page-heading"><div><div class="eyebrow">\xd0\x94\xd0\x90\xd0\x9d\xd0\x9d\xd0\xab\xd0\x95 \xd0\x94\xd0\x9b\xd0\xaf \xd0\xa0\xd0\x90\xd0\x97\xd0\x92\xd0\x98\xd0\xa2\xd0\x98\xd0\xaf</div><h1>\xd0\x9d\xd0\xbe\xd0\xb2\xd1\x8b\xd0\xb5 \xd0\xbf\xd1\x80\xd0\xbe\xd1\x84\xd0\xb8\xd0\xbb\xd0\xb8. \xd0\x9d\xd0\xbe\xd0\xb2\xd1\x8b\xd0\xb9 \xd0\xba\xd0\xbe\xd0\xbd\xd1\x82\xd0\xb5\xd0\xba\xd1\x81\xd1\x82<span class="heading-dot">.</span></h1><p>\xd0\x97\xd0\xb0\xd0\xb3\xd1\x80\xd1\x83\xd0\xb7\xd0\xb8 \xd0\xbf\xd1\x80\xd0\xbe\xd0\xb2\xd0\xb5\xd1\x80\xd0\xbe\xd1\x87\xd0\xbd\xd1\x8b\xd0\xb5 \xd0\xbf\xd1\x80\xd0\xbe\xd1\x84\xd0\xb8\xd0\xbb\xd0\xb8 \xd0\xb8 \xd0\xb8\xd1\x81\xd1\x82\xd0\xbe\xd1\x80\xd0\xb8\xd1\x8e \xd0\xb2 \xd1\x84\xd0\xbe\xd1\x80\xd0\xbc\xd0\xb0\xd1\x82\xd0\xb5 \xd1\x81\xd1\x82\xd0\xb0\xd1\x80\xd1\x82\xd0\xbe\xd0\xb2\xd0\xbe\xd0\xb3\xd0\xbe \xd0\xbd\xd0\xb0\xd0\xb1\xd0\xbe\xd1\x80\xd0\xb0.</p></div></div><div class="import-layout"><form method="post" enctype="multipart/form-data" class="panel import-form"><input type="hidden" name="csrfmiddlewaretoken" value="[REDACTED_TEST_CSRF]"><span class="tag green">\xd0\x98\xd0\xbc\xd0\xbf\xd0\xbe\xd1\x80\xd1\x82 JSON / CSV</span><h2>\xd0\x97\xd0\xb0\xd0\xb3\xd1\x80\xd1\x83\xd0\xb7\xd0\xba\xd0\xb0 \xd0\xb4\xd0\xb0\xd0\xbd\xd0\xbd\xd1\x8b\xd1\x85</h2><label for="employees">\xd0\x9f\xd1\x80\xd0\xbe\xd1\x84\xd0\xb8\xd0\xbb\xd0\xb8 \xd1\x81\xd0\xbe\xd1\x82\xd1\x80\xd1\x83\xd0\xb4\xd0\xbd\xd0\xb8\xd0\xba\xd0\xbe\xd0\xb2 \xc2\xb7 employees.json</label><input id="employees" name="employees" type="file" accept=".json"><label for="history-file">\xd0\x98\xd1\x81\xd1\x82\xd0\xbe\xd1\x80\xd0\xb8\xd1\x8f \xd1\x83\xd1\x87\xd0\xb0\xd1\x81\xd1\x82\xd0\xb8\xd1\x8f \xc2\xb7 activity_history.csv</label><input id="history-file" name="history" type="file" accept=".csv"><details><summary>\xd0\x9e\xd0\xb1\xd0\xbd\xd0\xbe\xd0\xb2\xd0\xb8\xd1\x82\xd1\x8c \xd0\xba\xd0\xb0\xd1\x82\xd0\xb0\xd0\xbb\xd0\xbe\xd0\xb3 \xd0\xbd\xd0\xb0\xd0\xb2\xd1\x8b\xd0\xba\xd0\xbe\xd0\xb2 \xd0\xb8 \xd0\xbc\xd0\xb5\xd1\x80\xd0\xbe\xd0\xbf\xd1\x80\xd0\xb8\xd1\x8f\xd1\x82\xd0\xb8\xd0\xb9</summary><label for="skills-file">skills.json</label><input id="skills-file" type="file" name="skills" accept=".json"><label for="events-file">events.json</label><input id="events-file" type="file" name="events" accept=".json"></details><button class="button primary full">\xd0\x9f\xd1\x80\xd0\xbe\xd0\xb2\xd0\xb5\xd1\x80\xd0\xb8\xd1\x82\xd1\x8c \xd0\xb8 \xd0\xb7\xd0\xb0\xd0\xb3\xd1\x80\xd1\x83\xd0\xb7\xd0\xb8\xd1\x82\xd1\x8c <span>\xe2\x86\x97</span></button></form><aside class="panel import-help"><span class="eyebrow">\xd0\xa7\xd0\xa2\xd0\x9e \xd0\x9f\xd0\xa0\xd0\x9e\xd0\x98\xd0\x97\xd0\x9e\xd0\x99\xd0\x94\xd0\x81\xd0\xa2</span><h2>\xd0\x9f\xd0\xbe\xd0\xbd\xd1\x8f\xd1\x82\xd0\xbd\xd1\x8b\xd0\xb9 \xd0\xb8 \xd0\xbf\xd1\x80\xd0\xbe\xd0\xb2\xd0\xb5\xd1\x80\xd1\x8f\xd0\xb5\xd0\xbc\xd1\x8b\xd0\xb9 \xd0\xb8\xd0\xbc\xd0\xbf\xd0\xbe\xd1\x80\xd1\x82</h2><ol><li><strong>\xd0\x9f\xd1\x80\xd0\xbe\xd0\xb2\xd0\xb5\xd1\x80\xd0\xb8\xd0\xbc \xd1\x84\xd0\xbe\xd1\x80\xd0\xbc\xd0\xb0\xd1\x82.</strong><p>\xd0\xa1\xd1\x85\xd0\xb5\xd0\xbc\xd1\x83, \xd0\xb4\xd0\xb8\xd0\xb0\xd0\xbf\xd0\xb0\xd0\xb7\xd0\xbe\xd0\xbd\xd1\x8b \xd1\x83\xd1\x80\xd0\xbe\xd0\xb2\xd0\xbd\xd0\xb5\xd0\xb9, \xd0\xb4\xd0\xb0\xd1\x82\xd1\x8b \xd0\xb8 \xd1\x81\xd1\x81\xd1\x8b\xd0\xbb\xd0\xba\xd0\xb8 \xd0\xbd\xd0\xb0 \xd0\xbd\xd0\xb0\xd0\xb2\xd1\x8b\xd0\xba\xd0\xb8 \xd0\xb8 \xd1\x81\xd0\xbe\xd0\xb1\xd1\x8b\xd1\x82\xd0\xb8\xd1\x8f.</p></li><li><strong>\xd0\xa1\xd0\xbe\xd1\x85\xd1\x80\xd0\xb0\xd0\xbd\xd0\xb8\xd0\xbc \xd0\xb2\xd0\xbc\xd0\xb5\xd1\x81\xd1\x82\xd0\xb5.</strong><p>\xd0\x95\xd1\x81\xd0\xbb\xd0\xb8 \xd0\xbd\xd0\xb0\xd0\xb9\xd0\xb4\xd1\x91\xd1\x82\xd1\x81\xd1\x8f \xd0\xbe\xd1\x88\xd0\xb8\xd0\xb1\xd0\xba\xd0\xb0, \xd0\xbd\xd0\xb8 \xd0\xbe\xd0\xb4\xd0\xbd\xd0\xb0 \xd0\xb7\xd0\xb0\xd0\xbf\xd0\xb8\xd1\x81\xd1\x8c \xd0\xb8\xd0\xb7 \xd1\x8d\xd1\x82\xd0\xbe\xd0\xb9 \xd0\xb7\xd0\xb0\xd0\xb3\xd1\x80\xd1\x83\xd0\xb7\xd0\xba\xd0\xb8 \xd0\xbd\xd0\xb5 \xd0\xb8\xd0\xb7\xd0\xbc\xd0\xb5\xd0\xbd\xd0\xb8\xd1\x82\xd1\x81\xd1\x8f.</p></li><li><strong>\xd0\x9f\xd0\xb5\xd1\x80\xd0\xb5\xd1\x81\xd1\x87\xd0\xb8\xd1\x82\xd0\xb0\xd0\xb5\xd0\xbc \xd1\x80\xd0\xb5\xd0\xba\xd0\xbe\xd0\xbc\xd0\xb5\xd0\xbd\xd0\xb4\xd0\xb0\xd1\x86\xd0\xb8\xd0\xb8.</strong><p>\xd0\x9f\xd0\xbe\xd0\xb2\xd1\x82\xd0\xbe\xd1\x80\xd0\xbd\xd0\xb0\xd1\x8f \xd0\xb7\xd0\xb0\xd0\xb3\xd1\x80\xd1\x83\xd0\xb7\xd0\xba\xd0\xb0 \xd0\xbe\xd0\xb1\xd0\xbd\xd0\xbe\xd0\xb2\xd0\xbb\xd1\x8f\xd0\xb5\xd1\x82 \xd0\xb7\xd0\xb0\xd0\xbf\xd0\xb8\xd1\x81\xd0\xb8 \xd0\xbf\xd0\xbe ID \xd0\xb8 \xd0\xbd\xd0\xb5 \xd1\x81\xd0\xbe\xd0\xb7\xd0\xb4\xd0\xb0\xd1\x91\xd1\x82 \xd0\xb4\xd1\x83\xd0\xb1\xd0\xbb\xd0\xb8\xd0\xba\xd0\xb0\xd1\x82\xd0\xbe\xd0\xb2.</p></li></ol><div class="notice">UTF-8 \xc2\xb7 \xd0\xb4\xd0\xbe 10 \xd0\x9c\xd0\x91 \xd0\xbd\xd0\xb0 \xd1\x84\xd0\xb0\xd0\xb9\xd0\xbb. \xd0\x94\xd0\xb0\xd1\x82\xd0\xb0 \xd1\x81\xd1\x80\xd0\xb5\xd0\xb7\xd0\xb0 \xd0\xb4\xd0\xbe\xd0\xbb\xd0\xb6\xd0\xbd\xd0\xb0 \xd1\x81\xd0\xbe\xd0\xb2\xd0\xbf\xd0\xb0\xd0\xb4\xd0\xb0\xd1\x82\xd1\x8c \xd1\x81 \xd1\x82\xd0\xb5\xd0\xba\xd1\x83\xd1\x89\xd0\xb8\xd0\xbc \xd0\xbd\xd0\xb0\xd0\xb1\xd0\xbe\xd1\x80\xd0\xbe\xd0\xbc: 01.10.2026.</div></aside></div><section class="panel import-result"><h2>\xd0\xa0\xd0\xb5\xd0\xb7\xd1\x83\xd0\xbb\xd1\x8c\xd1\x82\xd0\xb0\xd1\x82 \xd0\xb7\xd0\xb0\xd0\xb3\xd1\x80\xd1\x83\xd0\xb7\xd0\xba\xd0\xb8</h2><p><strong>Skill</strong>: \xd0\xbe\xd0\xb1\xd1\x80\xd0\xb0\xd0\xb1\xd0\xbe\xd1\x82\xd0\xb0\xd0\xbd\xd0\xbe 0, \xd0\xbd\xd0\xbe\xd0\xb2\xd1\x8b\xd1\x85 0</p><p><strong>Event</strong>: \xd0\xbe\xd0\xb1\xd1\x80\xd0\xb0\xd0\xb1\xd0\xbe\xd1\x82\xd0\xb0\xd0\xbd\xd0\xbe 0, \xd0\xbd\xd0\xbe\xd0\xb2\xd1\x8b\xd1\x85 0</p><p><strong>Employee</strong>: \xd0\xbe\xd0\xb1\xd1\x80\xd0\xb0\xd0\xb1\xd0\xbe\xd1\x82\xd0\xb0\xd0\xbd\xd0\xbe 0, \xd0\xbd\xd0\xbe\xd0\xb2\xd1\x8b\xd1\x85 0</p><p><strong>Participation</strong>: \xd0\xbe\xd0\xb1\xd1\x80\xd0\xb0\xd0\xb1\xd0\xbe\xd1\x82\xd0\xb0\xd0\xbd\xd0\xbe 0, \xd0\xbd\xd0\xbe\xd0\xb2\xd1\x8b\xd1\x85 0</p><p><strong>RoleProfile</strong>: \xd0\xbe\xd0\xb1\xd1\x80\xd0\xb0\xd0\xb1\xd0\xbe\xd1\x82\xd0\xb0\xd0\xbd\xd0\xbe 0</p><a class="button secondary" href="/hr/">\xd0\x9e\xd1\x82\xd0\xba\xd1\x80\xd1\x8b\xd1\x82\xd1\x8c \xd0\xbf\xd1\x80\xd0\xbe\xd1\x84\xd0\xb8\xd0\xbb\xd0\xb8 \xe2\x86\x97</a></section></main>\n<footer class="footer">Career Quest <span>HackAlem AI \xc2\xb7 Meta Juniors \xc2\xb7 Halyk Bank case</span></footer></div>\n<div id="toast" role="status" aria-live="polite" hidden></div>\n</body></html>\n\n'
+
+======================================================================
+FAIL: test_nonrepeatable_event_cannot_gain_twice_from_imported_history (qa_backend_extra.IndependentBackendAudit.test_nonrepeatable_event_cannot_gain_twice_from_imported_history)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/qa_backend_extra.py", line 225, in test_nonrepeatable_event_cannot_gain_twice_from_imported_history
+    self.assertLessEqual(levels.get("SK_CLOUD", 0), 2,
+AssertionError: 3 not less than or equal to 2 : EV_009 is not repeatable per kit README; two record IDs must not award Cloud twice
+
+----------------------------------------------------------------------
+Ran 25 tests in 35.170s
+
+FAILED (failures=7)
+Destroying test database for alias 'default' ('test_career_quest')...

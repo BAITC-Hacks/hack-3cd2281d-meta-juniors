@@ -1,0 +1,35 @@
+- main:
+  - link "cq ↗ Career Quest":
+    - /url: /login/
+    - text: cq
+    - generic: ↗
+    - generic: Career Quest
+  - generic: ТВОЙ СЛЕДУЮЩИЙ ШАГ
+  - heading "Развитие, в котором виден смысл." [level=1]:
+    - text: Развитие,
+    - text: в котором
+    - text: виден смысл.
+  - paragraph:
+    - text: Соединяем твои навыки, опыт и цели
+    - text: в понятную карьерную траекторию.
+  - generic: Ты здесь
+  - generic: Следующий шаг ↗
+  - generic: HackAlem AI 2026 · Meta Juniors
+  - generic: РАДЫ ВИДЕТЬ ТЕБЯ
+  - heading "Продолжим расти?" [level=2]
+  - paragraph: Войди в своё пространство развития.
+  - alert: Не удалось войти. Проверь логин и пароль.
+  - generic: Логин
+  - textbox "Логин" [active]:
+    - /placeholder: Твой логин
+  - generic: Пароль
+  - textbox "Пароль":
+    - /placeholder: Твой пароль
+  - button "Войти в пространство ↗":
+    - text: Войти в пространство
+    - generic: ↗
+  - generic: ПОСМОТРЕТЬ ДЕМО
+  - paragraph: Синтетические профили. Две отдельные роли.
+  - button "Я сотрудник"
+  - button "Я HR"
+  - text: "Логины: employee / hr · Пароль: career-demo-2026"

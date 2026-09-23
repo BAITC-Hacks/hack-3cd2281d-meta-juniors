@@ -1,0 +1,56 @@
+- complementary:
+  - link "cq ↗ Career Quest РАСТИ ОСОЗНАННО":
+    - /url: /
+    - text: cq
+    - generic: ↗
+    - text: Career Quest
+    - generic: РАСТИ ОСОЗНАННО
+  - generic: РАБОЧЕЕ ПРОСТРАНСТВО
+  - navigation "Главное меню":
+    - link "Обзор команды":
+      - /url: /hr/
+      - text: Обзор команды
+    - link "Загрузка данных":
+      - /url: /hr/import/
+      - text: Загрузка данных
+  - generic: ↗
+  - strong:
+    - text: Маленькие шаги.
+    - text: Заметный рост.
+  - paragraph: Твой путь развития начинается с понятного следующего шага.
+  - generic: HR
+  - strong: HR-пространство
+  - text: hr
+  - button "Выйти": ↪
+- banner:
+  - text: Рабочее пространство /
+  - strong: Данные
+  - generic: Демо · синтетические данные
+- main:
+  - generic: ДАННЫЕ ДЛЯ РАЗВИТИЯ
+  - heading "Новые профили. Новый контекст." [level=1]
+  - paragraph: Загрузи проверочные профили и историю в формате стартового набора.
+  - generic: Импорт JSON / CSV
+  - heading "Загрузка данных" [level=2]
+  - generic: Профили сотрудников · employees.json
+  - button "Профили сотрудников · employees.json"
+  - generic: История участия · activity_history.csv
+  - button "История участия · activity_history.csv"
+  - generic "Обновить каталог навыков и мероприятий"
+  - button "Проверить и загрузить ↗":
+    - text: Проверить и загрузить
+    - generic: ↗
+  - complementary:
+    - generic: ЧТО ПРОИЗОЙДЁТ
+    - heading "Понятный и проверяемый импорт" [level=2]
+    - list:
+      - strong: Проверим формат.
+      - paragraph: Схему, диапазоны уровней, даты и ссылки на навыки и события.
+      - strong: Сохраним вместе.
+      - paragraph: Если найдётся ошибка, ни одна запись из этой загрузки не изменится.
+      - strong: Пересчитаем рекомендации.
+      - paragraph: Повторная загрузка обновляет записи по ID и не создаёт дубликатов.
+    - generic: "UTF-8 · до 10 МБ на файл. Дата среза должна совпадать с текущим набором: 01.10.2026."
+- contentinfo:
+  - text: Career Quest
+  - generic: HackAlem AI · Meta Juniors · Halyk Bank case

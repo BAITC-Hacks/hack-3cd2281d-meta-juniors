@@ -1,0 +1,110 @@
+{
+  "status": "static fixture validation only; no application or fixture import was run",
+  "valid_profiles": 3,
+  "valid_history_records": 6,
+  "original_profiles": 200,
+  "original_history_records": 2743,
+  "expected_total_profiles_after_fresh_import": 203,
+  "expected_total_history_after_fresh_import": 2749,
+  "source_sha256": {
+    "employees.json": "b362fc3f3e6901dfc52c831ff987709fe08edd9212fd1132eadf999f0e50315a",
+    "events.json": "2cbca22918155e384cb9ee80ac8b47c777dc97c8acc4914d7c3ac508b4ccd97a",
+    "skills.json": "5bf2ba4ef6c47226489be5e34f7fb4f7f518d7755a2c60e3a5f678aa4db2025b",
+    "activity_history.csv": "79662f9e7ae5cbe08532afa90fb23e44a7115f8be3701968e54d834729b83f49"
+  },
+  "profiles": {
+    "QA001": {
+      "history_count": 4,
+      "coverage_before": {
+        "numerator": 46,
+        "denominator": 50,
+        "percent": 92
+      },
+      "useful_candidate_ids": [
+        "EV_005",
+        "EV_006",
+        "EV_007",
+        "EV_036"
+      ],
+      "EV_006_changes": {
+        "SK_SYSTEM_DESIGN": [
+          2,
+          3
+        ],
+        "SK_API_DESIGN": [
+          4,
+          4
+        ],
+        "SK_OBSERVABILITY": [
+          3,
+          4
+        ]
+      },
+      "coverage_after_EV_006": {
+        "numerator": 47,
+        "denominator": 50,
+        "percent": 94
+      }
+    },
+    "QA002": {
+      "history_count": 1,
+      "coverage_before": {
+        "numerator": 50,
+        "denominator": 50,
+        "percent": 100
+      },
+      "useful_candidate_ids": [],
+      "EV_006_changes": {
+        "SK_SYSTEM_DESIGN": [
+          5,
+          5
+        ],
+        "SK_API_DESIGN": [
+          5,
+          5
+        ],
+        "SK_OBSERVABILITY": [
+          5,
+          5
+        ]
+      },
+      "coverage_after_EV_006": {
+        "numerator": 50,
+        "denominator": 50,
+        "percent": 100
+      }
+    },
+    "QA003": {
+      "history_count": 1,
+      "coverage_before": {
+        "numerator": 60,
+        "denominator": 62,
+        "percent": 97
+      },
+      "useful_candidate_ids": [
+        "EV_006"
+      ],
+      "EV_006_changes": {
+        "SK_SYSTEM_DESIGN": [
+          4,
+          5
+        ],
+        "SK_API_DESIGN": [
+          5,
+          5
+        ],
+        "SK_OBSERVABILITY": [
+          3,
+          4
+        ]
+      },
+      "coverage_after_EV_006": {
+        "numerator": 62,
+        "denominator": 62,
+        "percent": 100
+      }
+    }
+  },
+  "negative_json_field": "skills.SK_SYSTEM_DESIGN",
+  "negative_csv_unknown_event": "EV_UNKNOWN_QA"
+}

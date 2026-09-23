@@ -1,0 +1,203 @@
+- complementary:
+  - link "cq ↗ Career Quest РАСТИ ОСОЗНАННО":
+    - /url: /
+    - text: cq
+    - generic: ↗
+    - text: Career Quest
+    - generic: РАСТИ ОСОЗНАННО
+  - generic: РАБОЧЕЕ ПРОСТРАНСТВО
+  - navigation "Главное меню":
+    - link "Обзор команды":
+      - /url: /hr/
+      - text: Обзор команды
+    - link "Загрузка данных":
+      - /url: /hr/import/
+      - text: Загрузка данных
+  - generic: ↗
+  - strong:
+    - text: Маленькие шаги.
+    - text: Заметный рост.
+  - paragraph: Твой путь развития начинается с понятного следующего шага.
+  - generic: HR
+  - strong: HR-пространство
+  - text: hr
+  - button "Выйти": ↪
+- banner:
+  - text: Рабочее пространство /
+  - strong: Развитие
+  - generic: Демо · синтетические данные
+- main:
+  - generic: МОЁ РАЗВИТИЕ
+  - heading "QA Synthetic Counterexample." [level=1]
+  - paragraph: Backend Engineer · Middle · Backend Development
+  - text: Срез на 01.10.2026
+  - generic: Просмотр профиля сотрудника для HR. Карьерную цель и выполнение активностей меняет сам сотрудник.
+  - generic: ТВОЯ КАРЬЕРНАЯ ТРАЕКТОРИЯ
+  - heading "Следующая точка — Senior" [level=2]
+  - paragraph: Backend Engineer. Каждый шаг приближает тебя к навыкам целевого профиля.
+  - generic: Middle
+  - generic: Senior ↗
+  - strong: 92%
+  - generic: навыков к цели
+  - text: Покрытие требований,
+  - text: не вероятность повышения
+  - article:
+    - generic: Критичные разрывы
+    - strong: 1навык
+    - paragraph: Важны для выбранной цели
+  - article:
+    - generic: Завершено добровольно
+    - strong: 0активностей
+    - paragraph: За весь период истории
+  - article:
+    - generic: После аттестации
+    - strong: 0завершений
+    - paragraph: Уже учтены в текущих навыках
+  - generic: ОТ ЦЕЛИ К ДЕЙСТВИЮ
+  - heading "Твои следующие шаги" [level=2]:
+    - text: Твои следующие шаги
+  - paragraph: С учётом навыков, карьерной цели и истории участия.
+  - button "Обновить подбор ↻"
+  - status:
+    - generic: Подбор по правилам
+    - generic: AI-ключ ещё не подключён. Показан резервный многофакторный подбор по правилам.
+    - generic: 0.02 с · сохранённый подбор
+  - article:
+    - generic: ↗
+    - generic: ШАГ 01
+    - heading "Architecture Review Circle" [level=3]
+    - generic: онлайн
+    - generic: ·
+    - generic: 8 ч
+    - generic: · EV_007
+    - paragraph: "Приоритет: критичный навык для карьерной цели"
+    - list:
+      - listitem: "System Design: 2 → 3 при требуемых 4. Критично для целевого грейда."
+      - listitem: За 180 дней нет истории активностей такого типа и формата; предпочтение пока неизвестно.
+      - listitem: "Нагрузка: 8 ч. Формат: онлайн."
+    - paragraph: "Ближайшая возможность: 2026-10-23"
+  - article:
+    - generic: ◇
+    - generic: ШАГ 02
+    - heading "Designing High-Load Systems" [level=3]
+    - generic: очно
+    - generic: ·
+    - generic: 12 ч
+    - generic: · EV_006
+    - paragraph: "Приоритет: критичный навык для карьерной цели"
+    - list:
+      - listitem: "System Design: 2 → 3 при требуемых 4. Критично для целевого грейда."
+      - listitem: За 180 дней нет истории активностей такого типа и формата; предпочтение пока неизвестно.
+      - listitem: "Нагрузка: 12 ч. Формат: очно."
+    - paragraph: "Ближайшая возможность: 2026-10-07"
+  - article:
+    - generic: ✧
+    - generic: ШАГ 03
+    - heading "System Design Fundamentals" [level=3]
+    - generic: онлайн
+    - generic: ·
+    - generic: 16 ч
+    - generic: · EV_005
+    - paragraph: "Приоритет: критичный навык для карьерной цели"
+    - list:
+      - listitem: "System Design: 2 → 3 при требуемых 4. Критично для целевого грейда."
+      - listitem: За 180 дней нет истории активностей такого типа и формата; предпочтение пока неизвестно.
+      - listitem: "Нагрузка: 16 ч. Формат: онлайн."
+    - paragraph: "Ближайшая возможность: 2026-11-23"
+  - generic: КАРТА РАЗВИТИЯ
+  - heading "Что уже есть. Что впереди." [level=2]
+  - generic: Сейчас
+  - generic: Нужно для цели
+  - strong: System Design
+  - text: Критичный
+  - generic: 2 / 4
+  - generic: Ещё 2
+  - strong: API Design
+  - text: Критичный
+  - generic: 4 / 4
+  - generic: Достигнут ✓
+  - strong: Public Speaking
+  - generic: 0 / 2
+  - generic: Ещё 2
+  - strong: Application Security
+  - generic: 3 / 3
+  - generic: Достигнут ✓
+  - strong: CI/CD
+  - generic: 3 / 3
+  - generic: Достигнут ✓
+  - strong: Cloud Platforms
+  - generic: 3 / 3
+  - generic: Достигнут ✓
+  - strong: Communication
+  - generic: 3 / 3
+  - generic: Достигнут ✓
+  - strong: Containers & Orchestration
+  - generic: 3 / 3
+  - generic: Достигнут ✓
+  - strong: Leadership
+  - generic: 2 / 2
+  - generic: Достигнут ✓
+  - strong: Mentoring
+  - generic: 3 / 3
+  - generic: Достигнут ✓
+  - strong: Observability
+  - generic: 3 / 3
+  - generic: Достигнут ✓
+  - strong: Problem Solving
+  - generic: 4 / 4
+  - generic: Достигнут ✓
+  - strong: Python
+  - generic: 4 / 4
+  - generic: Достигнут ✓
+  - strong: SQL
+  - generic: 4 / 4
+  - generic: Достигнут ✓
+  - strong: Stakeholder Management
+  - generic: 2 / 2
+  - generic: Достигнут ✓
+  - strong: Teamwork
+  - generic: 3 / 3
+  - generic: Достигнут ✓
+  - paragraph: Шкала 0–5. Прогресс = сумма min(текущий, требуемый) / сумма требуемых уровней. Навык растёт по gain и max_level из каталога.
+  - generic: ТВОЙ ОПЫТ
+  - heading "История активностей" [level=2]
+  - generic: 4 записей
+  - table:
+    - rowgroup:
+      - row "Активность Дата Тип участия Результат":
+        - columnheader "Активность"
+        - columnheader "Дата"
+        - columnheader "Тип участия"
+        - columnheader "Результат"
+    - rowgroup:
+      - row "Public Speaking Club EV_036 · QA_H006 03.09.2026 Добровольная Пропуск":
+        - cell "Public Speaking Club EV_036 · QA_H006":
+          - strong: Public Speaking Club
+          - generic: EV_036 · QA_H006
+        - cell "03.09.2026"
+        - cell "Добровольная"
+        - cell "Пропуск"
+      - row "Public Speaking Club EV_036 · QA_H005 06.08.2026 Добровольная Пропуск":
+        - cell "Public Speaking Club EV_036 · QA_H005":
+          - strong: Public Speaking Club
+          - generic: EV_036 · QA_H005
+        - cell "06.08.2026"
+        - cell "Добровольная"
+        - cell "Пропуск"
+      - row "Public Speaking Club EV_036 · QA_H004 09.07.2026 Добровольная Пропуск":
+        - cell "Public Speaking Club EV_036 · QA_H004":
+          - strong: Public Speaking Club
+          - generic: EV_036 · QA_H004
+        - cell "09.07.2026"
+        - cell "Добровольная"
+        - cell "Пропуск"
+      - row "New Employee Onboarding EV_004 · QA_H001 10.10.2024 Обязательная Завершено":
+        - cell "New Employee Onboarding EV_004 · QA_H001":
+          - strong: New Employee Onboarding
+          - generic: EV_004 · QA_H001
+        - cell "10.10.2024"
+        - cell "Обязательная"
+        - cell "Завершено"
+- contentinfo:
+  - text: Career Quest
+  - generic: HackAlem AI · Meta Juniors · Halyk Bank case

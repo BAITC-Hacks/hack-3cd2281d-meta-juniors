@@ -1,0 +1,868 @@
+- complementary:
+  - link "cq ↗ Career Quest РАСТИ ОСОЗНАННО":
+    - /url: /
+    - text: cq
+    - generic: ↗
+    - text: Career Quest
+    - generic: РАСТИ ОСОЗНАННО
+  - generic: РАБОЧЕЕ ПРОСТРАНСТВО
+  - navigation "Главное меню":
+    - link "Обзор команды":
+      - /url: /hr/
+      - text: Обзор команды
+    - link "Загрузка данных":
+      - /url: /hr/import/
+      - text: Загрузка данных
+  - generic: ↗
+  - strong:
+    - text: Маленькие шаги.
+    - text: Заметный рост.
+  - paragraph: Твой путь развития начинается с понятного следующего шага.
+  - generic: HR
+  - strong: HR-пространство
+  - text: hr
+  - button "Выйти": ↪
+- banner:
+  - text: Рабочее пространство /
+  - strong: Команда
+  - generic: Демо · синтетические данные
+- main:
+  - generic: HR-ПРОСТРАНСТВО
+  - heading "Развитие команды." [level=1]
+  - paragraph: Компетенции, которым нужна поддержка. Люди, с которыми стоит поговорить.
+  - link "Загрузить данные":
+    - /url: /hr/import/
+    - text: Загрузить данные
+  - generic: Подразделение
+  - combobox "Подразделение":
+    - option "Все подразделения"
+    - option "Backend Development" [selected]
+    - option "Customer Support"
+    - option "Data & Analytics"
+    - option "Frontend Development"
+    - option "Human Resources"
+    - option "Product Management"
+    - option "Quality Assurance"
+    - option "Sales"
+  - button "Показать"
+  - generic: Срез на 01.10.2026
+  - article:
+    - generic: В выбранной группе
+    - strong: 40сотрудников
+    - paragraph: Профили из загруженного набора
+  - article:
+    - generic: Среднее покрытие цели
+    - strong: 59% навыков
+    - paragraph: Среди сотрудников с целевым профилем
+  - article:
+    - generic: Повод для разговора
+    - strong: 20сотрудников
+    - paragraph: Сигнал поддержки, не оценка человека
+  - generic: ПРИОРИТЕТЫ ОБУЧЕНИЯ
+  - heading "Где команде нужна поддержка" [level=2]
+  - paragraph: Число сотрудников с разрывом относительно их карьерной цели.
+  - strong: System Design
+  - generic: 30 чел.
+  - generic: Критичен для 22
+  - strong: API Design
+  - generic: 23 чел.
+  - generic: Критичен для 18
+  - strong: Python
+  - generic: 23 чел.
+  - generic: Критичен для 9
+  - strong: Mentoring
+  - generic: 27 чел.
+  - generic: Критичен для 8
+  - strong: Leadership
+  - generic: 18 чел.
+  - generic: Критичен для 8
+  - strong: Statistics
+  - generic: 7 чел.
+  - generic: Критичен для 4
+  - strong: A/B Testing
+  - generic: 5 чел.
+  - generic: Критичен для 2
+  - strong: Stakeholder Management
+  - generic: 25 чел.
+  - generic: Критичен для 1
+  - strong: Cloud Platforms
+  - generic: 28 чел.
+  - generic: Критичен для 0
+  - strong: Containers & Orchestration
+  - generic: 25 чел.
+  - generic: Критичен для 0
+  - generic: ИНДИВИДУАЛЬНАЯ ПОДДЕРЖКА
+  - heading "Профили сотрудников" [level=2]
+  - searchbox "Поиск сотрудника"
+  - table:
+    - rowgroup:
+      - row "Сотрудник Цель Покрытие За 90 дней Поддержка":
+        - columnheader "Сотрудник"
+        - columnheader "Цель"
+        - columnheader "Покрытие"
+        - columnheader "За 90 дней"
+        - columnheader "Поддержка"
+        - columnheader
+    - rowgroup:
+      - 'row "Marat Yessenov E0001 · Backend Engineer · Junior Backend Engineer Middle 55% Критичных разрывов: 1 3 завершено 0 пропусков / отказов / прерываний Есть участие Профиль Marat Yessenov"':
+        - cell "Marat Yessenov E0001 · Backend Engineer · Junior":
+          - strong: Marat Yessenov
+          - generic: E0001 · Backend Engineer · Junior
+        - cell "Backend Engineer Middle":
+          - text: Backend Engineer
+          - generic: Middle
+        - 'cell "55% Критичных разрывов: 1"':
+          - strong: 55%
+          - generic: "Критичных разрывов: 1"
+        - cell "3 завершено 0 пропусков / отказов / прерываний":
+          - text: 3 завершено
+          - generic: 0 пропусков / отказов / прерываний
+        - cell "Есть участие":
+          - generic: Есть участие
+        - cell "Профиль Marat Yessenov":
+          - link "Профиль Marat Yessenov":
+            - /url: /people/E0001/
+            - text: ↗
+      - 'row "Arman Zhaksylykov E0002 · Backend Engineer · Middle Backend Engineer Senior 62% Критичных разрывов: 2 1 завершено 1 пропусков / отказов / прерываний Есть участие Профиль Arman Zhaksylykov"':
+        - cell "Arman Zhaksylykov E0002 · Backend Engineer · Middle":
+          - strong: Arman Zhaksylykov
+          - generic: E0002 · Backend Engineer · Middle
+        - cell "Backend Engineer Senior":
+          - text: Backend Engineer
+          - generic: Senior
+        - 'cell "62% Критичных разрывов: 2"':
+          - strong: 62%
+          - generic: "Критичных разрывов: 2"
+        - cell "1 завершено 1 пропусков / отказов / прерываний":
+          - text: 1 завершено
+          - generic: 1 пропусков / отказов / прерываний
+        - cell "Есть участие":
+          - generic: Есть участие
+        - cell "Профиль Arman Zhaksylykov":
+          - link "Профиль Arman Zhaksylykov":
+            - /url: /people/E0002/
+            - text: ↗
+      - 'row "Togzhan Yessenova E0005 · Backend Engineer · Middle Backend Engineer Senior 68% Критичных разрывов: 2 0 завершено 0 пропусков / отказов / прерываний Обсудить развитие Профиль Togzhan Yessenova"':
+        - cell "Togzhan Yessenova E0005 · Backend Engineer · Middle":
+          - strong: Togzhan Yessenova
+          - generic: E0005 · Backend Engineer · Middle
+        - cell "Backend Engineer Senior":
+          - text: Backend Engineer
+          - generic: Senior
+        - 'cell "68% Критичных разрывов: 2"':
+          - strong: 68%
+          - generic: "Критичных разрывов: 2"
+        - cell "0 завершено 0 пропусков / отказов / прерываний":
+          - text: 0 завершено
+          - generic: 0 пропусков / отказов / прерываний
+        - cell "Обсудить развитие":
+          - generic: Обсудить развитие
+        - cell "Профиль Togzhan Yessenova":
+          - link "Профиль Togzhan Yessenova":
+            - /url: /people/E0005/
+            - text: ↗
+      - 'row "Kanat Tulegenov E0007 · Backend Engineer · Senior Backend Engineer Lead 76% Критичных разрывов: 3 2 завершено 0 пропусков / отказов / прерываний Есть участие Профиль Kanat Tulegenov"':
+        - cell "Kanat Tulegenov E0007 · Backend Engineer · Senior":
+          - strong: Kanat Tulegenov
+          - generic: E0007 · Backend Engineer · Senior
+        - cell "Backend Engineer Lead":
+          - text: Backend Engineer
+          - generic: Lead
+        - 'cell "76% Критичных разрывов: 3"':
+          - strong: 76%
+          - generic: "Критичных разрывов: 3"
+        - cell "2 завершено 0 пропусков / отказов / прерываний":
+          - text: 2 завершено
+          - generic: 0 пропусков / отказов / прерываний
+        - cell "Есть участие":
+          - generic: Есть участие
+        - cell "Профиль Kanat Tulegenov":
+          - link "Профиль Kanat Tulegenov":
+            - /url: /people/E0007/
+            - text: ↗
+      - 'row "Rustem Ismailov E0013 · Backend Engineer · Senior Data Analyst Senior 34% Критичных разрывов: 2 0 завершено 0 пропусков / отказов / прерываний Обсудить развитие Профиль Rustem Ismailov"':
+        - cell "Rustem Ismailov E0013 · Backend Engineer · Senior":
+          - strong: Rustem Ismailov
+          - generic: E0013 · Backend Engineer · Senior
+        - cell "Data Analyst Senior":
+          - text: Data Analyst
+          - generic: Senior
+        - 'cell "34% Критичных разрывов: 2"':
+          - strong: 34%
+          - generic: "Критичных разрывов: 2"
+        - cell "0 завершено 0 пропусков / отказов / прерываний":
+          - text: 0 завершено
+          - generic: 0 пропусков / отказов / прерываний
+        - cell "Обсудить развитие":
+          - generic: Обсудить развитие
+        - cell "Профиль Rustem Ismailov":
+          - link "Профиль Rustem Ismailov":
+            - /url: /people/E0013/
+            - text: ↗
+      - 'row "Assel Omarova E0016 · Backend Engineer · Junior Backend Engineer Middle 52% Критичных разрывов: 2 0 завершено 0 пропусков / отказов / прерываний Обсудить развитие Профиль Assel Omarova"':
+        - cell "Assel Omarova E0016 · Backend Engineer · Junior":
+          - strong: Assel Omarova
+          - generic: E0016 · Backend Engineer · Junior
+        - cell "Backend Engineer Middle":
+          - text: Backend Engineer
+          - generic: Middle
+        - 'cell "52% Критичных разрывов: 2"':
+          - strong: 52%
+          - generic: "Критичных разрывов: 2"
+        - cell "0 завершено 0 пропусков / отказов / прерываний":
+          - text: 0 завершено
+          - generic: 0 пропусков / отказов / прерываний
+        - cell "Обсудить развитие":
+          - generic: Обсудить развитие
+        - cell "Профиль Assel Omarova":
+          - link "Профиль Assel Omarova":
+            - /url: /people/E0016/
+            - text: ↗
+      - 'row "Zhanna Baimukhanova E0023 · Backend Engineer · Junior Backend Engineer Middle 48% Критичных разрывов: 2 0 завершено 0 пропусков / отказов / прерываний Обсудить развитие Профиль Zhanna Baimukhanova"':
+        - cell "Zhanna Baimukhanova E0023 · Backend Engineer · Junior":
+          - strong: Zhanna Baimukhanova
+          - generic: E0023 · Backend Engineer · Junior
+        - cell "Backend Engineer Middle":
+          - text: Backend Engineer
+          - generic: Middle
+        - 'cell "48% Критичных разрывов: 2"':
+          - strong: 48%
+          - generic: "Критичных разрывов: 2"
+        - cell "0 завершено 0 пропусков / отказов / прерываний":
+          - text: 0 завершено
+          - generic: 0 пропусков / отказов / прерываний
+        - cell "Обсудить развитие":
+          - generic: Обсудить развитие
+        - cell "Профиль Zhanna Baimukhanova":
+          - link "Профиль Zhanna Baimukhanova":
+            - /url: /people/E0023/
+            - text: ↗
+      - 'row "Ainur Utepova E0026 · Backend Engineer · Senior Backend Engineer Lead 66% Критичных разрывов: 3 1 завершено 0 пропусков / отказов / прерываний Есть участие Профиль Ainur Utepova"':
+        - cell "Ainur Utepova E0026 · Backend Engineer · Senior":
+          - strong: Ainur Utepova
+          - generic: E0026 · Backend Engineer · Senior
+        - cell "Backend Engineer Lead":
+          - text: Backend Engineer
+          - generic: Lead
+        - 'cell "66% Критичных разрывов: 3"':
+          - strong: 66%
+          - generic: "Критичных разрывов: 3"
+        - cell "1 завершено 0 пропусков / отказов / прерываний":
+          - text: 1 завершено
+          - generic: 0 пропусков / отказов / прерываний
+        - cell "Есть участие":
+          - generic: Есть участие
+        - cell "Профиль Ainur Utepova":
+          - link "Профиль Ainur Utepova":
+            - /url: /people/E0026/
+            - text: ↗
+      - 'row "Akmaral Ismailova E0028 · Backend Engineer · Middle Backend Engineer Senior 74% Критичных разрывов: 1 4 завершено 0 пропусков / отказов / прерываний Есть участие Профиль Akmaral Ismailova"':
+        - cell "Akmaral Ismailova E0028 · Backend Engineer · Middle":
+          - strong: Akmaral Ismailova
+          - generic: E0028 · Backend Engineer · Middle
+        - cell "Backend Engineer Senior":
+          - text: Backend Engineer
+          - generic: Senior
+        - 'cell "74% Критичных разрывов: 1"':
+          - strong: 74%
+          - generic: "Критичных разрывов: 1"
+        - cell "4 завершено 0 пропусков / отказов / прерываний":
+          - text: 4 завершено
+          - generic: 0 пропусков / отказов / прерываний
+        - cell "Есть участие":
+          - generic: Есть участие
+        - cell "Профиль Akmaral Ismailova":
+          - link "Профиль Akmaral Ismailova":
+            - /url: /people/E0028/
+            - text: ↗
+      - 'row "Irina Pavlova E0040 · Backend Engineer · Junior Backend Engineer Middle 45% Критичных разрывов: 2 0 завершено 1 пропусков / отказов / прерываний Обсудить развитие Профиль Irina Pavlova"':
+        - cell "Irina Pavlova E0040 · Backend Engineer · Junior":
+          - strong: Irina Pavlova
+          - generic: E0040 · Backend Engineer · Junior
+        - cell "Backend Engineer Middle":
+          - text: Backend Engineer
+          - generic: Middle
+        - 'cell "45% Критичных разрывов: 2"':
+          - strong: 45%
+          - generic: "Критичных разрывов: 2"
+        - cell "0 завершено 1 пропусков / отказов / прерываний":
+          - text: 0 завершено
+          - generic: 1 пропусков / отказов / прерываний
+        - cell "Обсудить развитие":
+          - generic: Обсудить развитие
+        - cell "Профиль Irina Pavlova":
+          - link "Профиль Irina Pavlova":
+            - /url: /people/E0040/
+            - text: ↗
+      - 'row "Symbat Baimukhanova E0047 · Backend Engineer · Middle Backend Engineer Senior 56% Критичных разрывов: 2 0 завершено 1 пропусков / отказов / прерываний Обсудить развитие Профиль Symbat Baimukhanova"':
+        - cell "Symbat Baimukhanova E0047 · Backend Engineer · Middle":
+          - strong: Symbat Baimukhanova
+          - generic: E0047 · Backend Engineer · Middle
+        - cell "Backend Engineer Senior":
+          - text: Backend Engineer
+          - generic: Senior
+        - 'cell "56% Критичных разрывов: 2"':
+          - strong: 56%
+          - generic: "Критичных разрывов: 2"
+        - cell "0 завершено 1 пропусков / отказов / прерываний":
+          - text: 0 завершено
+          - generic: 1 пропусков / отказов / прерываний
+        - cell "Обсудить развитие":
+          - generic: Обсудить развитие
+        - cell "Профиль Symbat Baimukhanova":
+          - link "Профиль Symbat Baimukhanova":
+            - /url: /people/E0047/
+            - text: ↗
+      - 'row "Symbat Abenova E0050 · Backend Engineer · Lead Data Analyst Lead 48% Критичных разрывов: 1 3 завершено 1 пропусков / отказов / прерываний Есть участие Профиль Symbat Abenova"':
+        - cell "Symbat Abenova E0050 · Backend Engineer · Lead":
+          - strong: Symbat Abenova
+          - generic: E0050 · Backend Engineer · Lead
+        - cell "Data Analyst Lead":
+          - text: Data Analyst
+          - generic: Lead
+        - 'cell "48% Критичных разрывов: 1"':
+          - strong: 48%
+          - generic: "Критичных разрывов: 1"
+        - cell "3 завершено 1 пропусков / отказов / прерываний":
+          - text: 3 завершено
+          - generic: 1 пропусков / отказов / прерываний
+        - cell "Есть участие":
+          - generic: Есть участие
+        - cell "Профиль Symbat Abenova":
+          - link "Профиль Symbat Abenova":
+            - /url: /people/E0050/
+            - text: ↗
+      - 'row "Ksenia Pavlova E0058 · Backend Engineer · Junior Backend Engineer Middle 52% Критичных разрывов: 1 1 завершено 1 пропусков / отказов / прерываний Есть участие Профиль Ksenia Pavlova"':
+        - cell "Ksenia Pavlova E0058 · Backend Engineer · Junior":
+          - strong: Ksenia Pavlova
+          - generic: E0058 · Backend Engineer · Junior
+        - cell "Backend Engineer Middle":
+          - text: Backend Engineer
+          - generic: Middle
+        - 'cell "52% Критичных разрывов: 1"':
+          - strong: 52%
+          - generic: "Критичных разрывов: 1"
+        - cell "1 завершено 1 пропусков / отказов / прерываний":
+          - text: 1 завершено
+          - generic: 1 пропусков / отказов / прерываний
+        - cell "Есть участие":
+          - generic: Есть участие
+        - cell "Профиль Ksenia Pavlova":
+          - link "Профиль Ksenia Pavlova":
+            - /url: /people/E0058/
+            - text: ↗
+      - 'row "Natalia Kuznetsova E0064 · Backend Engineer · Senior Data Analyst Senior 45% Критичных разрывов: 2 1 завершено 1 пропусков / отказов / прерываний Есть участие Профиль Natalia Kuznetsova"':
+        - cell "Natalia Kuznetsova E0064 · Backend Engineer · Senior":
+          - strong: Natalia Kuznetsova
+          - generic: E0064 · Backend Engineer · Senior
+        - cell "Data Analyst Senior":
+          - text: Data Analyst
+          - generic: Senior
+        - 'cell "45% Критичных разрывов: 2"':
+          - strong: 45%
+          - generic: "Критичных разрывов: 2"
+        - cell "1 завершено 1 пропусков / отказов / прерываний":
+          - text: 1 завершено
+          - generic: 1 пропусков / отказов / прерываний
+        - cell "Есть участие":
+          - generic: Есть участие
+        - cell "Профиль Natalia Kuznetsova":
+          - link "Профиль Natalia Kuznetsova":
+            - /url: /people/E0064/
+            - text: ↗
+      - 'row "Zhanna Bekova E0069 · Backend Engineer · Middle Backend Engineer Senior 70% Критичных разрывов: 2 0 завершено 0 пропусков / отказов / прерываний Обсудить развитие Профиль Zhanna Bekova"':
+        - cell "Zhanna Bekova E0069 · Backend Engineer · Middle":
+          - strong: Zhanna Bekova
+          - generic: E0069 · Backend Engineer · Middle
+        - cell "Backend Engineer Senior":
+          - text: Backend Engineer
+          - generic: Senior
+        - 'cell "70% Критичных разрывов: 2"':
+          - strong: 70%
+          - generic: "Критичных разрывов: 2"
+        - cell "0 завершено 0 пропусков / отказов / прерываний":
+          - text: 0 завершено
+          - generic: 0 пропусков / отказов / прерываний
+        - cell "Обсудить развитие":
+          - generic: Обсудить развитие
+        - cell "Профиль Zhanna Bekova":
+          - link "Профиль Zhanna Bekova":
+            - /url: /people/E0069/
+            - text: ↗
+      - 'row "Maxim Smirnov E0087 · Backend Engineer · Middle Data Analyst Middle 37% Критичных разрывов: 1 2 завершено 0 пропусков / отказов / прерываний Есть участие Профиль Maxim Smirnov"':
+        - cell "Maxim Smirnov E0087 · Backend Engineer · Middle":
+          - strong: Maxim Smirnov
+          - generic: E0087 · Backend Engineer · Middle
+        - cell "Data Analyst Middle":
+          - text: Data Analyst
+          - generic: Middle
+        - 'cell "37% Критичных разрывов: 1"':
+          - strong: 37%
+          - generic: "Критичных разрывов: 1"
+        - cell "2 завершено 0 пропусков / отказов / прерываний":
+          - text: 2 завершено
+          - generic: 0 пропусков / отказов / прерываний
+        - cell "Есть участие":
+          - generic: Есть участие
+        - cell "Профиль Maxim Smirnov":
+          - link "Профиль Maxim Smirnov":
+            - /url: /people/E0087/
+            - text: ↗
+      - 'row "Rustem Seitkali E0088 · Backend Engineer · Senior Backend Engineer Lead 76% Критичных разрывов: 3 1 завершено 0 пропусков / отказов / прерываний Есть участие Профиль Rustem Seitkali"':
+        - cell "Rustem Seitkali E0088 · Backend Engineer · Senior":
+          - strong: Rustem Seitkali
+          - generic: E0088 · Backend Engineer · Senior
+        - cell "Backend Engineer Lead":
+          - text: Backend Engineer
+          - generic: Lead
+        - 'cell "76% Критичных разрывов: 3"':
+          - strong: 76%
+          - generic: "Критичных разрывов: 3"
+        - cell "1 завершено 0 пропусков / отказов / прерываний":
+          - text: 1 завершено
+          - generic: 0 пропусков / отказов / прерываний
+        - cell "Есть участие":
+          - generic: Есть участие
+        - cell "Профиль Rustem Seitkali":
+          - link "Профиль Rustem Seitkali":
+            - /url: /people/E0088/
+            - text: ↗
+      - 'row "Daniyar Sadykov E0092 · Backend Engineer · Middle Backend Engineer Senior 66% Критичных разрывов: 1 0 завершено 1 пропусков / отказов / прерываний Обсудить развитие Профиль Daniyar Sadykov"':
+        - cell "Daniyar Sadykov E0092 · Backend Engineer · Middle":
+          - strong: Daniyar Sadykov
+          - generic: E0092 · Backend Engineer · Middle
+        - cell "Backend Engineer Senior":
+          - text: Backend Engineer
+          - generic: Senior
+        - 'cell "66% Критичных разрывов: 1"':
+          - strong: 66%
+          - generic: "Критичных разрывов: 1"
+        - cell "0 завершено 1 пропусков / отказов / прерываний":
+          - text: 0 завершено
+          - generic: 1 пропусков / отказов / прерываний
+        - cell "Обсудить развитие":
+          - generic: Обсудить развитие
+        - cell "Профиль Daniyar Sadykov":
+          - link "Профиль Daniyar Sadykov":
+            - /url: /people/E0092/
+            - text: ↗
+      - 'row "Indira Temirkhanova E0096 · Backend Engineer · Junior Backend Engineer Middle 42% Критичных разрывов: 2 0 завершено 2 пропусков / отказов / прерываний Обсудить развитие Профиль Indira Temirkhanova"':
+        - cell "Indira Temirkhanova E0096 · Backend Engineer · Junior":
+          - strong: Indira Temirkhanova
+          - generic: E0096 · Backend Engineer · Junior
+        - cell "Backend Engineer Middle":
+          - text: Backend Engineer
+          - generic: Middle
+        - 'cell "42% Критичных разрывов: 2"':
+          - strong: 42%
+          - generic: "Критичных разрывов: 2"
+        - cell "0 завершено 2 пропусков / отказов / прерываний":
+          - text: 0 завершено
+          - generic: 2 пропусков / отказов / прерываний
+        - cell "Обсудить развитие":
+          - generic: Обсудить развитие
+        - cell "Профиль Indira Temirkhanova":
+          - link "Профиль Indira Temirkhanova":
+            - /url: /people/E0096/
+            - text: ↗
+      - 'row "Olzhas Dzhakupov E0097 · Backend Engineer · Senior Backend Engineer Lead 68% Критичных разрывов: 3 1 завершено 0 пропусков / отказов / прерываний Есть участие Профиль Olzhas Dzhakupov"':
+        - cell "Olzhas Dzhakupov E0097 · Backend Engineer · Senior":
+          - strong: Olzhas Dzhakupov
+          - generic: E0097 · Backend Engineer · Senior
+        - cell "Backend Engineer Lead":
+          - text: Backend Engineer
+          - generic: Lead
+        - 'cell "68% Критичных разрывов: 3"':
+          - strong: 68%
+          - generic: "Критичных разрывов: 3"
+        - cell "1 завершено 0 пропусков / отказов / прерываний":
+          - text: 1 завершено
+          - generic: 0 пропусков / отказов / прерываний
+        - cell "Есть участие":
+          - generic: Есть участие
+        - cell "Профиль Olzhas Dzhakupov":
+          - link "Профиль Olzhas Dzhakupov":
+            - /url: /people/E0097/
+            - text: ↗
+      - 'row "Sergey Morozov E0101 · Backend Engineer · Junior Backend Engineer Middle 42% Критичных разрывов: 2 0 завершено 0 пропусков / отказов / прерываний Обсудить развитие Профиль Sergey Morozov"':
+        - cell "Sergey Morozov E0101 · Backend Engineer · Junior":
+          - strong: Sergey Morozov
+          - generic: E0101 · Backend Engineer · Junior
+        - cell "Backend Engineer Middle":
+          - text: Backend Engineer
+          - generic: Middle
+        - 'cell "42% Критичных разрывов: 2"':
+          - strong: 42%
+          - generic: "Критичных разрывов: 2"
+        - cell "0 завершено 0 пропусков / отказов / прерываний":
+          - text: 0 завершено
+          - generic: 0 пропусков / отказов / прерываний
+        - cell "Обсудить развитие":
+          - generic: Обсудить развитие
+        - cell "Профиль Sergey Morozov":
+          - link "Профиль Sergey Morozov":
+            - /url: /people/E0101/
+            - text: ↗
+      - 'row "Pavel Volkov E0106 · Backend Engineer · Senior Backend Engineer Lead 81% Критичных разрывов: 3 0 завершено 0 пропусков / отказов / прерываний Обсудить развитие Профиль Pavel Volkov"':
+        - cell "Pavel Volkov E0106 · Backend Engineer · Senior":
+          - strong: Pavel Volkov
+          - generic: E0106 · Backend Engineer · Senior
+        - cell "Backend Engineer Lead":
+          - text: Backend Engineer
+          - generic: Lead
+        - 'cell "81% Критичных разрывов: 3"':
+          - strong: 81%
+          - generic: "Критичных разрывов: 3"
+        - cell "0 завершено 0 пропусков / отказов / прерываний":
+          - text: 0 завершено
+          - generic: 0 пропусков / отказов / прерываний
+        - cell "Обсудить развитие":
+          - generic: Обсудить развитие
+        - cell "Профиль Pavel Volkov":
+          - link "Профиль Pavel Volkov":
+            - /url: /people/E0106/
+            - text: ↗
+      - 'row "Artem Sokolov E0119 · Backend Engineer · Junior Backend Engineer Middle 45% Критичных разрывов: 2 0 завершено 2 пропусков / отказов / прерываний Обсудить развитие Профиль Artem Sokolov"':
+        - cell "Artem Sokolov E0119 · Backend Engineer · Junior":
+          - strong: Artem Sokolov
+          - generic: E0119 · Backend Engineer · Junior
+        - cell "Backend Engineer Middle":
+          - text: Backend Engineer
+          - generic: Middle
+        - 'cell "45% Критичных разрывов: 2"':
+          - strong: 45%
+          - generic: "Критичных разрывов: 2"
+        - cell "0 завершено 2 пропусков / отказов / прерываний":
+          - text: 0 завершено
+          - generic: 2 пропусков / отказов / прерываний
+        - cell "Обсудить развитие":
+          - generic: Обсудить развитие
+        - cell "Профиль Artem Sokolov":
+          - link "Профиль Artem Sokolov":
+            - /url: /people/E0119/
+            - text: ↗
+      - 'row "Zarina Sadykova E0127 · Backend Engineer · Middle Backend Engineer Senior 56% Критичных разрывов: 2 2 завершено 0 пропусков / отказов / прерываний Есть участие Профиль Zarina Sadykova"':
+        - cell "Zarina Sadykova E0127 · Backend Engineer · Middle":
+          - strong: Zarina Sadykova
+          - generic: E0127 · Backend Engineer · Middle
+        - cell "Backend Engineer Senior":
+          - text: Backend Engineer
+          - generic: Senior
+        - 'cell "56% Критичных разрывов: 2"':
+          - strong: 56%
+          - generic: "Критичных разрывов: 2"
+        - cell "2 завершено 0 пропусков / отказов / прерываний":
+          - text: 2 завершено
+          - generic: 0 пропусков / отказов / прерываний
+        - cell "Есть участие":
+          - generic: Есть участие
+        - cell "Профиль Zarina Sadykova":
+          - link "Профиль Zarina Sadykova":
+            - /url: /people/E0127/
+            - text: ↗
+      - 'row "Azamat Kaliyev E0128 · Backend Engineer · Senior Backend Engineer Lead 79% Критичных разрывов: 3 1 завершено 0 пропусков / отказов / прерываний Есть участие Профиль Azamat Kaliyev"':
+        - cell "Azamat Kaliyev E0128 · Backend Engineer · Senior":
+          - strong: Azamat Kaliyev
+          - generic: E0128 · Backend Engineer · Senior
+        - cell "Backend Engineer Lead":
+          - text: Backend Engineer
+          - generic: Lead
+        - 'cell "79% Критичных разрывов: 3"':
+          - strong: 79%
+          - generic: "Критичных разрывов: 3"
+        - cell "1 завершено 0 пропусков / отказов / прерываний":
+          - text: 1 завершено
+          - generic: 0 пропусков / отказов / прерываний
+        - cell "Есть участие":
+          - generic: Есть участие
+        - cell "Профиль Azamat Kaliyev":
+          - link "Профиль Azamat Kaliyev":
+            - /url: /people/E0128/
+            - text: ↗
+      - 'row "Marat Sarsenbayev E0135 · Backend Engineer · Junior Data Analyst Junior 42% Критичных разрывов: 0 2 завершено 0 пропусков / отказов / прерываний Есть участие Профиль Marat Sarsenbayev"':
+        - cell "Marat Sarsenbayev E0135 · Backend Engineer · Junior":
+          - strong: Marat Sarsenbayev
+          - generic: E0135 · Backend Engineer · Junior
+        - cell "Data Analyst Junior":
+          - text: Data Analyst
+          - generic: Junior
+        - 'cell "42% Критичных разрывов: 0"':
+          - strong: 42%
+          - generic: "Критичных разрывов: 0"
+        - cell "2 завершено 0 пропусков / отказов / прерываний":
+          - text: 2 завершено
+          - generic: 0 пропусков / отказов / прерываний
+        - cell "Есть участие":
+          - generic: Есть участие
+        - cell "Профиль Marat Sarsenbayev":
+          - link "Профиль Marat Sarsenbayev":
+            - /url: /people/E0135/
+            - text: ↗
+      - 'row "Rustem Sarsenbayev E0136 · Backend Engineer · Senior Backend Engineer Lead 76% Критичных разрывов: 3 0 завершено 0 пропусков / отказов / прерываний Обсудить развитие Профиль Rustem Sarsenbayev"':
+        - cell "Rustem Sarsenbayev E0136 · Backend Engineer · Senior":
+          - strong: Rustem Sarsenbayev
+          - generic: E0136 · Backend Engineer · Senior
+        - cell "Backend Engineer Lead":
+          - text: Backend Engineer
+          - generic: Lead
+        - 'cell "76% Критичных разрывов: 3"':
+          - strong: 76%
+          - generic: "Критичных разрывов: 3"
+        - cell "0 завершено 0 пропусков / отказов / прерываний":
+          - text: 0 завершено
+          - generic: 0 пропусков / отказов / прерываний
+        - cell "Обсудить развитие":
+          - generic: Обсудить развитие
+        - cell "Профиль Rustem Sarsenbayev":
+          - link "Профиль Rustem Sarsenbayev":
+            - /url: /people/E0136/
+            - text: ↗
+      - 'row "Natalia Sokolova E0137 · Backend Engineer · Middle Backend Engineer Senior 64% Критичных разрывов: 2 0 завершено 1 пропусков / отказов / прерываний Обсудить развитие Профиль Natalia Sokolova"':
+        - cell "Natalia Sokolova E0137 · Backend Engineer · Middle":
+          - strong: Natalia Sokolova
+          - generic: E0137 · Backend Engineer · Middle
+        - cell "Backend Engineer Senior":
+          - text: Backend Engineer
+          - generic: Senior
+        - 'cell "64% Критичных разрывов: 2"':
+          - strong: 64%
+          - generic: "Критичных разрывов: 2"
+        - cell "0 завершено 1 пропусков / отказов / прерываний":
+          - text: 0 завершено
+          - generic: 1 пропусков / отказов / прерываний
+        - cell "Обсудить развитие":
+          - generic: Обсудить развитие
+        - cell "Профиль Natalia Sokolova":
+          - link "Профиль Natalia Sokolova":
+            - /url: /people/E0137/
+            - text: ↗
+      - 'row "Aruzhan Dzhakupova E0140 · Backend Engineer · Middle Backend Engineer Senior 60% Критичных разрывов: 2 1 завершено 0 пропусков / отказов / прерываний Есть участие Профиль Aruzhan Dzhakupova"':
+        - cell "Aruzhan Dzhakupova E0140 · Backend Engineer · Middle":
+          - strong: Aruzhan Dzhakupova
+          - generic: E0140 · Backend Engineer · Middle
+        - cell "Backend Engineer Senior":
+          - text: Backend Engineer
+          - generic: Senior
+        - 'cell "60% Критичных разрывов: 2"':
+          - strong: 60%
+          - generic: "Критичных разрывов: 2"
+        - cell "1 завершено 0 пропусков / отказов / прерываний":
+          - text: 1 завершено
+          - generic: 0 пропусков / отказов / прерываний
+        - cell "Есть участие":
+          - generic: Есть участие
+        - cell "Профиль Aruzhan Dzhakupova":
+          - link "Профиль Aruzhan Dzhakupova":
+            - /url: /people/E0140/
+            - text: ↗
+      - 'row "Daria Kozlova E0150 · Backend Engineer · Middle Backend Engineer Senior 62% Критичных разрывов: 1 0 завершено 0 пропусков / отказов / прерываний Обсудить развитие Профиль Daria Kozlova"':
+        - cell "Daria Kozlova E0150 · Backend Engineer · Middle":
+          - strong: Daria Kozlova
+          - generic: E0150 · Backend Engineer · Middle
+        - cell "Backend Engineer Senior":
+          - text: Backend Engineer
+          - generic: Senior
+        - 'cell "62% Критичных разрывов: 1"':
+          - strong: 62%
+          - generic: "Критичных разрывов: 1"
+        - cell "0 завершено 0 пропусков / отказов / прерываний":
+          - text: 0 завершено
+          - generic: 0 пропусков / отказов / прерываний
+        - cell "Обсудить развитие":
+          - generic: Обсудить развитие
+        - cell "Профиль Daria Kozlova":
+          - link "Профиль Daria Kozlova":
+            - /url: /people/E0150/
+            - text: ↗
+      - 'row "Indira Zhaksylykova E0155 · Backend Engineer · Middle Backend Engineer Senior 68% Критичных разрывов: 2 0 завершено 0 пропусков / отказов / прерываний Обсудить развитие Профиль Indira Zhaksylykova"':
+        - cell "Indira Zhaksylykova E0155 · Backend Engineer · Middle":
+          - strong: Indira Zhaksylykova
+          - generic: E0155 · Backend Engineer · Middle
+        - cell "Backend Engineer Senior":
+          - text: Backend Engineer
+          - generic: Senior
+        - 'cell "68% Критичных разрывов: 2"':
+          - strong: 68%
+          - generic: "Критичных разрывов: 2"
+        - cell "0 завершено 0 пропусков / отказов / прерываний":
+          - text: 0 завершено
+          - generic: 0 пропусков / отказов / прерываний
+        - cell "Обсудить развитие":
+          - generic: Обсудить развитие
+        - cell "Профиль Indira Zhaksylykova":
+          - link "Профиль Indira Zhaksylykova":
+            - /url: /people/E0155/
+            - text: ↗
+      - 'row "Askar Akhmetov E0164 · Backend Engineer · Middle Data Analyst Middle 40% Критичных разрывов: 1 0 завершено 0 пропусков / отказов / прерываний Обсудить развитие Профиль Askar Akhmetov"':
+        - cell "Askar Akhmetov E0164 · Backend Engineer · Middle":
+          - strong: Askar Akhmetov
+          - generic: E0164 · Backend Engineer · Middle
+        - cell "Data Analyst Middle":
+          - text: Data Analyst
+          - generic: Middle
+        - 'cell "40% Критичных разрывов: 1"':
+          - strong: 40%
+          - generic: "Критичных разрывов: 1"
+        - cell "0 завершено 0 пропусков / отказов / прерываний":
+          - text: 0 завершено
+          - generic: 0 пропусков / отказов / прерываний
+        - cell "Обсудить развитие":
+          - generic: Обсудить развитие
+        - cell "Профиль Askar Akhmetov":
+          - link "Профиль Askar Akhmetov":
+            - /url: /people/E0164/
+            - text: ↗
+      - 'row "Aidos Nurlanov E0175 · Backend Engineer · Lead Цель не выбрана 0% Критичных разрывов: 0 0 завершено 0 пропусков / отказов / прерываний Обсудить развитие Профиль Aidos Nurlanov"':
+        - cell "Aidos Nurlanov E0175 · Backend Engineer · Lead":
+          - strong: Aidos Nurlanov
+          - generic: E0175 · Backend Engineer · Lead
+        - cell "Цель не выбрана"
+        - 'cell "0% Критичных разрывов: 0"':
+          - strong: 0%
+          - generic: "Критичных разрывов: 0"
+        - cell "0 завершено 0 пропусков / отказов / прерываний":
+          - text: 0 завершено
+          - generic: 0 пропусков / отказов / прерываний
+        - cell "Обсудить развитие":
+          - generic: Обсудить развитие
+        - cell "Профиль Aidos Nurlanov":
+          - link "Профиль Aidos Nurlanov":
+            - /url: /people/E0175/
+            - text: ↗
+      - 'row "Yerlan Kaliyev E0178 · Backend Engineer · Middle Backend Engineer Senior 74% Критичных разрывов: 1 2 завершено 0 пропусков / отказов / прерываний Есть участие Профиль Yerlan Kaliyev"':
+        - cell "Yerlan Kaliyev E0178 · Backend Engineer · Middle":
+          - strong: Yerlan Kaliyev
+          - generic: E0178 · Backend Engineer · Middle
+        - cell "Backend Engineer Senior":
+          - text: Backend Engineer
+          - generic: Senior
+        - 'cell "74% Критичных разрывов: 1"':
+          - strong: 74%
+          - generic: "Критичных разрывов: 1"
+        - cell "2 завершено 0 пропусков / отказов / прерываний":
+          - text: 2 завершено
+          - generic: 0 пропусков / отказов / прерываний
+        - cell "Есть участие":
+          - generic: Есть участие
+        - cell "Профиль Yerlan Kaliyev":
+          - link "Профиль Yerlan Kaliyev":
+            - /url: /people/E0178/
+            - text: ↗
+      - 'row "Saule Omarova E0184 · Backend Engineer · Middle Backend Engineer Senior 66% Критичных разрывов: 1 3 завершено 2 пропусков / отказов / прерываний Обсудить развитие Профиль Saule Omarova"':
+        - cell "Saule Omarova E0184 · Backend Engineer · Middle":
+          - strong: Saule Omarova
+          - generic: E0184 · Backend Engineer · Middle
+        - cell "Backend Engineer Senior":
+          - text: Backend Engineer
+          - generic: Senior
+        - 'cell "66% Критичных разрывов: 1"':
+          - strong: 66%
+          - generic: "Критичных разрывов: 1"
+        - cell "3 завершено 2 пропусков / отказов / прерываний":
+          - text: 3 завершено
+          - generic: 2 пропусков / отказов / прерываний
+        - cell "Обсудить развитие":
+          - generic: Обсудить развитие
+        - cell "Профиль Saule Omarova":
+          - link "Профиль Saule Omarova":
+            - /url: /people/E0184/
+            - text: ↗
+      - 'row "Natalia Popova E0186 · Backend Engineer · Middle Backend Engineer Senior 68% Критичных разрывов: 2 1 завершено 0 пропусков / отказов / прерываний Есть участие Профиль Natalia Popova"':
+        - cell "Natalia Popova E0186 · Backend Engineer · Middle":
+          - strong: Natalia Popova
+          - generic: E0186 · Backend Engineer · Middle
+        - cell "Backend Engineer Senior":
+          - text: Backend Engineer
+          - generic: Senior
+        - 'cell "68% Критичных разрывов: 2"':
+          - strong: 68%
+          - generic: "Критичных разрывов: 2"
+        - cell "1 завершено 0 пропусков / отказов / прерываний":
+          - text: 1 завершено
+          - generic: 0 пропусков / отказов / прерываний
+        - cell "Есть участие":
+          - generic: Есть участие
+        - cell "Профиль Natalia Popova":
+          - link "Профиль Natalia Popova":
+            - /url: /people/E0186/
+            - text: ↗
+      - 'row "Marat Mukanov E0190 · Backend Engineer · Senior Backend Engineer Lead 71% Критичных разрывов: 3 1 завершено 0 пропусков / отказов / прерываний Есть участие Профиль Marat Mukanov"':
+        - cell "Marat Mukanov E0190 · Backend Engineer · Senior":
+          - strong: Marat Mukanov
+          - generic: E0190 · Backend Engineer · Senior
+        - cell "Backend Engineer Lead":
+          - text: Backend Engineer
+          - generic: Lead
+        - 'cell "71% Критичных разрывов: 3"':
+          - strong: 71%
+          - generic: "Критичных разрывов: 3"
+        - cell "1 завершено 0 пропусков / отказов / прерываний":
+          - text: 1 завершено
+          - generic: 0 пропусков / отказов / прерываний
+        - cell "Есть участие":
+          - generic: Есть участие
+        - cell "Профиль Marat Mukanov":
+          - link "Профиль Marat Mukanov":
+            - /url: /people/E0190/
+            - text: ↗
+      - 'row "Irina Morozova E0192 · Backend Engineer · Junior Data Analyst Junior 58% Критичных разрывов: 0 1 завершено 0 пропусков / отказов / прерываний Есть участие Профиль Irina Morozova"':
+        - cell "Irina Morozova E0192 · Backend Engineer · Junior":
+          - strong: Irina Morozova
+          - generic: E0192 · Backend Engineer · Junior
+        - cell "Data Analyst Junior":
+          - text: Data Analyst
+          - generic: Junior
+        - 'cell "58% Критичных разрывов: 0"':
+          - strong: 58%
+          - generic: "Критичных разрывов: 0"
+        - cell "1 завершено 0 пропусков / отказов / прерываний":
+          - text: 1 завершено
+          - generic: 0 пропусков / отказов / прерываний
+        - cell "Есть участие":
+          - generic: Есть участие
+        - cell "Профиль Irina Morozova":
+          - link "Профиль Irina Morozova":
+            - /url: /people/E0192/
+            - text: ↗
+      - 'row "Olzhas Utepov E0196 · Backend Engineer · Junior Backend Engineer Middle 52% Критичных разрывов: 2 0 завершено 0 пропусков / отказов / прерываний Обсудить развитие Профиль Olzhas Utepov"':
+        - cell "Olzhas Utepov E0196 · Backend Engineer · Junior":
+          - strong: Olzhas Utepov
+          - generic: E0196 · Backend Engineer · Junior
+        - cell "Backend Engineer Middle":
+          - text: Backend Engineer
+          - generic: Middle
+        - 'cell "52% Критичных разрывов: 2"':
+          - strong: 52%
+          - generic: "Критичных разрывов: 2"
+        - cell "0 завершено 0 пропусков / отказов / прерываний":
+          - text: 0 завершено
+          - generic: 0 пропусков / отказов / прерываний
+        - cell "Обсудить развитие":
+          - generic: Обсудить развитие
+        - cell "Профиль Olzhas Utepov":
+          - link "Профиль Olzhas Utepov":
+            - /url: /people/E0196/
+            - text: ↗
+      - 'row "Irina Kuznetsova E0200 · Backend Engineer · Junior Backend Engineer Middle 52% Критичных разрывов: 2 1 завершено 1 пропусков / отказов / прерываний Есть участие Профиль Irina Kuznetsova"':
+        - cell "Irina Kuznetsova E0200 · Backend Engineer · Junior":
+          - strong: Irina Kuznetsova
+          - generic: E0200 · Backend Engineer · Junior
+        - cell "Backend Engineer Middle":
+          - text: Backend Engineer
+          - generic: Middle
+        - 'cell "52% Критичных разрывов: 2"':
+          - strong: 52%
+          - generic: "Критичных разрывов: 2"
+        - cell "1 завершено 1 пропусков / отказов / прерываний":
+          - text: 1 завершено
+          - generic: 1 пропусков / отказов / прерываний
+        - cell "Есть участие":
+          - generic: Есть участие
+        - cell "Профиль Irina Kuznetsova":
+          - link "Профиль Irina Kuznetsova":
+            - /url: /people/E0200/
+            - text: ↗
+  - paragraph: "Сигнал: за 90 дней нет завершённых добровольных активностей или есть ≥2 пропуска, отказа или прерывания. Причины неизвестны; это повод предложить помощь. Список отсортирован по ID, а не результативности."
+- contentinfo:
+  - text: Career Quest
+  - generic: HackAlem AI · Meta Juniors · Halyk Bank case
