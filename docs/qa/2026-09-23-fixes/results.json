@@ -1,0 +1,1110 @@
+{
+  "code_base": "1948d7b",
+  "branch": "codex/qa-fixes-2026-09-23",
+  "base_url": "http://127.0.0.1:8012",
+  "method": "Real HTTP, cookiejar, CSRF. No live AI.",
+  "checks": {
+    "hr_login": {
+      "passed": true
+    },
+    "preview_does_not_create_profiles": {
+      "passed": true,
+      "status": 200,
+      "elapsed_ms": 75.38
+    },
+    "confirmed_import": {
+      "passed": true,
+      "status": 200,
+      "elapsed_ms": 180.95
+    },
+    "three_profiles_history_coverage": {
+      "passed": true
+    },
+    "repeat_confirm_no_profile_history_change": {
+      "passed": true
+    }
+  },
+  "profiles": {
+    "QA001": {
+      "api_status": 200,
+      "api": {
+        "employee_id": "QA001",
+        "role": "Backend Engineer",
+        "grade": "Middle",
+        "skills": {
+          "SK_CRM": 3,
+          "SK_SQL": 4,
+          "SK_CICD": 3,
+          "SK_JAVA": 3,
+          "SK_AGILE": 3,
+          "SK_CLOUD": 3,
+          "SK_REACT": 3,
+          "SK_PYTHON": 4,
+          "SK_BI_TOOLS": 3,
+          "SK_DATA_VIZ": 3,
+          "SK_FEEDBACK": 3,
+          "SK_HTML_CSS": 3,
+          "SK_TEAMWORK": 3,
+          "SK_LABOR_LAW": 3,
+          "SK_MENTORING": 3,
+          "SK_ML_BASICS": 3,
+          "SK_AB_TESTING": 3,
+          "SK_API_DESIGN": 4,
+          "SK_CONTAINERS": 3,
+          "SK_JAVASCRIPT": 3,
+          "SK_LEADERSHIP": 2,
+          "SK_STATISTICS": 3,
+          "SK_TYPESCRIPT": 3,
+          "SK_API_TESTING": 3,
+          "SK_NEGOTIATION": 3,
+          "SK_PROSPECTING": 3,
+          "SK_ROADMAPPING": 3,
+          "SK_TEST_DESIGN": 3,
+          "SK_UX_RESEARCH": 3,
+          "SK_ACCOUNT_MGMT": 3,
+          "SK_ADAPTABILITY": 3,
+          "SK_APP_SECURITY": 3,
+          "SK_COMPENSATION": 3,
+          "SK_HR_ANALYTICS": 3,
+          "SK_LOAD_TESTING": 3,
+          "SK_PROJECT_MGMT": 3,
+          "SK_REQUIREMENTS": 3,
+          "SK_ACCESSIBILITY": 3,
+          "SK_COMMUNICATION": 3,
+          "SK_DATA_MODELING": 3,
+          "SK_OBSERVABILITY": 3,
+          "SK_SYSTEM_DESIGN": 2,
+          "SK_LEARNING_DESIGN": 3,
+          "SK_PROBLEM_SOLVING": 4,
+          "SK_PUBLIC_SPEAKING": 0,
+          "SK_TEST_AUTOMATION": 3,
+          "SK_TIME_MANAGEMENT": 3,
+          "SK_TROUBLESHOOTING": 3,
+          "SK_WEB_PERFORMANCE": 3,
+          "SK_CUSTOMER_SERVICE": 3,
+          "SK_STAKEHOLDER_MGMT": 2,
+          "SK_CRITICAL_THINKING": 3,
+          "SK_PRODUCT_ANALYTICS": 3,
+          "SK_PRODUCT_DISCOVERY": 3,
+          "SK_PRODUCT_KNOWLEDGE": 3,
+          "SK_EMPLOYEE_RELATIONS": 3,
+          "SK_TALENT_ACQUISITION": 3,
+          "SK_CONFLICT_RESOLUTION": 3,
+          "SK_WRITTEN_COMMUNICATION": 3,
+          "SK_EMOTIONAL_INTELLIGENCE": 3
+        },
+        "gaps": [
+          {
+            "skill_id": "SK_SYSTEM_DESIGN",
+            "name": "System Design",
+            "current": 2,
+            "baseline": 2,
+            "required": 4,
+            "gap": 2,
+            "critical": true,
+            "width": 40,
+            "target_width": 80
+          },
+          {
+            "skill_id": "SK_API_DESIGN",
+            "name": "API Design",
+            "current": 4,
+            "baseline": 4,
+            "required": 4,
+            "gap": 0,
+            "critical": true,
+            "width": 80,
+            "target_width": 80
+          },
+          {
+            "skill_id": "SK_PUBLIC_SPEAKING",
+            "name": "Public Speaking",
+            "current": 0,
+            "baseline": 0,
+            "required": 2,
+            "gap": 2,
+            "critical": false,
+            "width": 0,
+            "target_width": 40
+          },
+          {
+            "skill_id": "SK_APP_SECURITY",
+            "name": "Application Security",
+            "current": 3,
+            "baseline": 3,
+            "required": 3,
+            "gap": 0,
+            "critical": false,
+            "width": 60,
+            "target_width": 60
+          },
+          {
+            "skill_id": "SK_CICD",
+            "name": "CI/CD",
+            "current": 3,
+            "baseline": 3,
+            "required": 3,
+            "gap": 0,
+            "critical": false,
+            "width": 60,
+            "target_width": 60
+          },
+          {
+            "skill_id": "SK_CLOUD",
+            "name": "Cloud Platforms",
+            "current": 3,
+            "baseline": 3,
+            "required": 3,
+            "gap": 0,
+            "critical": false,
+            "width": 60,
+            "target_width": 60
+          },
+          {
+            "skill_id": "SK_COMMUNICATION",
+            "name": "Communication",
+            "current": 3,
+            "baseline": 3,
+            "required": 3,
+            "gap": 0,
+            "critical": false,
+            "width": 60,
+            "target_width": 60
+          },
+          {
+            "skill_id": "SK_CONTAINERS",
+            "name": "Containers & Orchestration",
+            "current": 3,
+            "baseline": 3,
+            "required": 3,
+            "gap": 0,
+            "critical": false,
+            "width": 60,
+            "target_width": 60
+          },
+          {
+            "skill_id": "SK_LEADERSHIP",
+            "name": "Leadership",
+            "current": 2,
+            "baseline": 2,
+            "required": 2,
+            "gap": 0,
+            "critical": false,
+            "width": 40,
+            "target_width": 40
+          },
+          {
+            "skill_id": "SK_MENTORING",
+            "name": "Mentoring",
+            "current": 3,
+            "baseline": 3,
+            "required": 3,
+            "gap": 0,
+            "critical": false,
+            "width": 60,
+            "target_width": 60
+          },
+          {
+            "skill_id": "SK_OBSERVABILITY",
+            "name": "Observability",
+            "current": 3,
+            "baseline": 3,
+            "required": 3,
+            "gap": 0,
+            "critical": false,
+            "width": 60,
+            "target_width": 60
+          },
+          {
+            "skill_id": "SK_PROBLEM_SOLVING",
+            "name": "Problem Solving",
+            "current": 4,
+            "baseline": 4,
+            "required": 4,
+            "gap": 0,
+            "critical": false,
+            "width": 80,
+            "target_width": 80
+          },
+          {
+            "skill_id": "SK_PYTHON",
+            "name": "Python",
+            "current": 4,
+            "baseline": 4,
+            "required": 4,
+            "gap": 0,
+            "critical": false,
+            "width": 80,
+            "target_width": 80
+          },
+          {
+            "skill_id": "SK_SQL",
+            "name": "SQL",
+            "current": 4,
+            "baseline": 4,
+            "required": 4,
+            "gap": 0,
+            "critical": false,
+            "width": 80,
+            "target_width": 80
+          },
+          {
+            "skill_id": "SK_STAKEHOLDER_MGMT",
+            "name": "Stakeholder Management",
+            "current": 2,
+            "baseline": 2,
+            "required": 2,
+            "gap": 0,
+            "critical": false,
+            "width": 40,
+            "target_width": 40
+          },
+          {
+            "skill_id": "SK_TEAMWORK",
+            "name": "Teamwork",
+            "current": 3,
+            "baseline": 3,
+            "required": 3,
+            "gap": 0,
+            "critical": false,
+            "width": 60,
+            "target_width": 60
+          }
+        ],
+        "coverage": 92,
+        "applied_records": [],
+        "as_of_date": "2026-10-01"
+      },
+      "html_status": 200,
+      "history_count": 4,
+      "history_sha256": "ebf610439c9b705a5c771128d441a916fe63a130cd8134e49c323b5b1936204d"
+    },
+    "QA002": {
+      "api_status": 200,
+      "api": {
+        "employee_id": "QA002",
+        "role": "Backend Engineer",
+        "grade": "Middle",
+        "skills": {
+          "SK_CRM": 5,
+          "SK_SQL": 5,
+          "SK_CICD": 5,
+          "SK_JAVA": 5,
+          "SK_AGILE": 5,
+          "SK_CLOUD": 5,
+          "SK_REACT": 5,
+          "SK_PYTHON": 5,
+          "SK_BI_TOOLS": 5,
+          "SK_DATA_VIZ": 5,
+          "SK_FEEDBACK": 5,
+          "SK_HTML_CSS": 5,
+          "SK_TEAMWORK": 5,
+          "SK_LABOR_LAW": 5,
+          "SK_MENTORING": 5,
+          "SK_ML_BASICS": 5,
+          "SK_AB_TESTING": 5,
+          "SK_API_DESIGN": 5,
+          "SK_CONTAINERS": 5,
+          "SK_JAVASCRIPT": 5,
+          "SK_LEADERSHIP": 5,
+          "SK_STATISTICS": 5,
+          "SK_TYPESCRIPT": 5,
+          "SK_API_TESTING": 5,
+          "SK_NEGOTIATION": 5,
+          "SK_PROSPECTING": 5,
+          "SK_ROADMAPPING": 5,
+          "SK_TEST_DESIGN": 5,
+          "SK_UX_RESEARCH": 5,
+          "SK_ACCOUNT_MGMT": 5,
+          "SK_ADAPTABILITY": 5,
+          "SK_APP_SECURITY": 5,
+          "SK_COMPENSATION": 5,
+          "SK_HR_ANALYTICS": 5,
+          "SK_LOAD_TESTING": 5,
+          "SK_PROJECT_MGMT": 5,
+          "SK_REQUIREMENTS": 5,
+          "SK_ACCESSIBILITY": 5,
+          "SK_COMMUNICATION": 5,
+          "SK_DATA_MODELING": 5,
+          "SK_OBSERVABILITY": 5,
+          "SK_SYSTEM_DESIGN": 5,
+          "SK_LEARNING_DESIGN": 5,
+          "SK_PROBLEM_SOLVING": 5,
+          "SK_PUBLIC_SPEAKING": 5,
+          "SK_TEST_AUTOMATION": 5,
+          "SK_TIME_MANAGEMENT": 5,
+          "SK_TROUBLESHOOTING": 5,
+          "SK_WEB_PERFORMANCE": 5,
+          "SK_CUSTOMER_SERVICE": 5,
+          "SK_STAKEHOLDER_MGMT": 5,
+          "SK_CRITICAL_THINKING": 5,
+          "SK_PRODUCT_ANALYTICS": 5,
+          "SK_PRODUCT_DISCOVERY": 5,
+          "SK_PRODUCT_KNOWLEDGE": 5,
+          "SK_EMPLOYEE_RELATIONS": 5,
+          "SK_TALENT_ACQUISITION": 5,
+          "SK_CONFLICT_RESOLUTION": 5,
+          "SK_WRITTEN_COMMUNICATION": 5,
+          "SK_EMOTIONAL_INTELLIGENCE": 5
+        },
+        "gaps": [
+          {
+            "skill_id": "SK_API_DESIGN",
+            "name": "API Design",
+            "current": 5,
+            "baseline": 5,
+            "required": 4,
+            "gap": 0,
+            "critical": true,
+            "width": 100,
+            "target_width": 80
+          },
+          {
+            "skill_id": "SK_SYSTEM_DESIGN",
+            "name": "System Design",
+            "current": 5,
+            "baseline": 5,
+            "required": 4,
+            "gap": 0,
+            "critical": true,
+            "width": 100,
+            "target_width": 80
+          },
+          {
+            "skill_id": "SK_APP_SECURITY",
+            "name": "Application Security",
+            "current": 5,
+            "baseline": 5,
+            "required": 3,
+            "gap": 0,
+            "critical": false,
+            "width": 100,
+            "target_width": 60
+          },
+          {
+            "skill_id": "SK_CICD",
+            "name": "CI/CD",
+            "current": 5,
+            "baseline": 5,
+            "required": 3,
+            "gap": 0,
+            "critical": false,
+            "width": 100,
+            "target_width": 60
+          },
+          {
+            "skill_id": "SK_CLOUD",
+            "name": "Cloud Platforms",
+            "current": 5,
+            "baseline": 5,
+            "required": 3,
+            "gap": 0,
+            "critical": false,
+            "width": 100,
+            "target_width": 60
+          },
+          {
+            "skill_id": "SK_COMMUNICATION",
+            "name": "Communication",
+            "current": 5,
+            "baseline": 5,
+            "required": 3,
+            "gap": 0,
+            "critical": false,
+            "width": 100,
+            "target_width": 60
+          },
+          {
+            "skill_id": "SK_CONTAINERS",
+            "name": "Containers & Orchestration",
+            "current": 5,
+            "baseline": 5,
+            "required": 3,
+            "gap": 0,
+            "critical": false,
+            "width": 100,
+            "target_width": 60
+          },
+          {
+            "skill_id": "SK_LEADERSHIP",
+            "name": "Leadership",
+            "current": 5,
+            "baseline": 5,
+            "required": 2,
+            "gap": 0,
+            "critical": false,
+            "width": 100,
+            "target_width": 40
+          },
+          {
+            "skill_id": "SK_MENTORING",
+            "name": "Mentoring",
+            "current": 5,
+            "baseline": 5,
+            "required": 3,
+            "gap": 0,
+            "critical": false,
+            "width": 100,
+            "target_width": 60
+          },
+          {
+            "skill_id": "SK_OBSERVABILITY",
+            "name": "Observability",
+            "current": 5,
+            "baseline": 5,
+            "required": 3,
+            "gap": 0,
+            "critical": false,
+            "width": 100,
+            "target_width": 60
+          },
+          {
+            "skill_id": "SK_PROBLEM_SOLVING",
+            "name": "Problem Solving",
+            "current": 5,
+            "baseline": 5,
+            "required": 4,
+            "gap": 0,
+            "critical": false,
+            "width": 100,
+            "target_width": 80
+          },
+          {
+            "skill_id": "SK_PUBLIC_SPEAKING",
+            "name": "Public Speaking",
+            "current": 5,
+            "baseline": 5,
+            "required": 2,
+            "gap": 0,
+            "critical": false,
+            "width": 100,
+            "target_width": 40
+          },
+          {
+            "skill_id": "SK_PYTHON",
+            "name": "Python",
+            "current": 5,
+            "baseline": 5,
+            "required": 4,
+            "gap": 0,
+            "critical": false,
+            "width": 100,
+            "target_width": 80
+          },
+          {
+            "skill_id": "SK_SQL",
+            "name": "SQL",
+            "current": 5,
+            "baseline": 5,
+            "required": 4,
+            "gap": 0,
+            "critical": false,
+            "width": 100,
+            "target_width": 80
+          },
+          {
+            "skill_id": "SK_STAKEHOLDER_MGMT",
+            "name": "Stakeholder Management",
+            "current": 5,
+            "baseline": 5,
+            "required": 2,
+            "gap": 0,
+            "critical": false,
+            "width": 100,
+            "target_width": 40
+          },
+          {
+            "skill_id": "SK_TEAMWORK",
+            "name": "Teamwork",
+            "current": 5,
+            "baseline": 5,
+            "required": 3,
+            "gap": 0,
+            "critical": false,
+            "width": 100,
+            "target_width": 60
+          }
+        ],
+        "coverage": 100,
+        "applied_records": [],
+        "as_of_date": "2026-10-01"
+      },
+      "html_status": 200,
+      "history_count": 1,
+      "history_sha256": "073bb1f2d7b091df5c9b4fd7e30e8f37af66148e29371599d2fbfc9fb3fbe9ff"
+    },
+    "QA003": {
+      "api_status": 200,
+      "api": {
+        "employee_id": "QA003",
+        "role": "Backend Engineer",
+        "grade": "Senior",
+        "skills": {
+          "SK_CRM": 3,
+          "SK_SQL": 4,
+          "SK_CICD": 3,
+          "SK_JAVA": 3,
+          "SK_AGILE": 3,
+          "SK_CLOUD": 4,
+          "SK_REACT": 3,
+          "SK_PYTHON": 4,
+          "SK_BI_TOOLS": 3,
+          "SK_DATA_VIZ": 3,
+          "SK_FEEDBACK": 3,
+          "SK_HTML_CSS": 3,
+          "SK_TEAMWORK": 4,
+          "SK_LABOR_LAW": 3,
+          "SK_MENTORING": 4,
+          "SK_ML_BASICS": 3,
+          "SK_AB_TESTING": 3,
+          "SK_API_DESIGN": 5,
+          "SK_CONTAINERS": 3,
+          "SK_JAVASCRIPT": 3,
+          "SK_LEADERSHIP": 4,
+          "SK_STATISTICS": 3,
+          "SK_TYPESCRIPT": 3,
+          "SK_API_TESTING": 3,
+          "SK_NEGOTIATION": 3,
+          "SK_PROSPECTING": 3,
+          "SK_ROADMAPPING": 3,
+          "SK_TEST_DESIGN": 3,
+          "SK_UX_RESEARCH": 3,
+          "SK_ACCOUNT_MGMT": 3,
+          "SK_ADAPTABILITY": 3,
+          "SK_APP_SECURITY": 4,
+          "SK_COMPENSATION": 3,
+          "SK_HR_ANALYTICS": 3,
+          "SK_LOAD_TESTING": 3,
+          "SK_PROJECT_MGMT": 3,
+          "SK_REQUIREMENTS": 3,
+          "SK_ACCESSIBILITY": 3,
+          "SK_COMMUNICATION": 4,
+          "SK_DATA_MODELING": 3,
+          "SK_OBSERVABILITY": 3,
+          "SK_SYSTEM_DESIGN": 4,
+          "SK_LEARNING_DESIGN": 3,
+          "SK_PROBLEM_SOLVING": 4,
+          "SK_PUBLIC_SPEAKING": 3,
+          "SK_TEST_AUTOMATION": 3,
+          "SK_TIME_MANAGEMENT": 3,
+          "SK_TROUBLESHOOTING": 3,
+          "SK_WEB_PERFORMANCE": 3,
+          "SK_CUSTOMER_SERVICE": 3,
+          "SK_STAKEHOLDER_MGMT": 4,
+          "SK_CRITICAL_THINKING": 3,
+          "SK_PRODUCT_ANALYTICS": 3,
+          "SK_PRODUCT_DISCOVERY": 3,
+          "SK_PRODUCT_KNOWLEDGE": 3,
+          "SK_EMPLOYEE_RELATIONS": 3,
+          "SK_TALENT_ACQUISITION": 3,
+          "SK_CONFLICT_RESOLUTION": 3,
+          "SK_WRITTEN_COMMUNICATION": 3,
+          "SK_EMOTIONAL_INTELLIGENCE": 3
+        },
+        "gaps": [
+          {
+            "skill_id": "SK_SYSTEM_DESIGN",
+            "name": "System Design",
+            "current": 4,
+            "baseline": 4,
+            "required": 5,
+            "gap": 1,
+            "critical": true,
+            "width": 80,
+            "target_width": 100
+          },
+          {
+            "skill_id": "SK_LEADERSHIP",
+            "name": "Leadership",
+            "current": 4,
+            "baseline": 4,
+            "required": 4,
+            "gap": 0,
+            "critical": true,
+            "width": 80,
+            "target_width": 80
+          },
+          {
+            "skill_id": "SK_MENTORING",
+            "name": "Mentoring",
+            "current": 4,
+            "baseline": 4,
+            "required": 4,
+            "gap": 0,
+            "critical": true,
+            "width": 80,
+            "target_width": 80
+          },
+          {
+            "skill_id": "SK_OBSERVABILITY",
+            "name": "Observability",
+            "current": 3,
+            "baseline": 3,
+            "required": 4,
+            "gap": 1,
+            "critical": false,
+            "width": 60,
+            "target_width": 80
+          },
+          {
+            "skill_id": "SK_API_DESIGN",
+            "name": "API Design",
+            "current": 5,
+            "baseline": 5,
+            "required": 4,
+            "gap": 0,
+            "critical": false,
+            "width": 100,
+            "target_width": 80
+          },
+          {
+            "skill_id": "SK_APP_SECURITY",
+            "name": "Application Security",
+            "current": 4,
+            "baseline": 4,
+            "required": 4,
+            "gap": 0,
+            "critical": false,
+            "width": 80,
+            "target_width": 80
+          },
+          {
+            "skill_id": "SK_CICD",
+            "name": "CI/CD",
+            "current": 3,
+            "baseline": 3,
+            "required": 3,
+            "gap": 0,
+            "critical": false,
+            "width": 60,
+            "target_width": 60
+          },
+          {
+            "skill_id": "SK_CLOUD",
+            "name": "Cloud Platforms",
+            "current": 4,
+            "baseline": 4,
+            "required": 4,
+            "gap": 0,
+            "critical": false,
+            "width": 80,
+            "target_width": 80
+          },
+          {
+            "skill_id": "SK_COMMUNICATION",
+            "name": "Communication",
+            "current": 4,
+            "baseline": 4,
+            "required": 4,
+            "gap": 0,
+            "critical": false,
+            "width": 80,
+            "target_width": 80
+          },
+          {
+            "skill_id": "SK_CONTAINERS",
+            "name": "Containers & Orchestration",
+            "current": 3,
+            "baseline": 3,
+            "required": 3,
+            "gap": 0,
+            "critical": false,
+            "width": 60,
+            "target_width": 60
+          },
+          {
+            "skill_id": "SK_PROBLEM_SOLVING",
+            "name": "Problem Solving",
+            "current": 4,
+            "baseline": 4,
+            "required": 4,
+            "gap": 0,
+            "critical": false,
+            "width": 80,
+            "target_width": 80
+          },
+          {
+            "skill_id": "SK_PUBLIC_SPEAKING",
+            "name": "Public Speaking",
+            "current": 3,
+            "baseline": 3,
+            "required": 3,
+            "gap": 0,
+            "critical": false,
+            "width": 60,
+            "target_width": 60
+          },
+          {
+            "skill_id": "SK_PYTHON",
+            "name": "Python",
+            "current": 4,
+            "baseline": 4,
+            "required": 4,
+            "gap": 0,
+            "critical": false,
+            "width": 80,
+            "target_width": 80
+          },
+          {
+            "skill_id": "SK_SQL",
+            "name": "SQL",
+            "current": 4,
+            "baseline": 4,
+            "required": 4,
+            "gap": 0,
+            "critical": false,
+            "width": 80,
+            "target_width": 80
+          },
+          {
+            "skill_id": "SK_STAKEHOLDER_MGMT",
+            "name": "Stakeholder Management",
+            "current": 4,
+            "baseline": 4,
+            "required": 4,
+            "gap": 0,
+            "critical": false,
+            "width": 80,
+            "target_width": 80
+          },
+          {
+            "skill_id": "SK_TEAMWORK",
+            "name": "Teamwork",
+            "current": 4,
+            "baseline": 4,
+            "required": 4,
+            "gap": 0,
+            "critical": false,
+            "width": 80,
+            "target_width": 80
+          }
+        ],
+        "coverage": 97,
+        "applied_records": [],
+        "as_of_date": "2026-10-01"
+      },
+      "html_status": 200,
+      "history_count": 1,
+      "history_sha256": "bbbfc9e2dca233c67ccfd491275ff802848a48228227bc49f51356aa547c3c29"
+    }
+  },
+  "recommendations": {
+    "QA001": {
+      "status": 200,
+      "elapsed_ms": 36.13,
+      "body": {
+        "steps": [
+          {
+            "event_id": "EV_007",
+            "title": "Architecture Review Circle",
+            "description": "Small-group sessions where a senior architect reviews participants' real design decisions.",
+            "format": "онлайн",
+            "type": "mentoring",
+            "duration_hours": 8.0,
+            "next_session": "2026-10-23",
+            "benefits": [
+              {
+                "skill_id": "SK_SYSTEM_DESIGN",
+                "name": "System Design",
+                "before": 2,
+                "after": 3,
+                "required": 4,
+                "critical": true,
+                "closes": 1
+              }
+            ],
+            "facts": [
+              {
+                "id": "EV_007:gap0",
+                "category": "gap",
+                "text": "System Design: 2 → 3 при требуемых 4. Критично для целевого грейда."
+              },
+              {
+                "id": "EV_007:history",
+                "category": "history",
+                "text": "За 180 дней нет истории активностей такого типа и формата; предпочтение пока неизвестно."
+              },
+              {
+                "id": "EV_007:effort",
+                "category": "effort",
+                "text": "Нагрузка: 8 ч. Формат: онлайн."
+              }
+            ],
+            "score": 41.6,
+            "critical_benefit": 1,
+            "history_records": [],
+            "same_event_failures": 0,
+            "explanation": [
+              {
+                "id": "EV_007:gap0",
+                "category": "gap",
+                "text": "System Design: 2 → 3 при требуемых 4. Критично для целевого грейда."
+              },
+              {
+                "id": "EV_007:history",
+                "category": "history",
+                "text": "За 180 дней нет истории активностей такого типа и формата; предпочтение пока неизвестно."
+              },
+              {
+                "id": "EV_007:effort",
+                "category": "effort",
+                "text": "Нагрузка: 8 ч. Формат: онлайн."
+              }
+            ],
+            "priority": "Приоритет: критичный навык для карьерной цели"
+          },
+          {
+            "event_id": "EV_006",
+            "title": "Designing High-Load Systems",
+            "description": "Hands-on architecture workshop on scaling, resilience and monitoring of production services.",
+            "format": "очно",
+            "type": "workshop",
+            "duration_hours": 12.0,
+            "next_session": "2026-10-07",
+            "benefits": [
+              {
+                "skill_id": "SK_SYSTEM_DESIGN",
+                "name": "System Design",
+                "before": 2,
+                "after": 3,
+                "required": 4,
+                "critical": true,
+                "closes": 1
+              }
+            ],
+            "facts": [
+              {
+                "id": "EV_006:gap0",
+                "category": "gap",
+                "text": "System Design: 2 → 3 при требуемых 4. Критично для целевого грейда."
+              },
+              {
+                "id": "EV_006:history",
+                "category": "history",
+                "text": "За 180 дней нет истории активностей такого типа и формата; предпочтение пока неизвестно."
+              },
+              {
+                "id": "EV_006:effort",
+                "category": "effort",
+                "text": "Нагрузка: 12 ч. Формат: очно."
+              }
+            ],
+            "score": 41.4,
+            "critical_benefit": 1,
+            "history_records": [],
+            "same_event_failures": 0,
+            "explanation": [
+              {
+                "id": "EV_006:gap0",
+                "category": "gap",
+                "text": "System Design: 2 → 3 при требуемых 4. Критично для целевого грейда."
+              },
+              {
+                "id": "EV_006:history",
+                "category": "history",
+                "text": "За 180 дней нет истории активностей такого типа и формата; предпочтение пока неизвестно."
+              },
+              {
+                "id": "EV_006:effort",
+                "category": "effort",
+                "text": "Нагрузка: 12 ч. Формат: очно."
+              }
+            ],
+            "priority": "Приоритет: критичный навык для карьерной цели"
+          },
+          {
+            "event_id": "EV_005",
+            "title": "System Design Fundamentals",
+            "description": "Core building blocks of distributed systems: caching, queues, databases, APIs.",
+            "format": "онлайн",
+            "type": "course",
+            "duration_hours": 16.0,
+            "next_session": "2026-11-23",
+            "benefits": [
+              {
+                "skill_id": "SK_SYSTEM_DESIGN",
+                "name": "System Design",
+                "before": 2,
+                "after": 3,
+                "required": 4,
+                "critical": true,
+                "closes": 1
+              }
+            ],
+            "facts": [
+              {
+                "id": "EV_005:gap0",
+                "category": "gap",
+                "text": "System Design: 2 → 3 при требуемых 4. Критично для целевого грейда."
+              },
+              {
+                "id": "EV_005:history",
+                "category": "history",
+                "text": "За 180 дней нет истории активностей такого типа и формата; предпочтение пока неизвестно."
+              },
+              {
+                "id": "EV_005:effort",
+                "category": "effort",
+                "text": "Нагрузка: 16 ч. Формат: онлайн."
+              }
+            ],
+            "score": 41.2,
+            "critical_benefit": 1,
+            "history_records": [],
+            "same_event_failures": 0,
+            "explanation": [
+              {
+                "id": "EV_005:gap0",
+                "category": "gap",
+                "text": "System Design: 2 → 3 при требуемых 4. Критично для целевого грейда."
+              },
+              {
+                "id": "EV_005:history",
+                "category": "history",
+                "text": "За 180 дней нет истории активностей такого типа и формата; предпочтение пока неизвестно."
+              },
+              {
+                "id": "EV_005:effort",
+                "category": "effort",
+                "text": "Нагрузка: 16 ч. Формат: онлайн."
+              }
+            ],
+            "priority": "Приоритет: критичный навык для карьерной цели"
+          }
+        ],
+        "uncovered": [],
+        "exclusions": {
+          "Обязательное мероприятие": 4,
+          "Уже завершено": 1,
+          "Не сокращает разрыв к цели": 10,
+          "Не подходит текущая роль": 21,
+          "Не подходит текущий грейд": 1
+        },
+        "cached": false,
+        "mode": "rules",
+        "mode_label": "Подбор по правилам",
+        "notice": "AI-ключ ещё не подключён. Показан резервный многофакторный подбор по правилам.",
+        "elapsed_ms": 15
+      }
+    },
+    "QA002": {
+      "status": 200,
+      "elapsed_ms": 21.56,
+      "body": {
+        "steps": [],
+        "uncovered": [],
+        "exclusions": {
+          "Обязательное мероприятие": 4,
+          "Уже завершено": 1,
+          "Не сокращает разрыв к цели": 14,
+          "Не подходит текущая роль": 21,
+          "Не подходит текущий грейд": 1
+        },
+        "cached": false,
+        "mode": "empty",
+        "mode_label": "Нет подходящих активностей",
+        "notice": "Требования выбранного профиля по навыкам выполнены. Это не является решением о повышении.",
+        "elapsed_ms": 2
+      }
+    },
+    "QA003": {
+      "status": 200,
+      "elapsed_ms": 39.67,
+      "body": {
+        "steps": [
+          {
+            "event_id": "EV_006",
+            "title": "Designing High-Load Systems",
+            "description": "Hands-on architecture workshop on scaling, resilience and monitoring of production services.",
+            "format": "очно",
+            "type": "workshop",
+            "duration_hours": 12.0,
+            "next_session": "2026-10-07",
+            "benefits": [
+              {
+                "skill_id": "SK_SYSTEM_DESIGN",
+                "name": "System Design",
+                "before": 4,
+                "after": 5,
+                "required": 5,
+                "critical": true,
+                "closes": 1
+              },
+              {
+                "skill_id": "SK_OBSERVABILITY",
+                "name": "Observability",
+                "before": 3,
+                "after": 4,
+                "required": 4,
+                "critical": false,
+                "closes": 1
+              }
+            ],
+            "facts": [
+              {
+                "id": "EV_006:gap0",
+                "category": "gap",
+                "text": "System Design: 4 → 5 при требуемых 5. Критично для целевого грейда."
+              },
+              {
+                "id": "EV_006:gap1",
+                "category": "gap",
+                "text": "Observability: 3 → 4 при требуемых 4."
+              },
+              {
+                "id": "EV_006:history",
+                "category": "history",
+                "text": "За 180 дней нет истории активностей такого типа и формата; предпочтение пока неизвестно."
+              },
+              {
+                "id": "EV_006:effort",
+                "category": "effort",
+                "text": "Нагрузка: 12 ч. Формат: очно."
+              }
+            ],
+            "score": 51.4,
+            "critical_benefit": 1,
+            "history_records": [],
+            "same_event_failures": 0,
+            "explanation": [
+              {
+                "id": "EV_006:gap0",
+                "category": "gap",
+                "text": "System Design: 4 → 5 при требуемых 5. Критично для целевого грейда."
+              },
+              {
+                "id": "EV_006:history",
+                "category": "history",
+                "text": "За 180 дней нет истории активностей такого типа и формата; предпочтение пока неизвестно."
+              },
+              {
+                "id": "EV_006:gap1",
+                "category": "gap",
+                "text": "Observability: 3 → 4 при требуемых 4."
+              },
+              {
+                "id": "EV_006:effort",
+                "category": "effort",
+                "text": "Нагрузка: 12 ч. Формат: очно."
+              }
+            ],
+            "priority": "Приоритет: критичный навык для карьерной цели"
+          }
+        ],
+        "uncovered": [],
+        "exclusions": {
+          "Обязательное мероприятие": 4,
+          "Уже завершено": 1,
+          "Не подходит текущий грейд": 7,
+          "Не сокращает разрыв к цели": 12,
+          "Не подходит текущая роль": 21
+        },
+        "cached": false,
+        "mode": "rules",
+        "mode_label": "Подбор по правилам",
+        "notice": "AI-ключ ещё не подключён. Показан резервный многофакторный подбор по правилам.",
+        "elapsed_ms": 15
+      }
+    }
+  }
+}

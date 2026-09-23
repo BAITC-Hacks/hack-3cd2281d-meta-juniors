@@ -1,0 +1,67 @@
+- complementary:
+  - link "cq ↗ Career Quest РАСТИ ОСОЗНАННО":
+    - /url: /
+    - text: cq
+    - generic: ↗
+    - text: Career Quest
+    - generic: РАСТИ ОСОЗНАННО
+  - generic: РАБОЧЕЕ ПРОСТРАНСТВО
+  - navigation "Главное меню":
+    - link "Моё развитие":
+      - /url: /
+      - text: Моё развитие
+    - link "Мой план":
+      - /url: /people/E0028/plan/
+      - text: Мой план
+    - link "Следующие шаги":
+      - /url: /#next-steps
+      - text: Следующие шаги
+    - link "История активностей":
+      - /url: /#history
+      - text: История активностей
+  - generic: ↗
+  - strong:
+    - text: Маленькие шаги.
+    - text: Заметный рост.
+  - paragraph: Твой путь развития начинается с понятного следующего шага.
+  - generic: Я
+  - strong: Личный кабинет
+  - text: employee
+  - button "Выйти": ↪
+- banner:
+  - text: Рабочее пространство /
+  - strong: Развитие
+  - generic: Демо · синтетические данные
+- main:
+  - generic: ОТ НАМЕРЕНИЯ К РЕЗУЛЬТАТУ
+  - heading "Мой план развития." [level=1]
+  - paragraph: Akmaral Ismailova · Backend Engineer / Senior
+  - link "Подобрать следующий шаг ↗":
+    - /url: /people/E0028/#next-steps
+  - strong: 0 из 1 шагов завершено
+  - paragraph: Запланированные шаги не повышают навыки. Прогресс обновляется после завершения.
+  - progressbar "Завершение плана"
+  - strong: 0%
+  - generic: "Демо прохождения: запуск и завершение моделируются на 01.10.2026, включая мероприятия с будущими сессиями. Они не подтверждают реальное обучение."
+  - heading "Запланировано" [level=2]
+  - generic: "0"
+  - generic: Добавь подходящую рекомендацию в свой план.
+  - heading "В процессе" [level=2]
+  - generic: "1"
+  - article:
+    - generic: EV_009 · 40 ч
+    - heading "Cloud Certification Prep" [level=3]:
+      - link "Cloud Certification Prep":
+        - /url: /people/E0028/events/EV_009/
+    - paragraph: Preparation track for an associate-level cloud certification, with final exam.
+    - paragraph: Выполнено 0%. Навыки ещё не начислены.
+    - link "Подробнее":
+      - /url: /people/E0028/events/EV_009/
+    - button "Завершить в демо ✓"
+  - heading "Завершено" [level=2]
+  - generic: "0"
+  - generic: Каждый завершённый шаг будет виден здесь.
+- contentinfo:
+  - text: Career Quest
+  - generic: HackAlem AI · Meta Juniors · Halyk Bank case
+- status: Не удалось связаться с сервером. Проверь соединение и попробуй ещё раз.

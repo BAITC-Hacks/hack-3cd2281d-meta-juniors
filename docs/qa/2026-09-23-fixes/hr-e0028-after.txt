@@ -1,0 +1,290 @@
+- complementary:
+  - link "cq ↗ Career Quest РАСТИ ОСОЗНАННО":
+    - /url: /
+    - text: cq
+    - generic: ↗
+    - text: Career Quest
+    - generic: РАСТИ ОСОЗНАННО
+  - generic: РАБОЧЕЕ ПРОСТРАНСТВО
+  - navigation "Главное меню":
+    - link "Обзор команды":
+      - /url: /hr/
+      - text: Обзор команды
+    - link "Загрузка данных":
+      - /url: /hr/import/
+      - text: Загрузка данных
+  - generic: ↗
+  - strong:
+    - text: Маленькие шаги.
+    - text: Заметный рост.
+  - paragraph: Твой путь развития начинается с понятного следующего шага.
+  - generic: HR
+  - strong: HR-пространство
+  - text: hr
+  - button "Выйти": ↪
+- banner:
+  - text: Рабочее пространство /
+  - strong: Команда
+  - generic: Демо · синтетические данные
+- main:
+  - generic: HR-ПРОСТРАНСТВО
+  - heading "Развитие команды." [level=1]
+  - paragraph: Компетенции, которым нужна поддержка. Люди, с которыми стоит поговорить.
+  - link "Загрузить данные":
+    - /url: /hr/import/
+    - text: Загрузить данные
+  - generic: Подразделение
+  - combobox "Подразделение":
+    - option "Все подразделения" [selected]
+    - option "Backend Development"
+    - option "Customer Support"
+    - option "Data & Analytics"
+    - option "Frontend Development"
+    - option "Human Resources"
+    - option "Product Management"
+    - option "Quality Assurance"
+    - option "Sales"
+  - generic: Грейд
+  - combobox "Грейд":
+    - option "Все грейды" [selected]
+    - option "Junior"
+    - option "Middle"
+    - option "Senior"
+    - option "Lead"
+  - generic: Разрыв в навыке
+  - combobox "Разрыв в навыке":
+    - option "Любой навык" [selected]
+    - option "A/B Testing"
+    - option "API Design"
+    - option "API Testing"
+    - option "Account Management"
+    - option "Adaptability"
+    - option "Agile Practices"
+    - option "Application Security"
+    - option "BI Tools"
+    - option "CI/CD"
+    - option "CRM Systems"
+    - option "Cloud Platforms"
+    - option "Communication"
+    - option "Compensation & Benefits"
+    - option "Conflict Resolution"
+    - option "Containers & Orchestration"
+    - option "Critical Thinking"
+    - option "Customer Service"
+    - option "Data Modeling"
+    - option "Data Visualization"
+    - option "Emotional Intelligence"
+    - option "Employee Relations"
+    - option "Feedback"
+    - option "HR Analytics"
+    - option "HTML & CSS"
+    - option "Java"
+    - option "JavaScript"
+    - option "Labor Law"
+    - option "Leadership"
+    - option "Learning Program Design"
+    - option "Load Testing"
+    - option "Machine Learning Fundamentals"
+    - option "Mentoring"
+    - option "Negotiation"
+    - option "Observability"
+    - option "Problem Solving"
+    - option "Product Analytics"
+    - option "Product Discovery"
+    - option "Product Knowledge"
+    - option "Project Management"
+    - option "Prospecting"
+    - option "Public Speaking"
+    - option "Python"
+    - option "React"
+    - option "Requirements Writing"
+    - option "Roadmapping & Prioritization"
+    - option "SQL"
+    - option "Stakeholder Management"
+    - option "Statistics"
+    - option "System Design"
+    - option "Talent Acquisition"
+    - option "Teamwork"
+    - option "Technical Troubleshooting"
+    - option "Test Automation"
+    - option "Test Design"
+    - option "Time Management"
+    - option "TypeScript"
+    - option "UX Research"
+    - option "Web Accessibility"
+    - option "Web Performance"
+    - option "Written Communication"
+  - generic: Сотрудник или роль
+  - searchbox "Сотрудник или роль": E0028
+  - checkbox "Нужна поддержка"
+  - text: Нужна поддержка
+  - checkbox "Без рекомендованного шага"
+  - text: Без рекомендованного шага
+  - button "Применить фильтры"
+  - link "Сбросить":
+    - /url: /hr/
+  - generic: Срез на 01.10.2026
+  - article:
+    - generic: В выбранной группе
+    - strong: 1сотрудников
+    - paragraph: Профили из загруженного набора
+  - article:
+    - generic: Среднее покрытие цели
+    - strong: 74% навыков
+    - paragraph: Среди сотрудников с целевым профилем
+  - article:
+    - generic: Повод для разговора
+    - strong: 0сотрудников
+    - paragraph: Сигнал поддержки, не оценка человека
+  - generic: ПРИОРИТЕТЫ ОБУЧЕНИЯ
+  - heading "Где команде нужна поддержка" [level=2]
+  - paragraph: Число сотрудников с разрывом относительно их карьерной цели.
+  - link "System Design ↗":
+    - /url: "?department=&grade=&skill=SK_SYSTEM_DESIGN&q=E0028"
+  - generic: 1 чел.
+  - generic: Критичен для 1
+  - link "Application Security ↗":
+    - /url: "?department=&grade=&skill=SK_APP_SECURITY&q=E0028"
+  - generic: 1 чел.
+  - generic: Критичен для 0
+  - link "Cloud Platforms ↗":
+    - /url: "?department=&grade=&skill=SK_CLOUD&q=E0028"
+  - generic: 1 чел.
+  - generic: Критичен для 0
+  - link "Containers & Orchestration ↗":
+    - /url: "?department=&grade=&skill=SK_CONTAINERS&q=E0028"
+  - generic: 1 чел.
+  - generic: Критичен для 0
+  - link "Leadership ↗":
+    - /url: "?department=&grade=&skill=SK_LEADERSHIP&q=E0028"
+  - generic: 1 чел.
+  - generic: Критичен для 0
+  - link "Mentoring ↗":
+    - /url: "?department=&grade=&skill=SK_MENTORING&q=E0028"
+  - generic: 1 чел.
+  - generic: Критичен для 0
+  - link "Observability ↗":
+    - /url: "?department=&grade=&skill=SK_OBSERVABILITY&q=E0028"
+  - generic: 1 чел.
+  - generic: Критичен для 0
+  - link "Problem Solving ↗":
+    - /url: "?department=&grade=&skill=SK_PROBLEM_SOLVING&q=E0028"
+  - generic: 1 чел.
+  - generic: Критичен для 0
+  - link "Python ↗":
+    - /url: "?department=&grade=&skill=SK_PYTHON&q=E0028"
+  - generic: 1 чел.
+  - generic: Критичен для 0
+  - link "SQL ↗":
+    - /url: "?department=&grade=&skill=SK_SQL&q=E0028"
+  - generic: 1 чел.
+  - generic: Критичен для 0
+  - generic: ИНДИВИДУАЛЬНАЯ ПОДДЕРЖКА
+  - heading "Профили сотрудников" [level=2]
+  - generic: 1 в выборке
+  - table:
+    - rowgroup:
+      - row "Сотрудник Цель Покрытие За 90 дней Следующий шаг Поддержка":
+        - columnheader "Сотрудник"
+        - columnheader "Цель"
+        - columnheader "Покрытие"
+        - columnheader "За 90 дней"
+        - columnheader "Следующий шаг"
+        - columnheader "Поддержка"
+        - columnheader
+    - rowgroup:
+      - 'row "Akmaral Ismailova E0028 · Backend Engineer · Middle Backend Engineer Senior 74% Критичных разрывов: 1 4 завершено 0 пропусков / отказов / прерываний Есть подходящий шаг Есть участие Профиль Akmaral Ismailova"':
+        - cell "Akmaral Ismailova E0028 · Backend Engineer · Middle":
+          - strong: Akmaral Ismailova
+          - generic: E0028 · Backend Engineer · Middle
+        - cell "Backend Engineer Senior":
+          - text: Backend Engineer
+          - generic: Senior
+        - 'cell "74% Критичных разрывов: 1"':
+          - strong: 74%
+          - generic: "Критичных разрывов: 1"
+        - cell "4 завершено 0 пропусков / отказов / прерываний":
+          - text: 4 завершено
+          - generic: 0 пропусков / отказов / прерываний
+        - cell "Есть подходящий шаг":
+          - generic: Есть подходящий шаг
+        - cell "Есть участие":
+          - generic: Есть участие
+        - cell "Профиль Akmaral Ismailova":
+          - link "Профиль Akmaral Ismailova":
+            - /url: /people/E0028/
+            - text: ↗
+  - paragraph:
+    - text: "Без рекомендованного шага в выбранной группе:"
+    - strong: "0"
+    - text: . Наличие шага рассчитано по тем же ограничениям каталога, цели и плана, что в профиле сотрудника.
+  - paragraph: "Сигнал: за 90 дней нет завершённых добровольных активностей или есть ≥2 пропуска, отказа или прерывания. Причины неизвестны; это повод предложить помощь. Список отсортирован по ID, а не результативности."
+  - region "Активности выбранной группы":
+    - generic: УЧАСТИЕ ПО МЕРОПРИЯТИЯМ
+    - heading "Активности выбранной группы" [level=2]
+    - paragraph: История за последние 90 дней на дату среза. Применены те же фильтры сотрудников.
+    - table:
+      - rowgroup:
+        - row "Мероприятие Участники Записи Завершено В процессе Прервано Пропуск Отказ Просрочено":
+          - columnheader "Мероприятие"
+          - columnheader "Участники"
+          - columnheader "Записи"
+          - columnheader "Завершено"
+          - columnheader "В процессе"
+          - columnheader "Прервано"
+          - columnheader "Пропуск"
+          - columnheader "Отказ"
+          - columnheader "Просрочено"
+      - rowgroup:
+        - row "Designing High-Load Systems EV_006 · Добровольная 1 1 1 0 0 0 0 0":
+          - cell "Designing High-Load Systems EV_006 · Добровольная":
+            - strong: Designing High-Load Systems
+            - generic: EV_006 · Добровольная
+          - cell "1"
+          - cell "1"
+          - cell "1"
+          - cell "0"
+          - cell "0"
+          - cell "0"
+          - cell "0"
+          - cell "0"
+        - row "Cloud Certification Prep EV_009 · Добровольная 1 1 1 0 0 0 0 0":
+          - cell "Cloud Certification Prep EV_009 · Добровольная":
+            - strong: Cloud Certification Prep
+            - generic: EV_009 · Добровольная
+          - cell "1"
+          - cell "1"
+          - cell "1"
+          - cell "0"
+          - cell "0"
+          - cell "0"
+          - cell "0"
+          - cell "0"
+        - row "API & Performance Testing Workshop EV_019 · Добровольная 1 1 1 0 0 0 0 0":
+          - cell "API & Performance Testing Workshop EV_019 · Добровольная":
+            - strong: API & Performance Testing Workshop
+            - generic: EV_019 · Добровольная
+          - cell "1"
+          - cell "1"
+          - cell "1"
+          - cell "0"
+          - cell "0"
+          - cell "0"
+          - cell "0"
+          - cell "0"
+        - row "Time & Priority Management EV_039 · Добровольная 1 1 1 0 0 0 0 0":
+          - cell "Time & Priority Management EV_039 · Добровольная":
+            - strong: Time & Priority Management
+            - generic: EV_039 · Добровольная
+          - cell "1"
+          - cell "1"
+          - cell "1"
+          - cell "0"
+          - cell "0"
+          - cell "0"
+          - cell "0"
+          - cell "0"
+    - paragraph: Участники — уникальные сотрудники внутри мероприятия. Статусы считаются по записям истории; повторные сессии клуба могут относиться к одному человеку. Обязательные активности показаны отдельно по типу и не дают игровых наград.
+- contentinfo:
+  - text: Career Quest
+  - generic: HackAlem AI · Meta Juniors · Halyk Bank case

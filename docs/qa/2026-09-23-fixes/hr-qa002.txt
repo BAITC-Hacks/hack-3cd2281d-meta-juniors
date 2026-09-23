@@ -1,0 +1,206 @@
+- complementary:
+  - link "cq ↗ Career Quest РАСТИ ОСОЗНАННО":
+    - /url: /
+    - text: cq
+    - generic: ↗
+    - text: Career Quest
+    - generic: РАСТИ ОСОЗНАННО
+  - generic: РАБОЧЕЕ ПРОСТРАНСТВО
+  - navigation "Главное меню":
+    - link "Обзор команды":
+      - /url: /hr/
+      - text: Обзор команды
+    - link "Загрузка данных":
+      - /url: /hr/import/
+      - text: Загрузка данных
+  - generic: ↗
+  - strong:
+    - text: Маленькие шаги.
+    - text: Заметный рост.
+  - paragraph: Твой путь развития начинается с понятного следующего шага.
+  - generic: HR
+  - strong: HR-пространство
+  - text: hr
+  - button "Выйти": ↪
+- banner:
+  - text: Рабочее пространство /
+  - strong: Команда
+  - generic: Демо · синтетические данные
+- main:
+  - generic: HR-ПРОСТРАНСТВО
+  - heading "Развитие команды." [level=1]
+  - paragraph: Компетенции, которым нужна поддержка. Люди, с которыми стоит поговорить.
+  - link "Загрузить данные":
+    - /url: /hr/import/
+    - text: Загрузить данные
+  - generic: Подразделение
+  - combobox "Подразделение":
+    - option "Все подразделения" [selected]
+    - option "Backend Development"
+    - option "Customer Support"
+    - option "Data & Analytics"
+    - option "Frontend Development"
+    - option "Human Resources"
+    - option "Product Management"
+    - option "Quality Assurance"
+    - option "Sales"
+  - generic: Грейд
+  - combobox "Грейд":
+    - option "Все грейды" [selected]
+    - option "Junior"
+    - option "Middle"
+    - option "Senior"
+    - option "Lead"
+  - generic: Разрыв в навыке
+  - combobox "Разрыв в навыке":
+    - option "Любой навык" [selected]
+    - option "A/B Testing"
+    - option "API Design"
+    - option "API Testing"
+    - option "Account Management"
+    - option "Adaptability"
+    - option "Agile Practices"
+    - option "Application Security"
+    - option "BI Tools"
+    - option "CI/CD"
+    - option "CRM Systems"
+    - option "Cloud Platforms"
+    - option "Communication"
+    - option "Compensation & Benefits"
+    - option "Conflict Resolution"
+    - option "Containers & Orchestration"
+    - option "Critical Thinking"
+    - option "Customer Service"
+    - option "Data Modeling"
+    - option "Data Visualization"
+    - option "Emotional Intelligence"
+    - option "Employee Relations"
+    - option "Feedback"
+    - option "HR Analytics"
+    - option "HTML & CSS"
+    - option "Java"
+    - option "JavaScript"
+    - option "Labor Law"
+    - option "Leadership"
+    - option "Learning Program Design"
+    - option "Load Testing"
+    - option "Machine Learning Fundamentals"
+    - option "Mentoring"
+    - option "Negotiation"
+    - option "Observability"
+    - option "Problem Solving"
+    - option "Product Analytics"
+    - option "Product Discovery"
+    - option "Product Knowledge"
+    - option "Project Management"
+    - option "Prospecting"
+    - option "Public Speaking"
+    - option "Python"
+    - option "React"
+    - option "Requirements Writing"
+    - option "Roadmapping & Prioritization"
+    - option "SQL"
+    - option "Stakeholder Management"
+    - option "Statistics"
+    - option "System Design"
+    - option "Talent Acquisition"
+    - option "Teamwork"
+    - option "Technical Troubleshooting"
+    - option "Test Automation"
+    - option "Test Design"
+    - option "Time Management"
+    - option "TypeScript"
+    - option "UX Research"
+    - option "Web Accessibility"
+    - option "Web Performance"
+    - option "Written Communication"
+  - generic: Сотрудник или роль
+  - searchbox "Сотрудник или роль": QA002
+  - checkbox "Нужна поддержка"
+  - text: Нужна поддержка
+  - checkbox "Без рекомендованного шага" [checked]
+  - text: Без рекомендованного шага
+  - button "Применить фильтры"
+  - link "Сбросить":
+    - /url: /hr/
+  - generic: Срез на 01.10.2026
+  - article:
+    - generic: В выбранной группе
+    - strong: 1сотрудников
+    - paragraph: Профили из загруженного набора
+  - article:
+    - generic: Среднее покрытие цели
+    - strong: 100% навыков
+    - paragraph: Среди сотрудников с целевым профилем
+  - article:
+    - generic: Повод для разговора
+    - strong: 1сотрудников
+    - paragraph: Сигнал поддержки, не оценка человека
+  - generic: ПРИОРИТЕТЫ ОБУЧЕНИЯ
+  - heading "Где команде нужна поддержка" [level=2]
+  - paragraph: Число сотрудников с разрывом относительно их карьерной цели.
+  - paragraph: Нет разрывов для выбранной группы.
+  - generic: ИНДИВИДУАЛЬНАЯ ПОДДЕРЖКА
+  - heading "Профили сотрудников" [level=2]
+  - generic: 1 в выборке
+  - table:
+    - rowgroup:
+      - row "Сотрудник Цель Покрытие За 90 дней Следующий шаг Поддержка":
+        - columnheader "Сотрудник"
+        - columnheader "Цель"
+        - columnheader "Покрытие"
+        - columnheader "За 90 дней"
+        - columnheader "Следующий шаг"
+        - columnheader "Поддержка"
+        - columnheader
+    - rowgroup:
+      - 'row "QA Synthetic No Gaps QA002 · Backend Engineer · Middle Backend Engineer Senior 100% Критичных разрывов: 0 0 завершено 0 пропусков / отказов / прерываний Без рекомендованного шага Требования цели по навыкам выполнены Обсудить развитие Профиль QA Synthetic No Gaps"':
+        - cell "QA Synthetic No Gaps QA002 · Backend Engineer · Middle":
+          - strong: QA Synthetic No Gaps
+          - generic: QA002 · Backend Engineer · Middle
+        - cell "Backend Engineer Senior":
+          - text: Backend Engineer
+          - generic: Senior
+        - 'cell "100% Критичных разрывов: 0"':
+          - strong: 100%
+          - generic: "Критичных разрывов: 0"
+        - cell "0 завершено 0 пропусков / отказов / прерываний":
+          - text: 0 завершено
+          - generic: 0 пропусков / отказов / прерываний
+        - cell "Без рекомендованного шага Требования цели по навыкам выполнены":
+          - generic: Без рекомендованного шага
+          - generic: Требования цели по навыкам выполнены
+        - cell "Обсудить развитие":
+          - generic: Обсудить развитие
+        - cell "Профиль QA Synthetic No Gaps":
+          - link "Профиль QA Synthetic No Gaps":
+            - /url: /people/QA002/
+            - text: ↗
+  - paragraph:
+    - text: "Без рекомендованного шага в выбранной группе:"
+    - strong: "1"
+    - text: . Наличие шага рассчитано по тем же ограничениям каталога, цели и плана, что в профиле сотрудника.
+  - paragraph: "Сигнал: за 90 дней нет завершённых добровольных активностей или есть ≥2 пропуска, отказа или прерывания. Причины неизвестны; это повод предложить помощь. Список отсортирован по ID, а не результативности."
+  - region "Активности выбранной группы":
+    - generic: УЧАСТИЕ ПО МЕРОПРИЯТИЯМ
+    - heading "Активности выбранной группы" [level=2]
+    - paragraph: История за последние 90 дней на дату среза. Применены те же фильтры сотрудников.
+    - table:
+      - rowgroup:
+        - row "Мероприятие Участники Записи Завершено В процессе Прервано Пропуск Отказ Просрочено":
+          - columnheader "Мероприятие"
+          - columnheader "Участники"
+          - columnheader "Записи"
+          - columnheader "Завершено"
+          - columnheader "В процессе"
+          - columnheader "Прервано"
+          - columnheader "Пропуск"
+          - columnheader "Отказ"
+          - columnheader "Просрочено"
+      - rowgroup:
+        - row "Для выбранной группы нет записей участия за 90 дней.":
+          - cell "Для выбранной группы нет записей участия за 90 дней."
+    - paragraph: Участники — уникальные сотрудники внутри мероприятия. Статусы считаются по записям истории; повторные сессии клуба могут относиться к одному человеку. Обязательные активности показаны отдельно по типу и не дают игровых наград.
+- contentinfo:
+  - text: Career Quest
+  - generic: HackAlem AI · Meta Juniors · Halyk Bank case

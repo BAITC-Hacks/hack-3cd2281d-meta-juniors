@@ -1,0 +1,1307 @@
+- complementary:
+  - link "cq ↗ Career Quest РАСТИ ОСОЗНАННО":
+    - /url: /
+    - text: cq
+    - generic: ↗
+    - text: Career Quest
+    - generic: РАСТИ ОСОЗНАННО
+  - generic: РАБОЧЕЕ ПРОСТРАНСТВО
+  - navigation "Главное меню":
+    - link "Обзор команды":
+      - /url: /hr/
+      - text: Обзор команды
+    - link "Загрузка данных":
+      - /url: /hr/import/
+      - text: Загрузка данных
+  - generic: ↗
+  - strong:
+    - text: Маленькие шаги.
+    - text: Заметный рост.
+  - paragraph: Твой путь развития начинается с понятного следующего шага.
+  - generic: HR
+  - strong: HR-пространство
+  - text: hr
+  - button "Выйти": ↪
+- banner:
+  - text: Рабочее пространство /
+  - strong: Команда
+  - generic: Демо · синтетические данные
+- main:
+  - generic: HR-ПРОСТРАНСТВО
+  - heading "Развитие команды." [level=1]
+  - paragraph: Компетенции, которым нужна поддержка. Люди, с которыми стоит поговорить.
+  - link "Загрузить данные":
+    - /url: /hr/import/
+    - text: Загрузить данные
+  - generic: Подразделение
+  - combobox "Подразделение":
+    - option "Все подразделения" [selected]
+    - option "Backend Development"
+    - option "Customer Support"
+    - option "Data & Analytics"
+    - option "Frontend Development"
+    - option "Human Resources"
+    - option "Product Management"
+    - option "Quality Assurance"
+    - option "Sales"
+  - generic: Грейд
+  - combobox "Грейд":
+    - option "Все грейды" [selected]
+    - option "Junior"
+    - option "Middle"
+    - option "Senior"
+    - option "Lead"
+  - generic: Разрыв в навыке
+  - combobox "Разрыв в навыке":
+    - option "Любой навык" [selected]
+    - option "A/B Testing"
+    - option "API Design"
+    - option "API Testing"
+    - option "Account Management"
+    - option "Adaptability"
+    - option "Agile Practices"
+    - option "Application Security"
+    - option "BI Tools"
+    - option "CI/CD"
+    - option "CRM Systems"
+    - option "Cloud Platforms"
+    - option "Communication"
+    - option "Compensation & Benefits"
+    - option "Conflict Resolution"
+    - option "Containers & Orchestration"
+    - option "Critical Thinking"
+    - option "Customer Service"
+    - option "Data Modeling"
+    - option "Data Visualization"
+    - option "Emotional Intelligence"
+    - option "Employee Relations"
+    - option "Feedback"
+    - option "HR Analytics"
+    - option "HTML & CSS"
+    - option "Java"
+    - option "JavaScript"
+    - option "Labor Law"
+    - option "Leadership"
+    - option "Learning Program Design"
+    - option "Load Testing"
+    - option "Machine Learning Fundamentals"
+    - option "Mentoring"
+    - option "Negotiation"
+    - option "Observability"
+    - option "Problem Solving"
+    - option "Product Analytics"
+    - option "Product Discovery"
+    - option "Product Knowledge"
+    - option "Project Management"
+    - option "Prospecting"
+    - option "Public Speaking"
+    - option "Python"
+    - option "React"
+    - option "Requirements Writing"
+    - option "Roadmapping & Prioritization"
+    - option "SQL"
+    - option "Stakeholder Management"
+    - option "Statistics"
+    - option "System Design"
+    - option "Talent Acquisition"
+    - option "Teamwork"
+    - option "Technical Troubleshooting"
+    - option "Test Automation"
+    - option "Test Design"
+    - option "Time Management"
+    - option "TypeScript"
+    - option "UX Research"
+    - option "Web Accessibility"
+    - option "Web Performance"
+    - option "Written Communication"
+  - generic: Сотрудник или роль
+  - searchbox "Сотрудник или роль"
+  - checkbox "Нужна поддержка"
+  - text: Нужна поддержка
+  - checkbox "Без рекомендованного шага" [checked]
+  - text: Без рекомендованного шага
+  - button "Применить фильтры"
+  - link "Сбросить":
+    - /url: /hr/
+  - generic: Срез на 01.10.2026
+  - article:
+    - generic: В выбранной группе
+    - strong: 41сотрудников
+    - paragraph: Профили из загруженного набора
+  - article:
+    - generic: Среднее покрытие цели
+    - strong: 58% навыков
+    - paragraph: Среди сотрудников с целевым профилем
+  - article:
+    - generic: Повод для разговора
+    - strong: 21сотрудников
+    - paragraph: Сигнал поддержки, не оценка человека
+  - generic: ПРИОРИТЕТЫ ОБУЧЕНИЯ
+  - heading "Где команде нужна поддержка" [level=2]
+  - paragraph: Число сотрудников с разрывом относительно их карьерной цели.
+  - link "Mentoring ↗":
+    - /url: "?department=&grade=&skill=SK_MENTORING&q=&no_step=1"
+  - generic: 18 чел.
+  - generic: Критичен для 7
+  - link "Leadership ↗":
+    - /url: "?department=&grade=&skill=SK_LEADERSHIP&q=&no_step=1"
+  - generic: 12 чел.
+  - generic: Критичен для 7
+  - link "Technical Troubleshooting ↗":
+    - /url: "?department=&grade=&skill=SK_TROUBLESHOOTING&q=&no_step=1"
+  - generic: 7 чел.
+  - generic: Критичен для 5
+  - link "Conflict Resolution ↗":
+    - /url: "?department=&grade=&skill=SK_CONFLICT_RESOLUTION&q=&no_step=1"
+  - generic: 7 чел.
+  - generic: Критичен для 4
+  - link "Product Discovery ↗":
+    - /url: "?department=&grade=&skill=SK_PRODUCT_DISCOVERY&q=&no_step=1"
+  - generic: 4 чел.
+  - generic: Критичен для 4
+  - link "Load Testing ↗":
+    - /url: "?department=&grade=&skill=SK_LOAD_TESTING&q=&no_step=1"
+  - generic: 8 чел.
+  - generic: Критичен для 3
+  - link "Test Automation ↗":
+    - /url: "?department=&grade=&skill=SK_TEST_AUTOMATION&q=&no_step=1"
+  - generic: 7 чел.
+  - generic: Критичен для 3
+  - link "API Testing ↗":
+    - /url: "?department=&grade=&skill=SK_API_TESTING&q=&no_step=1"
+  - generic: 6 чел.
+  - generic: Критичен для 3
+  - link "Feedback ↗":
+    - /url: "?department=&grade=&skill=SK_FEEDBACK&q=&no_step=1"
+  - generic: 5 чел.
+  - generic: Критичен для 2
+  - link "Negotiation ↗":
+    - /url: "?department=&grade=&skill=SK_NEGOTIATION&q=&no_step=1"
+  - generic: 3 чел.
+  - generic: Критичен для 2
+  - generic: ИНДИВИДУАЛЬНАЯ ПОДДЕРЖКА
+  - heading "Профили сотрудников" [level=2]
+  - generic: 41 в выборке
+  - table:
+    - rowgroup:
+      - row "Сотрудник Цель Покрытие За 90 дней Следующий шаг Поддержка":
+        - columnheader "Сотрудник"
+        - columnheader "Цель"
+        - columnheader "Покрытие"
+        - columnheader "За 90 дней"
+        - columnheader "Следующий шаг"
+        - columnheader "Поддержка"
+        - columnheader
+    - rowgroup:
+      - 'row "Arman Sadykov E0006 · Frontend Engineer · Lead Цель не выбрана 0% Критичных разрывов: 0 0 завершено 0 пропусков / отказов / прерываний Без рекомендованного шага Нужно выбрать карьерную цель Обсудить развитие Профиль Arman Sadykov"':
+        - cell "Arman Sadykov E0006 · Frontend Engineer · Lead":
+          - strong: Arman Sadykov
+          - generic: E0006 · Frontend Engineer · Lead
+        - cell "Цель не выбрана"
+        - 'cell "0% Критичных разрывов: 0"':
+          - strong: 0%
+          - generic: "Критичных разрывов: 0"
+        - cell "0 завершено 0 пропусков / отказов / прерываний":
+          - text: 0 завершено
+          - generic: 0 пропусков / отказов / прерываний
+        - cell "Без рекомендованного шага Нужно выбрать карьерную цель":
+          - generic: Без рекомендованного шага
+          - generic: Нужно выбрать карьерную цель
+        - cell "Обсудить развитие":
+          - generic: Обсудить развитие
+        - cell "Профиль Arman Sadykov":
+          - link "Профиль Arman Sadykov":
+            - /url: /people/E0006/
+            - text: ↗
+      - 'row "Aruzhan Seitkali E0010 · Customer Support Specialist · Middle QA Engineer Middle 38% Критичных разрывов: 1 0 завершено 0 пропусков / отказов / прерываний Без рекомендованного шага Нет доступной активности для текущих разрывов Обсудить развитие Профиль Aruzhan Seitkali"':
+        - cell "Aruzhan Seitkali E0010 · Customer Support Specialist · Middle":
+          - strong: Aruzhan Seitkali
+          - generic: E0010 · Customer Support Specialist · Middle
+        - cell "QA Engineer Middle":
+          - text: QA Engineer
+          - generic: Middle
+        - 'cell "38% Критичных разрывов: 1"':
+          - strong: 38%
+          - generic: "Критичных разрывов: 1"
+        - cell "0 завершено 0 пропусков / отказов / прерываний":
+          - text: 0 завершено
+          - generic: 0 пропусков / отказов / прерываний
+        - cell "Без рекомендованного шага Нет доступной активности для текущих разрывов":
+          - generic: Без рекомендованного шага
+          - generic: Нет доступной активности для текущих разрывов
+        - cell "Обсудить развитие":
+          - generic: Обсудить развитие
+        - cell "Профиль Aruzhan Seitkali":
+          - link "Профиль Aruzhan Seitkali":
+            - /url: /people/E0010/
+            - text: ↗
+      - 'row "Yerzhan Seitkali E0018 · Customer Support Specialist · Junior Customer Support Specialist Middle 63% Критичных разрывов: 2 0 завершено 0 пропусков / отказов / прерываний Без рекомендованного шага Нет доступной активности для текущих разрывов Обсудить развитие Профиль Yerzhan Seitkali"':
+        - cell "Yerzhan Seitkali E0018 · Customer Support Specialist · Junior":
+          - strong: Yerzhan Seitkali
+          - generic: E0018 · Customer Support Specialist · Junior
+        - cell "Customer Support Specialist Middle":
+          - text: Customer Support Specialist
+          - generic: Middle
+        - 'cell "63% Критичных разрывов: 2"':
+          - strong: 63%
+          - generic: "Критичных разрывов: 2"
+        - cell "0 завершено 0 пропусков / отказов / прерываний":
+          - text: 0 завершено
+          - generic: 0 пропусков / отказов / прерываний
+        - cell "Без рекомендованного шага Нет доступной активности для текущих разрывов":
+          - generic: Без рекомендованного шага
+          - generic: Нет доступной активности для текущих разрывов
+        - cell "Обсудить развитие":
+          - generic: Обсудить развитие
+        - cell "Профиль Yerzhan Seitkali":
+          - link "Профиль Yerzhan Seitkali":
+            - /url: /people/E0018/
+            - text: ↗
+      - 'row "Botagoz Zhumabekova E0021 · Customer Support Specialist · Middle Customer Support Specialist Senior 69% Критичных разрывов: 2 0 завершено 0 пропусков / отказов / прерываний Без рекомендованного шага Нет доступной активности для текущих разрывов Обсудить развитие Профиль Botagoz Zhumabekova"':
+        - cell "Botagoz Zhumabekova E0021 · Customer Support Specialist · Middle":
+          - strong: Botagoz Zhumabekova
+          - generic: E0021 · Customer Support Specialist · Middle
+        - cell "Customer Support Specialist Senior":
+          - text: Customer Support Specialist
+          - generic: Senior
+        - 'cell "69% Критичных разрывов: 2"':
+          - strong: 69%
+          - generic: "Критичных разрывов: 2"
+        - cell "0 завершено 0 пропусков / отказов / прерываний":
+          - text: 0 завершено
+          - generic: 0 пропусков / отказов / прерываний
+        - cell "Без рекомендованного шага Нет доступной активности для текущих разрывов":
+          - generic: Без рекомендованного шага
+          - generic: Нет доступной активности для текущих разрывов
+        - cell "Обсудить развитие":
+          - generic: Обсудить развитие
+        - cell "Профиль Botagoz Zhumabekova":
+          - link "Профиль Botagoz Zhumabekova":
+            - /url: /people/E0021/
+            - text: ↗
+      - 'row "Zhanna Baimukhanova E0023 · Backend Engineer · Junior Backend Engineer Middle 48% Критичных разрывов: 2 0 завершено 0 пропусков / отказов / прерываний Без рекомендованного шага Нет доступной активности для текущих разрывов Обсудить развитие Профиль Zhanna Baimukhanova"':
+        - cell "Zhanna Baimukhanova E0023 · Backend Engineer · Junior":
+          - strong: Zhanna Baimukhanova
+          - generic: E0023 · Backend Engineer · Junior
+        - cell "Backend Engineer Middle":
+          - text: Backend Engineer
+          - generic: Middle
+        - 'cell "48% Критичных разрывов: 2"':
+          - strong: 48%
+          - generic: "Критичных разрывов: 2"
+        - cell "0 завершено 0 пропусков / отказов / прерываний":
+          - text: 0 завершено
+          - generic: 0 пропусков / отказов / прерываний
+        - cell "Без рекомендованного шага Нет доступной активности для текущих разрывов":
+          - generic: Без рекомендованного шага
+          - generic: Нет доступной активности для текущих разрывов
+        - cell "Обсудить развитие":
+          - generic: Обсудить развитие
+        - cell "Профиль Zhanna Baimukhanova":
+          - link "Профиль Zhanna Baimukhanova":
+            - /url: /people/E0023/
+            - text: ↗
+      - 'row "Rustem Bekov E0029 · Customer Support Specialist · Senior Customer Support Specialist Lead 74% Критичных разрывов: 2 1 завершено 1 пропусков / отказов / прерываний Без рекомендованного шага Нет доступной активности для текущих разрывов Есть участие Профиль Rustem Bekov"':
+        - cell "Rustem Bekov E0029 · Customer Support Specialist · Senior":
+          - strong: Rustem Bekov
+          - generic: E0029 · Customer Support Specialist · Senior
+        - cell "Customer Support Specialist Lead":
+          - text: Customer Support Specialist
+          - generic: Lead
+        - 'cell "74% Критичных разрывов: 2"':
+          - strong: 74%
+          - generic: "Критичных разрывов: 2"
+        - cell "1 завершено 1 пропусков / отказов / прерываний":
+          - text: 1 завершено
+          - generic: 1 пропусков / отказов / прерываний
+        - cell "Без рекомендованного шага Нет доступной активности для текущих разрывов":
+          - generic: Без рекомендованного шага
+          - generic: Нет доступной активности для текущих разрывов
+        - cell "Есть участие":
+          - generic: Есть участие
+        - cell "Профиль Rustem Bekov":
+          - link "Профиль Rustem Bekov":
+            - /url: /people/E0029/
+            - text: ↗
+      - 'row "Zarina Omarova E0035 · Customer Support Specialist · Lead Цель не выбрана 0% Критичных разрывов: 0 2 завершено 3 пропусков / отказов / прерываний Без рекомендованного шага Нужно выбрать карьерную цель Обсудить развитие Профиль Zarina Omarova"':
+        - cell "Zarina Omarova E0035 · Customer Support Specialist · Lead":
+          - strong: Zarina Omarova
+          - generic: E0035 · Customer Support Specialist · Lead
+        - cell "Цель не выбрана"
+        - 'cell "0% Критичных разрывов: 0"':
+          - strong: 0%
+          - generic: "Критичных разрывов: 0"
+        - cell "2 завершено 3 пропусков / отказов / прерываний":
+          - text: 2 завершено
+          - generic: 3 пропусков / отказов / прерываний
+        - cell "Без рекомендованного шага Нужно выбрать карьерную цель":
+          - generic: Без рекомендованного шага
+          - generic: Нужно выбрать карьерную цель
+        - cell "Обсудить развитие":
+          - generic: Обсудить развитие
+        - cell "Профиль Zarina Omarova":
+          - link "Профиль Zarina Omarova":
+            - /url: /people/E0035/
+            - text: ↗
+      - 'row "Moldir Seitkali E0041 · Product Manager · Senior Product Manager Lead 80% Критичных разрывов: 2 2 завершено 0 пропусков / отказов / прерываний Без рекомендованного шага Нет доступной активности для текущих разрывов Есть участие Профиль Moldir Seitkali"':
+        - cell "Moldir Seitkali E0041 · Product Manager · Senior":
+          - strong: Moldir Seitkali
+          - generic: E0041 · Product Manager · Senior
+        - cell "Product Manager Lead":
+          - text: Product Manager
+          - generic: Lead
+        - 'cell "80% Критичных разрывов: 2"':
+          - strong: 80%
+          - generic: "Критичных разрывов: 2"
+        - cell "2 завершено 0 пропусков / отказов / прерываний":
+          - text: 2 завершено
+          - generic: 0 пропусков / отказов / прерываний
+        - cell "Без рекомендованного шага Нет доступной активности для текущих разрывов":
+          - generic: Без рекомендованного шага
+          - generic: Нет доступной активности для текущих разрывов
+        - cell "Есть участие":
+          - generic: Есть участие
+        - cell "Профиль Moldir Seitkali":
+          - link "Профиль Moldir Seitkali":
+            - /url: /people/E0041/
+            - text: ↗
+      - 'row "Gulnara Zhumabekova E0044 · Frontend Engineer · Lead Product Manager Lead 33% Критичных разрывов: 1 1 завершено 0 пропусков / отказов / прерываний Без рекомендованного шага Есть шаги в личном плане; новых рекомендаций нет Есть участие Профиль Gulnara Zhumabekova"':
+        - cell "Gulnara Zhumabekova E0044 · Frontend Engineer · Lead":
+          - strong: Gulnara Zhumabekova
+          - generic: E0044 · Frontend Engineer · Lead
+        - cell "Product Manager Lead":
+          - text: Product Manager
+          - generic: Lead
+        - 'cell "33% Критичных разрывов: 1"':
+          - strong: 33%
+          - generic: "Критичных разрывов: 1"
+        - cell "1 завершено 0 пропусков / отказов / прерываний":
+          - text: 1 завершено
+          - generic: 0 пропусков / отказов / прерываний
+        - cell "Без рекомендованного шага Есть шаги в личном плане; новых рекомендаций нет":
+          - generic: Без рекомендованного шага
+          - generic: Есть шаги в личном плане; новых рекомендаций нет
+        - cell "Есть участие":
+          - generic: Есть участие
+        - cell "Профиль Gulnara Zhumabekova":
+          - link "Профиль Gulnara Zhumabekova":
+            - /url: /people/E0044/
+            - text: ↗
+      - 'row "Dauren Zhumabekov E0046 · Sales Manager · Middle Sales Manager Senior 67% Критичных разрывов: 2 0 завершено 2 пропусков / отказов / прерываний Без рекомендованного шага Нет доступной активности для текущих разрывов Обсудить развитие Профиль Dauren Zhumabekov"':
+        - cell "Dauren Zhumabekov E0046 · Sales Manager · Middle":
+          - strong: Dauren Zhumabekov
+          - generic: E0046 · Sales Manager · Middle
+        - cell "Sales Manager Senior":
+          - text: Sales Manager
+          - generic: Senior
+        - 'cell "67% Критичных разрывов: 2"':
+          - strong: 67%
+          - generic: "Критичных разрывов: 2"
+        - cell "0 завершено 2 пропусков / отказов / прерываний":
+          - text: 0 завершено
+          - generic: 2 пропусков / отказов / прерываний
+        - cell "Без рекомендованного шага Нет доступной активности для текущих разрывов":
+          - generic: Без рекомендованного шага
+          - generic: Нет доступной активности для текущих разрывов
+        - cell "Обсудить развитие":
+          - generic: Обсудить развитие
+        - cell "Профиль Dauren Zhumabekov":
+          - link "Профиль Dauren Zhumabekov":
+            - /url: /people/E0046/
+            - text: ↗
+      - 'row "Aigerim Abenova E0053 · QA Engineer · Junior QA Engineer Middle 42% Критичных разрывов: 1 0 завершено 2 пропусков / отказов / прерываний Без рекомендованного шага Нет доступной активности для текущих разрывов Обсудить развитие Профиль Aigerim Abenova"':
+        - cell "Aigerim Abenova E0053 · QA Engineer · Junior":
+          - strong: Aigerim Abenova
+          - generic: E0053 · QA Engineer · Junior
+        - cell "QA Engineer Middle":
+          - text: QA Engineer
+          - generic: Middle
+        - 'cell "42% Критичных разрывов: 1"':
+          - strong: 42%
+          - generic: "Критичных разрывов: 1"
+        - cell "0 завершено 2 пропусков / отказов / прерываний":
+          - text: 0 завершено
+          - generic: 2 пропусков / отказов / прерываний
+        - cell "Без рекомендованного шага Нет доступной активности для текущих разрывов":
+          - generic: Без рекомендованного шага
+          - generic: Нет доступной активности для текущих разрывов
+        - cell "Обсудить развитие":
+          - generic: Обсудить развитие
+        - cell "Профиль Aigerim Abenova":
+          - link "Профиль Aigerim Abenova":
+            - /url: /people/E0053/
+            - text: ↗
+      - 'row "Yerzhan Dzhakupov E0055 · Product Manager · Lead Data Analyst Lead 50% Критичных разрывов: 0 3 завершено 0 пропусков / отказов / прерываний Без рекомендованного шага Нет доступной активности для текущих разрывов Есть участие Профиль Yerzhan Dzhakupov"':
+        - cell "Yerzhan Dzhakupov E0055 · Product Manager · Lead":
+          - strong: Yerzhan Dzhakupov
+          - generic: E0055 · Product Manager · Lead
+        - cell "Data Analyst Lead":
+          - text: Data Analyst
+          - generic: Lead
+        - 'cell "50% Критичных разрывов: 0"':
+          - strong: 50%
+          - generic: "Критичных разрывов: 0"
+        - cell "3 завершено 0 пропусков / отказов / прерываний":
+          - text: 3 завершено
+          - generic: 0 пропусков / отказов / прерываний
+        - cell "Без рекомендованного шага Нет доступной активности для текущих разрывов":
+          - generic: Без рекомендованного шага
+          - generic: Нет доступной активности для текущих разрывов
+        - cell "Есть участие":
+          - generic: Есть участие
+        - cell "Профиль Yerzhan Dzhakupov":
+          - link "Профиль Yerzhan Dzhakupov":
+            - /url: /people/E0055/
+            - text: ↗
+      - 'row "Maxim Volkov E0057 · Sales Manager · Senior Sales Manager Lead 79% Критичных разрывов: 2 1 завершено 0 пропусков / отказов / прерываний Без рекомендованного шага Нет доступной активности для текущих разрывов Есть участие Профиль Maxim Volkov"':
+        - cell "Maxim Volkov E0057 · Sales Manager · Senior":
+          - strong: Maxim Volkov
+          - generic: E0057 · Sales Manager · Senior
+        - cell "Sales Manager Lead":
+          - text: Sales Manager
+          - generic: Lead
+        - 'cell "79% Критичных разрывов: 2"':
+          - strong: 79%
+          - generic: "Критичных разрывов: 2"
+        - cell "1 завершено 0 пропусков / отказов / прерываний":
+          - text: 1 завершено
+          - generic: 0 пропусков / отказов / прерываний
+        - cell "Без рекомендованного шага Нет доступной активности для текущих разрывов":
+          - generic: Без рекомендованного шага
+          - generic: Нет доступной активности для текущих разрывов
+        - cell "Есть участие":
+          - generic: Есть участие
+        - cell "Профиль Maxim Volkov":
+          - link "Профиль Maxim Volkov":
+            - /url: /people/E0057/
+            - text: ↗
+      - 'row "Olga Petrova E0060 · Product Manager · Lead Цель не выбрана 0% Критичных разрывов: 0 1 завершено 0 пропусков / отказов / прерываний Без рекомендованного шага Нужно выбрать карьерную цель Есть участие Профиль Olga Petrova"':
+        - cell "Olga Petrova E0060 · Product Manager · Lead":
+          - strong: Olga Petrova
+          - generic: E0060 · Product Manager · Lead
+        - cell "Цель не выбрана"
+        - 'cell "0% Критичных разрывов: 0"':
+          - strong: 0%
+          - generic: "Критичных разрывов: 0"
+        - cell "1 завершено 0 пропусков / отказов / прерываний":
+          - text: 1 завершено
+          - generic: 0 пропусков / отказов / прерываний
+        - cell "Без рекомендованного шага Нужно выбрать карьерную цель":
+          - generic: Без рекомендованного шага
+          - generic: Нужно выбрать карьерную цель
+        - cell "Есть участие":
+          - generic: Есть участие
+        - cell "Профиль Olga Petrova":
+          - link "Профиль Olga Petrova":
+            - /url: /people/E0060/
+            - text: ↗
+      - 'row "Alibek Kaliyev E0061 · Data Analyst · Lead Цель не выбрана 0% Критичных разрывов: 0 0 завершено 0 пропусков / отказов / прерываний Без рекомендованного шага Нужно выбрать карьерную цель Обсудить развитие Профиль Alibek Kaliyev"':
+        - cell "Alibek Kaliyev E0061 · Data Analyst · Lead":
+          - strong: Alibek Kaliyev
+          - generic: E0061 · Data Analyst · Lead
+        - cell "Цель не выбрана"
+        - 'cell "0% Критичных разрывов: 0"':
+          - strong: 0%
+          - generic: "Критичных разрывов: 0"
+        - cell "0 завершено 0 пропусков / отказов / прерываний":
+          - text: 0 завершено
+          - generic: 0 пропусков / отказов / прерываний
+        - cell "Без рекомендованного шага Нужно выбрать карьерную цель":
+          - generic: Без рекомендованного шага
+          - generic: Нужно выбрать карьерную цель
+        - cell "Обсудить развитие":
+          - generic: Обсудить развитие
+        - cell "Профиль Alibek Kaliyev":
+          - link "Профиль Alibek Kaliyev":
+            - /url: /people/E0061/
+            - text: ↗
+      - 'row "Samat Baimukhanov E0063 · QA Engineer · Lead Цель не выбрана 0% Критичных разрывов: 0 0 завершено 1 пропусков / отказов / прерываний Без рекомендованного шага Нужно выбрать карьерную цель Обсудить развитие Профиль Samat Baimukhanov"':
+        - cell "Samat Baimukhanov E0063 · QA Engineer · Lead":
+          - strong: Samat Baimukhanov
+          - generic: E0063 · QA Engineer · Lead
+        - cell "Цель не выбрана"
+        - 'cell "0% Критичных разрывов: 0"':
+          - strong: 0%
+          - generic: "Критичных разрывов: 0"
+        - cell "0 завершено 1 пропусков / отказов / прерываний":
+          - text: 0 завершено
+          - generic: 1 пропусков / отказов / прерываний
+        - cell "Без рекомендованного шага Нужно выбрать карьерную цель":
+          - generic: Без рекомендованного шага
+          - generic: Нужно выбрать карьерную цель
+        - cell "Обсудить развитие":
+          - generic: Обсудить развитие
+        - cell "Профиль Samat Baimukhanov":
+          - link "Профиль Samat Baimukhanov":
+            - /url: /people/E0063/
+            - text: ↗
+      - 'row "Madi Kassymov E0065 · QA Engineer · Middle QA Engineer Senior 62% Критичных разрывов: 2 1 завершено 1 пропусков / отказов / прерываний Без рекомендованного шага Нет доступной активности для текущих разрывов Есть участие Профиль Madi Kassymov"':
+        - cell "Madi Kassymov E0065 · QA Engineer · Middle":
+          - strong: Madi Kassymov
+          - generic: E0065 · QA Engineer · Middle
+        - cell "QA Engineer Senior":
+          - text: QA Engineer
+          - generic: Senior
+        - 'cell "62% Критичных разрывов: 2"':
+          - strong: 62%
+          - generic: "Критичных разрывов: 2"
+        - cell "1 завершено 1 пропусков / отказов / прерываний":
+          - text: 1 завершено
+          - generic: 1 пропусков / отказов / прерываний
+        - cell "Без рекомендованного шага Нет доступной активности для текущих разрывов":
+          - generic: Без рекомендованного шага
+          - generic: Нет доступной активности для текущих разрывов
+        - cell "Есть участие":
+          - generic: Есть участие
+        - cell "Профиль Madi Kassymov":
+          - link "Профиль Madi Kassymov":
+            - /url: /people/E0065/
+            - text: ↗
+      - 'row "Indira Baimukhanova E0079 · Sales Manager · Junior Sales Manager Middle 67% Критичных разрывов: 2 1 завершено 0 пропусков / отказов / прерываний Без рекомендованного шага Нет доступной активности для текущих разрывов Есть участие Профиль Indira Baimukhanova"':
+        - cell "Indira Baimukhanova E0079 · Sales Manager · Junior":
+          - strong: Indira Baimukhanova
+          - generic: E0079 · Sales Manager · Junior
+        - cell "Sales Manager Middle":
+          - text: Sales Manager
+          - generic: Middle
+        - 'cell "67% Критичных разрывов: 2"':
+          - strong: 67%
+          - generic: "Критичных разрывов: 2"
+        - cell "1 завершено 0 пропусков / отказов / прерываний":
+          - text: 1 завершено
+          - generic: 0 пропусков / отказов / прерываний
+        - cell "Без рекомендованного шага Нет доступной активности для текущих разрывов":
+          - generic: Без рекомендованного шага
+          - generic: Нет доступной активности для текущих разрывов
+        - cell "Есть участие":
+          - generic: Есть участие
+        - cell "Профиль Indira Baimukhanova":
+          - link "Профиль Indira Baimukhanova":
+            - /url: /people/E0079/
+            - text: ↗
+      - 'row "Zarina Tulegenova E0085 · Data Analyst · Lead Цель не выбрана 0% Критичных разрывов: 0 0 завершено 2 пропусков / отказов / прерываний Без рекомендованного шага Нужно выбрать карьерную цель Обсудить развитие Профиль Zarina Tulegenova"':
+        - cell "Zarina Tulegenova E0085 · Data Analyst · Lead":
+          - strong: Zarina Tulegenova
+          - generic: E0085 · Data Analyst · Lead
+        - cell "Цель не выбрана"
+        - 'cell "0% Критичных разрывов: 0"':
+          - strong: 0%
+          - generic: "Критичных разрывов: 0"
+        - cell "0 завершено 2 пропусков / отказов / прерываний":
+          - text: 0 завершено
+          - generic: 2 пропусков / отказов / прерываний
+        - cell "Без рекомендованного шага Нужно выбрать карьерную цель":
+          - generic: Без рекомендованного шага
+          - generic: Нужно выбрать карьерную цель
+        - cell "Обсудить развитие":
+          - generic: Обсудить развитие
+        - cell "Профиль Zarina Tulegenova":
+          - link "Профиль Zarina Tulegenova":
+            - /url: /people/E0085/
+            - text: ↗
+      - 'row "Pavel Kozlov E0091 · QA Engineer · Senior QA Engineer Lead 69% Критичных разрывов: 1 1 завершено 0 пропусков / отказов / прерываний Без рекомендованного шага Нет доступной активности для текущих разрывов Есть участие Профиль Pavel Kozlov"':
+        - cell "Pavel Kozlov E0091 · QA Engineer · Senior":
+          - strong: Pavel Kozlov
+          - generic: E0091 · QA Engineer · Senior
+        - cell "QA Engineer Lead":
+          - text: QA Engineer
+          - generic: Lead
+        - 'cell "69% Критичных разрывов: 1"':
+          - strong: 69%
+          - generic: "Критичных разрывов: 1"
+        - cell "1 завершено 0 пропусков / отказов / прерываний":
+          - text: 1 завершено
+          - generic: 0 пропусков / отказов / прерываний
+        - cell "Без рекомендованного шага Нет доступной активности для текущих разрывов":
+          - generic: Без рекомендованного шага
+          - generic: Нет доступной активности для текущих разрывов
+        - cell "Есть участие":
+          - generic: Есть участие
+        - cell "Профиль Pavel Kozlov":
+          - link "Профиль Pavel Kozlov":
+            - /url: /people/E0091/
+            - text: ↗
+      - 'row "Aizhan Zhaksylykova E0093 · Customer Support Specialist · Middle QA Engineer Middle 38% Критичных разрывов: 1 4 завершено 0 пропусков / отказов / прерываний Без рекомендованного шага Нет доступной активности для текущих разрывов Есть участие Профиль Aizhan Zhaksylykova"':
+        - cell "Aizhan Zhaksylykova E0093 · Customer Support Specialist · Middle":
+          - strong: Aizhan Zhaksylykova
+          - generic: E0093 · Customer Support Specialist · Middle
+        - cell "QA Engineer Middle":
+          - text: QA Engineer
+          - generic: Middle
+        - 'cell "38% Критичных разрывов: 1"':
+          - strong: 38%
+          - generic: "Критичных разрывов: 1"
+        - cell "4 завершено 0 пропусков / отказов / прерываний":
+          - text: 4 завершено
+          - generic: 0 пропусков / отказов / прерываний
+        - cell "Без рекомендованного шага Нет доступной активности для текущих разрывов":
+          - generic: Без рекомендованного шага
+          - generic: Нет доступной активности для текущих разрывов
+        - cell "Есть участие":
+          - generic: Есть участие
+        - cell "Профиль Aizhan Zhaksylykova":
+          - link "Профиль Aizhan Zhaksylykova":
+            - /url: /people/E0093/
+            - text: ↗
+      - 'row "Kirill Petrov E0094 · Sales Manager · Senior Sales Manager Lead 75% Критичных разрывов: 2 0 завершено 0 пропусков / отказов / прерываний Без рекомендованного шага Нет доступной активности для текущих разрывов Обсудить развитие Профиль Kirill Petrov"':
+        - cell "Kirill Petrov E0094 · Sales Manager · Senior":
+          - strong: Kirill Petrov
+          - generic: E0094 · Sales Manager · Senior
+        - cell "Sales Manager Lead":
+          - text: Sales Manager
+          - generic: Lead
+        - 'cell "75% Критичных разрывов: 2"':
+          - strong: 75%
+          - generic: "Критичных разрывов: 2"
+        - cell "0 завершено 0 пропусков / отказов / прерываний":
+          - text: 0 завершено
+          - generic: 0 пропусков / отказов / прерываний
+        - cell "Без рекомендованного шага Нет доступной активности для текущих разрывов":
+          - generic: Без рекомендованного шага
+          - generic: Нет доступной активности для текущих разрывов
+        - cell "Обсудить развитие":
+          - generic: Обсудить развитие
+        - cell "Профиль Kirill Petrov":
+          - link "Профиль Kirill Petrov":
+            - /url: /people/E0094/
+            - text: ↗
+      - 'row "Olzhas Akhmetov E0102 · Frontend Engineer · Junior Frontend Engineer Middle 57% Критичных разрывов: 2 0 завершено 0 пропусков / отказов / прерываний Без рекомендованного шага Есть шаги в личном плане; новых рекомендаций нет Обсудить развитие Профиль Olzhas Akhmetov"':
+        - cell "Olzhas Akhmetov E0102 · Frontend Engineer · Junior":
+          - strong: Olzhas Akhmetov
+          - generic: E0102 · Frontend Engineer · Junior
+        - cell "Frontend Engineer Middle":
+          - text: Frontend Engineer
+          - generic: Middle
+        - 'cell "57% Критичных разрывов: 2"':
+          - strong: 57%
+          - generic: "Критичных разрывов: 2"
+        - cell "0 завершено 0 пропусков / отказов / прерываний":
+          - text: 0 завершено
+          - generic: 0 пропусков / отказов / прерываний
+        - cell "Без рекомендованного шага Есть шаги в личном плане; новых рекомендаций нет":
+          - generic: Без рекомендованного шага
+          - generic: Есть шаги в личном плане; новых рекомендаций нет
+        - cell "Обсудить развитие":
+          - generic: Обсудить развитие
+        - cell "Профиль Olzhas Akhmetov":
+          - link "Профиль Olzhas Akhmetov":
+            - /url: /people/E0102/
+            - text: ↗
+      - 'row "Artem Kozlov E0111 · QA Engineer · Middle QA Engineer Senior 60% Критичных разрывов: 2 2 завершено 1 пропусков / отказов / прерываний Без рекомендованного шага Нет доступной активности для текущих разрывов Есть участие Профиль Artem Kozlov"':
+        - cell "Artem Kozlov E0111 · QA Engineer · Middle":
+          - strong: Artem Kozlov
+          - generic: E0111 · QA Engineer · Middle
+        - cell "QA Engineer Senior":
+          - text: QA Engineer
+          - generic: Senior
+        - 'cell "60% Критичных разрывов: 2"':
+          - strong: 60%
+          - generic: "Критичных разрывов: 2"
+        - cell "2 завершено 1 пропусков / отказов / прерываний":
+          - text: 2 завершено
+          - generic: 1 пропусков / отказов / прерываний
+        - cell "Без рекомендованного шага Нет доступной активности для текущих разрывов":
+          - generic: Без рекомендованного шага
+          - generic: Нет доступной активности для текущих разрывов
+        - cell "Есть участие":
+          - generic: Есть участие
+        - cell "Профиль Artem Kozlov":
+          - link "Профиль Artem Kozlov":
+            - /url: /people/E0111/
+            - text: ↗
+      - 'row "Sergey Lebedev E0112 · Customer Support Specialist · Senior Customer Support Specialist Lead 72% Критичных разрывов: 2 0 завершено 0 пропусков / отказов / прерываний Без рекомендованного шага Нет доступной активности для текущих разрывов Обсудить развитие Профиль Sergey Lebedev"':
+        - cell "Sergey Lebedev E0112 · Customer Support Specialist · Senior":
+          - strong: Sergey Lebedev
+          - generic: E0112 · Customer Support Specialist · Senior
+        - cell "Customer Support Specialist Lead":
+          - text: Customer Support Specialist
+          - generic: Lead
+        - 'cell "72% Критичных разрывов: 2"':
+          - strong: 72%
+          - generic: "Критичных разрывов: 2"
+        - cell "0 завершено 0 пропусков / отказов / прерываний":
+          - text: 0 завершено
+          - generic: 0 пропусков / отказов / прерываний
+        - cell "Без рекомендованного шага Нет доступной активности для текущих разрывов":
+          - generic: Без рекомендованного шага
+          - generic: Нет доступной активности для текущих разрывов
+        - cell "Обсудить развитие":
+          - generic: Обсудить развитие
+        - cell "Профиль Sergey Lebedev":
+          - link "Профиль Sergey Lebedev":
+            - /url: /people/E0112/
+            - text: ↗
+      - 'row "Serik Tulegenov E0114 · Customer Support Specialist · Junior Customer Support Specialist Middle 67% Критичных разрывов: 2 0 завершено 1 пропусков / отказов / прерываний Без рекомендованного шага Нет доступной активности для текущих разрывов Обсудить развитие Профиль Serik Tulegenov"':
+        - cell "Serik Tulegenov E0114 · Customer Support Specialist · Junior":
+          - strong: Serik Tulegenov
+          - generic: E0114 · Customer Support Specialist · Junior
+        - cell "Customer Support Specialist Middle":
+          - text: Customer Support Specialist
+          - generic: Middle
+        - 'cell "67% Критичных разрывов: 2"':
+          - strong: 67%
+          - generic: "Критичных разрывов: 2"
+        - cell "0 завершено 1 пропусков / отказов / прерываний":
+          - text: 0 завершено
+          - generic: 1 пропусков / отказов / прерываний
+        - cell "Без рекомендованного шага Нет доступной активности для текущих разрывов":
+          - generic: Без рекомендованного шага
+          - generic: Нет доступной активности для текущих разрывов
+        - cell "Обсудить развитие":
+          - generic: Обсудить развитие
+        - cell "Профиль Serik Tulegenov":
+          - link "Профиль Serik Tulegenov":
+            - /url: /people/E0114/
+            - text: ↗
+      - 'row "Togzhan Baimukhanova E0123 · Frontend Engineer · Senior Frontend Engineer Lead 81% Критичных разрывов: 2 1 завершено 1 пропусков / отказов / прерываний Без рекомендованного шага Нет доступной активности для текущих разрывов Есть участие Профиль Togzhan Baimukhanova"':
+        - cell "Togzhan Baimukhanova E0123 · Frontend Engineer · Senior":
+          - strong: Togzhan Baimukhanova
+          - generic: E0123 · Frontend Engineer · Senior
+        - cell "Frontend Engineer Lead":
+          - text: Frontend Engineer
+          - generic: Lead
+        - 'cell "81% Критичных разрывов: 2"':
+          - strong: 81%
+          - generic: "Критичных разрывов: 2"
+        - cell "1 завершено 1 пропусков / отказов / прерываний":
+          - text: 1 завершено
+          - generic: 1 пропусков / отказов / прерываний
+        - cell "Без рекомендованного шага Нет доступной активности для текущих разрывов":
+          - generic: Без рекомендованного шага
+          - generic: Нет доступной активности для текущих разрывов
+        - cell "Есть участие":
+          - generic: Есть участие
+        - cell "Профиль Togzhan Baimukhanova":
+          - link "Профиль Togzhan Baimukhanova":
+            - /url: /people/E0123/
+            - text: ↗
+      - 'row "Saule Sarsenbayeva E0133 · HR Business Partner · Lead Цель не выбрана 0% Критичных разрывов: 0 1 завершено 1 пропусков / отказов / прерываний Без рекомендованного шага Нужно выбрать карьерную цель Есть участие Профиль Saule Sarsenbayeva"':
+        - cell "Saule Sarsenbayeva E0133 · HR Business Partner · Lead":
+          - strong: Saule Sarsenbayeva
+          - generic: E0133 · HR Business Partner · Lead
+        - cell "Цель не выбрана"
+        - 'cell "0% Критичных разрывов: 0"':
+          - strong: 0%
+          - generic: "Критичных разрывов: 0"
+        - cell "1 завершено 1 пропусков / отказов / прерываний":
+          - text: 1 завершено
+          - generic: 1 пропусков / отказов / прерываний
+        - cell "Без рекомендованного шага Нужно выбрать карьерную цель":
+          - generic: Без рекомендованного шага
+          - generic: Нужно выбрать карьерную цель
+        - cell "Есть участие":
+          - generic: Есть участие
+        - cell "Профиль Saule Sarsenbayeva":
+          - link "Профиль Saule Sarsenbayeva":
+            - /url: /people/E0133/
+            - text: ↗
+      - 'row "Botagoz Ismailova E0144 · Customer Support Specialist · Junior Customer Support Specialist Middle 50% Критичных разрывов: 2 0 завершено 0 пропусков / отказов / прерываний Без рекомендованного шага Нет доступной активности для текущих разрывов Обсудить развитие Профиль Botagoz Ismailova"':
+        - cell "Botagoz Ismailova E0144 · Customer Support Specialist · Junior":
+          - strong: Botagoz Ismailova
+          - generic: E0144 · Customer Support Specialist · Junior
+        - cell "Customer Support Specialist Middle":
+          - text: Customer Support Specialist
+          - generic: Middle
+        - 'cell "50% Критичных разрывов: 2"':
+          - strong: 50%
+          - generic: "Критичных разрывов: 2"
+        - cell "0 завершено 0 пропусков / отказов / прерываний":
+          - text: 0 завершено
+          - generic: 0 пропусков / отказов / прерываний
+        - cell "Без рекомендованного шага Нет доступной активности для текущих разрывов":
+          - generic: Без рекомендованного шага
+          - generic: Нет доступной активности для текущих разрывов
+        - cell "Обсудить развитие":
+          - generic: Обсудить развитие
+        - cell "Профиль Botagoz Ismailova":
+          - link "Профиль Botagoz Ismailova":
+            - /url: /people/E0144/
+            - text: ↗
+      - 'row "Madina Abenova E0148 · Sales Manager · Lead Цель не выбрана 0% Критичных разрывов: 0 1 завершено 0 пропусков / отказов / прерываний Без рекомендованного шага Нужно выбрать карьерную цель Есть участие Профиль Madina Abenova"':
+        - cell "Madina Abenova E0148 · Sales Manager · Lead":
+          - strong: Madina Abenova
+          - generic: E0148 · Sales Manager · Lead
+        - cell "Цель не выбрана"
+        - 'cell "0% Критичных разрывов: 0"':
+          - strong: 0%
+          - generic: "Критичных разрывов: 0"
+        - cell "1 завершено 0 пропусков / отказов / прерываний":
+          - text: 1 завершено
+          - generic: 0 пропусков / отказов / прерываний
+        - cell "Без рекомендованного шага Нужно выбрать карьерную цель":
+          - generic: Без рекомендованного шага
+          - generic: Нужно выбрать карьерную цель
+        - cell "Есть участие":
+          - generic: Есть участие
+        - cell "Профиль Madina Abenova":
+          - link "Профиль Madina Abenova":
+            - /url: /people/E0148/
+            - text: ↗
+      - 'row "Zhandos Mukanov E0160 · Customer Support Specialist · Junior Customer Support Specialist Middle 53% Критичных разрывов: 2 0 завершено 0 пропусков / отказов / прерываний Без рекомендованного шага Нет доступной активности для текущих разрывов Обсудить развитие Профиль Zhandos Mukanov"':
+        - cell "Zhandos Mukanov E0160 · Customer Support Specialist · Junior":
+          - strong: Zhandos Mukanov
+          - generic: E0160 · Customer Support Specialist · Junior
+        - cell "Customer Support Specialist Middle":
+          - text: Customer Support Specialist
+          - generic: Middle
+        - 'cell "53% Критичных разрывов: 2"':
+          - strong: 53%
+          - generic: "Критичных разрывов: 2"
+        - cell "0 завершено 0 пропусков / отказов / прерываний":
+          - text: 0 завершено
+          - generic: 0 пропусков / отказов / прерываний
+        - cell "Без рекомендованного шага Нет доступной активности для текущих разрывов":
+          - generic: Без рекомендованного шага
+          - generic: Нет доступной активности для текущих разрывов
+        - cell "Обсудить развитие":
+          - generic: Обсудить развитие
+        - cell "Профиль Zhandos Mukanov":
+          - link "Профиль Zhandos Mukanov":
+            - /url: /people/E0160/
+            - text: ↗
+      - 'row "Daniyar Kassymov E0162 · Data Analyst · Middle Data Analyst Senior 66% Критичных разрывов: 1 1 завершено 2 пропусков / отказов / прерываний Без рекомендованного шага Есть шаги в личном плане; новых рекомендаций нет Обсудить развитие Профиль Daniyar Kassymov"':
+        - cell "Daniyar Kassymov E0162 · Data Analyst · Middle":
+          - strong: Daniyar Kassymov
+          - generic: E0162 · Data Analyst · Middle
+        - cell "Data Analyst Senior":
+          - text: Data Analyst
+          - generic: Senior
+        - 'cell "66% Критичных разрывов: 1"':
+          - strong: 66%
+          - generic: "Критичных разрывов: 1"
+        - cell "1 завершено 2 пропусков / отказов / прерываний":
+          - text: 1 завершено
+          - generic: 2 пропусков / отказов / прерываний
+        - cell "Без рекомендованного шага Есть шаги в личном плане; новых рекомендаций нет":
+          - generic: Без рекомендованного шага
+          - generic: Есть шаги в личном плане; новых рекомендаций нет
+        - cell "Обсудить развитие":
+          - generic: Обсудить развитие
+        - cell "Профиль Daniyar Kassymov":
+          - link "Профиль Daniyar Kassymov":
+            - /url: /people/E0162/
+            - text: ↗
+      - 'row "Askar Akhmetov E0164 · Backend Engineer · Middle Data Analyst Middle 40% Критичных разрывов: 1 0 завершено 0 пропусков / отказов / прерываний Без рекомендованного шага Нет доступной активности для текущих разрывов Обсудить развитие Профиль Askar Akhmetov"':
+        - cell "Askar Akhmetov E0164 · Backend Engineer · Middle":
+          - strong: Askar Akhmetov
+          - generic: E0164 · Backend Engineer · Middle
+        - cell "Data Analyst Middle":
+          - text: Data Analyst
+          - generic: Middle
+        - 'cell "40% Критичных разрывов: 1"':
+          - strong: 40%
+          - generic: "Критичных разрывов: 1"
+        - cell "0 завершено 0 пропусков / отказов / прерываний":
+          - text: 0 завершено
+          - generic: 0 пропусков / отказов / прерываний
+        - cell "Без рекомендованного шага Нет доступной активности для текущих разрывов":
+          - generic: Без рекомендованного шага
+          - generic: Нет доступной активности для текущих разрывов
+        - cell "Обсудить развитие":
+          - generic: Обсудить развитие
+        - cell "Профиль Askar Akhmetov":
+          - link "Профиль Askar Akhmetov":
+            - /url: /people/E0164/
+            - text: ↗
+      - 'row "Aruzhan Kaliyeva E0169 · Sales Manager · Lead Product Manager Lead 40% Критичных разрывов: 1 2 завершено 0 пропусков / отказов / прерываний Без рекомендованного шага Нет доступной активности для текущих разрывов Есть участие Профиль Aruzhan Kaliyeva"':
+        - cell "Aruzhan Kaliyeva E0169 · Sales Manager · Lead":
+          - strong: Aruzhan Kaliyeva
+          - generic: E0169 · Sales Manager · Lead
+        - cell "Product Manager Lead":
+          - text: Product Manager
+          - generic: Lead
+        - 'cell "40% Критичных разрывов: 1"':
+          - strong: 40%
+          - generic: "Критичных разрывов: 1"
+        - cell "2 завершено 0 пропусков / отказов / прерываний":
+          - text: 2 завершено
+          - generic: 0 пропусков / отказов / прерываний
+        - cell "Без рекомендованного шага Нет доступной активности для текущих разрывов":
+          - generic: Без рекомендованного шага
+          - generic: Нет доступной активности для текущих разрывов
+        - cell "Есть участие":
+          - generic: Есть участие
+        - cell "Профиль Aruzhan Kaliyeva":
+          - link "Профиль Aruzhan Kaliyeva":
+            - /url: /people/E0169/
+            - text: ↗
+      - 'row "Aidos Nurlanov E0175 · Backend Engineer · Lead Цель не выбрана 0% Критичных разрывов: 0 0 завершено 0 пропусков / отказов / прерываний Без рекомендованного шага Нужно выбрать карьерную цель Обсудить развитие Профиль Aidos Nurlanov"':
+        - cell "Aidos Nurlanov E0175 · Backend Engineer · Lead":
+          - strong: Aidos Nurlanov
+          - generic: E0175 · Backend Engineer · Lead
+        - cell "Цель не выбрана"
+        - 'cell "0% Критичных разрывов: 0"':
+          - strong: 0%
+          - generic: "Критичных разрывов: 0"
+        - cell "0 завершено 0 пропусков / отказов / прерываний":
+          - text: 0 завершено
+          - generic: 0 пропусков / отказов / прерываний
+        - cell "Без рекомендованного шага Нужно выбрать карьерную цель":
+          - generic: Без рекомендованного шага
+          - generic: Нужно выбрать карьерную цель
+        - cell "Обсудить развитие":
+          - generic: Обсудить развитие
+        - cell "Профиль Aidos Nurlanov":
+          - link "Профиль Aidos Nurlanov":
+            - /url: /people/E0175/
+            - text: ↗
+      - 'row "Aizhan Nurlanova E0176 · Product Manager · Junior Product Manager Middle 44% Критичных разрывов: 2 1 завершено 0 пропусков / отказов / прерываний Без рекомендованного шага Нет доступной активности для текущих разрывов Есть участие Профиль Aizhan Nurlanova"':
+        - cell "Aizhan Nurlanova E0176 · Product Manager · Junior":
+          - strong: Aizhan Nurlanova
+          - generic: E0176 · Product Manager · Junior
+        - cell "Product Manager Middle":
+          - text: Product Manager
+          - generic: Middle
+        - 'cell "44% Критичных разрывов: 2"':
+          - strong: 44%
+          - generic: "Критичных разрывов: 2"
+        - cell "1 завершено 0 пропусков / отказов / прерываний":
+          - text: 1 завершено
+          - generic: 0 пропусков / отказов / прерываний
+        - cell "Без рекомендованного шага Нет доступной активности для текущих разрывов":
+          - generic: Без рекомендованного шага
+          - generic: Нет доступной активности для текущих разрывов
+        - cell "Есть участие":
+          - generic: Есть участие
+        - cell "Профиль Aizhan Nurlanova":
+          - link "Профиль Aizhan Nurlanova":
+            - /url: /people/E0176/
+            - text: ↗
+      - 'row "Zhandos Bekov E0179 · QA Engineer · Lead Цель не выбрана 0% Критичных разрывов: 0 0 завершено 0 пропусков / отказов / прерываний Без рекомендованного шага Нужно выбрать карьерную цель Обсудить развитие Профиль Zhandos Bekov"':
+        - cell "Zhandos Bekov E0179 · QA Engineer · Lead":
+          - strong: Zhandos Bekov
+          - generic: E0179 · QA Engineer · Lead
+        - cell "Цель не выбрана"
+        - 'cell "0% Критичных разрывов: 0"':
+          - strong: 0%
+          - generic: "Критичных разрывов: 0"
+        - cell "0 завершено 0 пропусков / отказов / прерываний":
+          - text: 0 завершено
+          - generic: 0 пропусков / отказов / прерываний
+        - cell "Без рекомендованного шага Нужно выбрать карьерную цель":
+          - generic: Без рекомендованного шага
+          - generic: Нужно выбрать карьерную цель
+        - cell "Обсудить развитие":
+          - generic: Обсудить развитие
+        - cell "Профиль Zhandos Bekov":
+          - link "Профиль Zhandos Bekov":
+            - /url: /people/E0179/
+            - text: ↗
+      - 'row "Denis Pavlov E0180 · Customer Support Specialist · Lead QA Engineer Lead 31% Критичных разрывов: 2 2 завершено 0 пропусков / отказов / прерываний Без рекомендованного шага Нет доступной активности для текущих разрывов Есть участие Профиль Denis Pavlov"':
+        - cell "Denis Pavlov E0180 · Customer Support Specialist · Lead":
+          - strong: Denis Pavlov
+          - generic: E0180 · Customer Support Specialist · Lead
+        - cell "QA Engineer Lead":
+          - text: QA Engineer
+          - generic: Lead
+        - 'cell "31% Критичных разрывов: 2"':
+          - strong: 31%
+          - generic: "Критичных разрывов: 2"
+        - cell "2 завершено 0 пропусков / отказов / прерываний":
+          - text: 2 завершено
+          - generic: 0 пропусков / отказов / прерываний
+        - cell "Без рекомендованного шага Нет доступной активности для текущих разрывов":
+          - generic: Без рекомендованного шага
+          - generic: Нет доступной активности для текущих разрывов
+        - cell "Есть участие":
+          - generic: Есть участие
+        - cell "Профиль Denis Pavlov":
+          - link "Профиль Denis Pavlov":
+            - /url: /people/E0180/
+            - text: ↗
+      - 'row "Togzhan Zhaksylykova E0185 · Customer Support Specialist · Middle Customer Support Specialist Senior 76% Критичных разрывов: 1 2 завершено 1 пропусков / отказов / прерываний Без рекомендованного шага Нет доступной активности для текущих разрывов Есть участие Профиль Togzhan Zhaksylykova"':
+        - cell "Togzhan Zhaksylykova E0185 · Customer Support Specialist · Middle":
+          - strong: Togzhan Zhaksylykova
+          - generic: E0185 · Customer Support Specialist · Middle
+        - cell "Customer Support Specialist Senior":
+          - text: Customer Support Specialist
+          - generic: Senior
+        - 'cell "76% Критичных разрывов: 1"':
+          - strong: 76%
+          - generic: "Критичных разрывов: 1"
+        - cell "2 завершено 1 пропусков / отказов / прерываний":
+          - text: 2 завершено
+          - generic: 1 пропусков / отказов / прерываний
+        - cell "Без рекомендованного шага Нет доступной активности для текущих разрывов":
+          - generic: Без рекомендованного шага
+          - generic: Нет доступной активности для текущих разрывов
+        - cell "Есть участие":
+          - generic: Есть участие
+        - cell "Профиль Togzhan Zhaksylykova":
+          - link "Профиль Togzhan Zhaksylykova":
+            - /url: /people/E0185/
+            - text: ↗
+      - 'row "Irina Morozova E0192 · Backend Engineer · Junior Data Analyst Junior 58% Критичных разрывов: 0 1 завершено 0 пропусков / отказов / прерываний Без рекомендованного шага Нет доступной активности для текущих разрывов Есть участие Профиль Irina Morozova"':
+        - cell "Irina Morozova E0192 · Backend Engineer · Junior":
+          - strong: Irina Morozova
+          - generic: E0192 · Backend Engineer · Junior
+        - cell "Data Analyst Junior":
+          - text: Data Analyst
+          - generic: Junior
+        - 'cell "58% Критичных разрывов: 0"':
+          - strong: 58%
+          - generic: "Критичных разрывов: 0"
+        - cell "1 завершено 0 пропусков / отказов / прерываний":
+          - text: 1 завершено
+          - generic: 0 пропусков / отказов / прерываний
+        - cell "Без рекомендованного шага Нет доступной активности для текущих разрывов":
+          - generic: Без рекомендованного шага
+          - generic: Нет доступной активности для текущих разрывов
+        - cell "Есть участие":
+          - generic: Есть участие
+        - cell "Профиль Irina Morozova":
+          - link "Профиль Irina Morozova":
+            - /url: /people/E0192/
+            - text: ↗
+      - 'row "Akmaral Zhaksylykova E0197 · QA Engineer · Middle QA Engineer Senior 55% Критичных разрывов: 2 1 завершено 0 пропусков / отказов / прерываний Без рекомендованного шага Есть шаги в личном плане; новых рекомендаций нет Есть участие Профиль Akmaral Zhaksylykova"':
+        - cell "Akmaral Zhaksylykova E0197 · QA Engineer · Middle":
+          - strong: Akmaral Zhaksylykova
+          - generic: E0197 · QA Engineer · Middle
+        - cell "QA Engineer Senior":
+          - text: QA Engineer
+          - generic: Senior
+        - 'cell "55% Критичных разрывов: 2"':
+          - strong: 55%
+          - generic: "Критичных разрывов: 2"
+        - cell "1 завершено 0 пропусков / отказов / прерываний":
+          - text: 1 завершено
+          - generic: 0 пропусков / отказов / прерываний
+        - cell "Без рекомендованного шага Есть шаги в личном плане; новых рекомендаций нет":
+          - generic: Без рекомендованного шага
+          - generic: Есть шаги в личном плане; новых рекомендаций нет
+        - cell "Есть участие":
+          - generic: Есть участие
+        - cell "Профиль Akmaral Zhaksylykova":
+          - link "Профиль Akmaral Zhaksylykova":
+            - /url: /people/E0197/
+            - text: ↗
+  - paragraph:
+    - text: "Без рекомендованного шага в выбранной группе:"
+    - strong: "41"
+    - text: . Наличие шага рассчитано по тем же ограничениям каталога, цели и плана, что в профиле сотрудника.
+  - paragraph: "Сигнал: за 90 дней нет завершённых добровольных активностей или есть ≥2 пропуска, отказа или прерывания. Причины неизвестны; это повод предложить помощь. Список отсортирован по ID, а не результативности."
+  - region "Активности выбранной группы":
+    - generic: УЧАСТИЕ ПО МЕРОПРИЯТИЯМ
+    - heading "Активности выбранной группы" [level=2]
+    - paragraph: История за последние 90 дней на дату среза. Применены те же фильтры сотрудников.
+    - table:
+      - rowgroup:
+        - row "Мероприятие Участники Записи Завершено В процессе Прервано Пропуск Отказ Просрочено":
+          - columnheader "Мероприятие"
+          - columnheader "Участники"
+          - columnheader "Записи"
+          - columnheader "Завершено"
+          - columnheader "В процессе"
+          - columnheader "Прервано"
+          - columnheader "Пропуск"
+          - columnheader "Отказ"
+          - columnheader "Просрочено"
+      - rowgroup:
+        - row "System Design Fundamentals EV_005 · Добровольная 3 3 2 1 0 0 0 0":
+          - cell "System Design Fundamentals EV_005 · Добровольная":
+            - strong: System Design Fundamentals
+            - generic: EV_005 · Добровольная
+          - cell "3"
+          - cell "3"
+          - cell "2"
+          - cell "1"
+          - cell "0"
+          - cell "0"
+          - cell "0"
+          - cell "0"
+        - row "Business Writing & Documentation EV_008 · Добровольная 1 1 1 0 0 0 0 0":
+          - cell "Business Writing & Documentation EV_008 · Добровольная":
+            - strong: Business Writing & Documentation
+            - generic: EV_008 · Добровольная
+          - cell "1"
+          - cell "1"
+          - cell "1"
+          - cell "0"
+          - cell "0"
+          - cell "0"
+          - cell "0"
+          - cell "0"
+        - row "Secure Coding Workshop EV_011 · Добровольная 3 4 2 0 0 2 0 0":
+          - cell "Secure Coding Workshop EV_011 · Добровольная":
+            - strong: Secure Coding Workshop
+            - generic: EV_011 · Добровольная
+          - cell "3"
+          - cell "4"
+          - cell "2"
+          - cell "0"
+          - cell "0"
+          - cell "2"
+          - cell "0"
+          - cell "0"
+        - row "Advanced Python EV_012 · Добровольная 1 1 1 0 0 0 0 0":
+          - cell "Advanced Python EV_012 · Добровольная":
+            - strong: Advanced Python
+            - generic: EV_012 · Добровольная
+          - cell "1"
+          - cell "1"
+          - cell "1"
+          - cell "0"
+          - cell "0"
+          - cell "0"
+          - cell "0"
+          - cell "0"
+        - row "Web Performance Fundamentals EV_015 · Добровольная 1 1 0 1 0 0 0 0":
+          - cell "Web Performance Fundamentals EV_015 · Добровольная":
+            - strong: Web Performance Fundamentals
+            - generic: EV_015 · Добровольная
+          - cell "1"
+          - cell "1"
+          - cell "0"
+          - cell "1"
+          - cell "0"
+          - cell "0"
+          - cell "0"
+          - cell "0"
+        - row "Accessible Interfaces EV_016 · Добровольная 2 3 2 0 0 0 1 0":
+          - cell "Accessible Interfaces EV_016 · Добровольная":
+            - strong: Accessible Interfaces
+            - generic: EV_016 · Добровольная
+          - cell "2"
+          - cell "3"
+          - cell "2"
+          - cell "0"
+          - cell "0"
+          - cell "0"
+          - cell "1"
+          - cell "0"
+        - row "Data Storytelling & Visualization EV_023 · Добровольная 1 1 0 0 1 0 0 0":
+          - cell "Data Storytelling & Visualization EV_023 · Добровольная":
+            - strong: Data Storytelling & Visualization
+            - generic: EV_023 · Добровольная
+          - cell "1"
+          - cell "1"
+          - cell "0"
+          - cell "0"
+          - cell "1"
+          - cell "0"
+          - cell "0"
+          - cell "0"
+        - row "Dimensional Data Modeling EV_025 · Добровольная 1 2 0 1 0 0 1 0":
+          - cell "Dimensional Data Modeling EV_025 · Добровольная":
+            - strong: Dimensional Data Modeling
+            - generic: EV_025 · Добровольная
+          - cell "1"
+          - cell "2"
+          - cell "0"
+          - cell "1"
+          - cell "0"
+          - cell "0"
+          - cell "1"
+          - cell "0"
+        - row "Roadmapping & Agile Planning EV_027 · Добровольная 1 1 1 0 0 0 0 0":
+          - cell "Roadmapping & Agile Planning EV_027 · Добровольная":
+            - strong: Roadmapping & Agile Planning
+            - generic: EV_027 · Добровольная
+          - cell "1"
+          - cell "1"
+          - cell "1"
+          - cell "0"
+          - cell "0"
+          - cell "0"
+          - cell "0"
+          - cell "0"
+        - row "Designing Learning Programs EV_031 · Добровольная 1 1 0 0 0 0 1 0":
+          - cell "Designing Learning Programs EV_031 · Добровольная":
+            - strong: Designing Learning Programs
+            - generic: EV_031 · Добровольная
+          - cell "1"
+          - cell "1"
+          - cell "0"
+          - cell "0"
+          - cell "0"
+          - cell "0"
+          - cell "1"
+          - cell "0"
+        - row "Handling Difficult Conversations EV_034 · Добровольная 1 1 1 0 0 0 0 0":
+          - cell "Handling Difficult Conversations EV_034 · Добровольная":
+            - strong: Handling Difficult Conversations
+            - generic: EV_034 · Добровольная
+          - cell "1"
+          - cell "1"
+          - cell "1"
+          - cell "0"
+          - cell "0"
+          - cell "0"
+          - cell "0"
+          - cell "0"
+        - row "Technical Troubleshooting Academy EV_035 · Добровольная 1 1 0 1 0 0 0 0":
+          - cell "Technical Troubleshooting Academy EV_035 · Добровольная":
+            - strong: Technical Troubleshooting Academy
+            - generic: EV_035 · Добровольная
+          - cell "1"
+          - cell "1"
+          - cell "0"
+          - cell "1"
+          - cell "0"
+          - cell "0"
+          - cell "0"
+          - cell "0"
+        - row "Public Speaking Club EV_036 · Добровольная 16 30 20 0 0 7 3 0":
+          - cell "Public Speaking Club EV_036 · Добровольная":
+            - strong: Public Speaking Club
+            - generic: EV_036 · Добровольная
+          - cell "16"
+          - cell "30"
+          - cell "20"
+          - cell "0"
+          - cell "0"
+          - cell "7"
+          - cell "3"
+          - cell "0"
+        - row "Mentor Track EV_037 · Добровольная 1 2 1 0 0 1 0 0":
+          - cell "Mentor Track EV_037 · Добровольная":
+            - strong: Mentor Track
+            - generic: EV_037 · Добровольная
+          - cell "1"
+          - cell "2"
+          - cell "1"
+          - cell "0"
+          - cell "0"
+          - cell "1"
+          - cell "0"
+          - cell "0"
+        - row "Leadership Foundations EV_038 · Добровольная 1 2 0 1 1 0 0 0":
+          - cell "Leadership Foundations EV_038 · Добровольная":
+            - strong: Leadership Foundations
+            - generic: EV_038 · Добровольная
+          - cell "1"
+          - cell "2"
+          - cell "0"
+          - cell "1"
+          - cell "1"
+          - cell "0"
+          - cell "0"
+          - cell "0"
+        - row "Time & Priority Management EV_039 · Добровольная 1 1 1 0 0 0 0 0":
+          - cell "Time & Priority Management EV_039 · Добровольная":
+            - strong: Time & Priority Management
+            - generic: EV_039 · Добровольная
+          - cell "1"
+          - cell "1"
+          - cell "1"
+          - cell "0"
+          - cell "0"
+          - cell "0"
+          - cell "0"
+          - cell "0"
+        - row "Structured Problem Solving EV_040 · Добровольная 2 2 1 0 0 0 1 0":
+          - cell "Structured Problem Solving EV_040 · Добровольная":
+            - strong: Structured Problem Solving
+            - generic: EV_040 · Добровольная
+          - cell "2"
+          - cell "2"
+          - cell "1"
+          - cell "0"
+          - cell "0"
+          - cell "0"
+          - cell "1"
+          - cell "0"
+    - paragraph: Участники — уникальные сотрудники внутри мероприятия. Статусы считаются по записям истории; повторные сессии клуба могут относиться к одному человеку. Обязательные активности показаны отдельно по типу и не дают игровых наград.
+- contentinfo:
+  - text: Career Quest
+  - generic: HackAlem AI · Meta Juniors · Halyk Bank case

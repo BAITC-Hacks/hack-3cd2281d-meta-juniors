@@ -1,0 +1,366 @@
+- complementary:
+  - link "cq ↗ Career Quest РАСТИ ОСОЗНАННО":
+    - /url: /
+    - text: cq
+    - generic: ↗
+    - text: Career Quest
+    - generic: РАСТИ ОСОЗНАННО
+  - generic: РАБОЧЕЕ ПРОСТРАНСТВО
+  - navigation "Главное меню":
+    - link "Моё развитие":
+      - /url: /
+      - text: Моё развитие
+    - link "Мой план":
+      - /url: /people/E0028/plan/
+      - text: Мой план
+    - link "Следующие шаги":
+      - /url: /#next-steps
+      - text: Следующие шаги
+    - link "История активностей":
+      - /url: /#history
+      - text: История активностей
+  - generic: ↗
+  - strong:
+    - text: Маленькие шаги.
+    - text: Заметный рост.
+  - paragraph: Твой путь развития начинается с понятного следующего шага.
+  - generic: Я
+  - strong: Личный кабинет
+  - text: employee
+  - button "Выйти": ↪
+- banner:
+  - text: Рабочее пространство /
+  - strong: Развитие
+  - generic: Демо · синтетические данные
+- main:
+  - generic: МОЁ РАЗВИТИЕ
+  - heading "Akmaral Ismailova." [level=1]
+  - paragraph: Backend Engineer · Middle · Backend Development
+  - text: Срез на 01.10.2026
+  - generic: ТВОЯ КАРЬЕРНАЯ ТРАЕКТОРИЯ
+  - heading "Следующая точка — Senior" [level=2]
+  - paragraph: Backend Engineer. Каждый шаг приближает тебя к навыкам целевого профиля.
+  - generic: Middle
+  - generic: Senior ↗
+  - generic: Предложен следующий грейд. Ты можешь выбрать другую цель.
+  - strong: 72%
+  - generic: навыков к цели
+  - text: Покрытие требований,
+  - text: не вероятность повышения
+  - generic "Изменить карьерную цель ↗":
+    - text: Изменить карьерную цель
+    - generic: ↗
+  - option "Backend Engineer" [selected]
+  - option "Frontend Engineer"
+  - option "Data Analyst"
+  - option "QA Engineer"
+  - option "Product Manager"
+  - option "HR Business Partner"
+  - option "Sales Manager"
+  - option "Customer Support Specialist"
+  - option "Junior"
+  - option "Middle"
+  - option "Senior" [selected]
+  - option "Lead"
+  - article:
+    - generic: Критичные разрывы
+    - strong: 1навык
+    - paragraph: Важны для выбранной цели
+  - article:
+    - generic: Завершено добровольно
+    - strong: 7активностей
+    - paragraph: За весь период истории
+  - article:
+    - generic: После аттестации
+    - strong: 3завершения
+    - paragraph: Уже учтены в текущих навыках
+  - strong: Мой план развития
+  - paragraph: "Активных шагов: 0 · добавляй, начинай и отслеживай результат."
+  - link "Открыть план ↗":
+    - /url: /people/E0028/plan/
+  - generic: ОТ ЦЕЛИ К ДЕЙСТВИЮ
+  - heading "Твои следующие шаги" [level=2]:
+    - text: Твои следующие шаги
+  - paragraph: С учётом навыков, карьерной цели и истории участия.
+  - button "Обновить подбор ↻"
+  - status:
+    - generic: Подбор по правилам
+    - generic: AI-ключ ещё не подключён. Показан резервный многофакторный подбор по правилам.
+    - generic: 0.02 с
+  - article:
+    - generic: ↗
+    - generic: ШАГ 01
+    - heading "Mentor Track" [level=3]
+    - generic: онлайн
+    - generic: ·
+    - generic: 12 ч
+    - generic: · EV_037
+    - paragraph: Баланс карьерной пользы, истории и нагрузки
+    - list:
+      - listitem: "Mentoring: 2 → 3 при требуемых 3."
+      - listitem: За 180 дней нет истории активностей такого типа и формата; предпочтение пока неизвестно.
+      - listitem: "Нагрузка: 12 ч. Формат: онлайн."
+    - paragraph: "Ближайшая возможность: 2026-11-19"
+    - link "Подробнее":
+      - /url: /people/E0028/events/EV_037/
+    - button "В мой план +"
+  - article:
+    - generic: ◇
+    - generic: ШАГ 02
+    - heading "Kubernetes in Practice" [level=3]
+    - generic: онлайн
+    - generic: ·
+    - generic: 20 ч
+    - generic: · EV_010
+    - paragraph: Баланс карьерной пользы, истории и нагрузки
+    - list:
+      - listitem: "Containers & Orchestration: 1 → 2 при требуемых 3."
+      - listitem: За 180 дней нет истории активностей такого типа и формата; предпочтение пока неизвестно.
+      - listitem: В истории этой активности есть 1 пропусков, отказов или прерываний. Причины в данных не указаны.
+      - listitem: "Нагрузка: 20 ч. Формат: онлайн."
+    - paragraph: "Ближайшая возможность: 2026-10-16"
+    - link "Подробнее":
+      - /url: /people/E0028/events/EV_010/
+    - button "В мой план +"
+  - article:
+    - generic: ✧
+    - generic: ШАГ 03
+    - heading "Cloud Certification Prep" [level=3]
+    - generic: в своём темпе
+    - generic: ·
+    - generic: 40 ч
+    - generic: · EV_009
+    - paragraph: Баланс карьерной пользы, истории и нагрузки
+    - list:
+      - listitem: "Cloud Platforms: 1 → 2 при требуемых 3."
+      - listitem: "За 180 дней в активностях такого типа и формата: завершено 0, пропусков/отказов/прерываний 1."
+      - listitem: В истории этой активности есть 2 пропусков, отказов или прерываний. Причины в данных не указаны.
+      - listitem: "Нагрузка: 40 ч. Формат: в своём темпе."
+    - paragraph: "Ближайшая возможность: В любое время"
+    - link "Подробнее":
+      - /url: /people/E0028/events/EV_009/
+    - button "В мой план +"
+  - generic: "Для этих разрывов нет новых доступных шагов вне плана: System Design, Application Security, Leadership, Observability, Problem Solving, Python, SQL, Stakeholder Management, Teamwork. Проверь личный план или обсуди варианты с HR."
+  - paragraph: Добавь рекомендацию в план. Там можно смоделировать начало и завершение, чтобы увидеть изменение навыков.
+  - generic: КАРТА РАЗВИТИЯ
+  - heading "Что уже есть. Что впереди." [level=2]
+  - generic: Сейчас
+  - generic: Нужно для цели
+  - strong: System Design
+  - text: Критичный
+  - generic: 3 / 4
+  - generic: Ещё 1
+  - strong: API Design
+  - text: Критичный
+  - generic: 4 / 4
+  - generic: Достигнут ✓
+  - strong: Cloud Platforms
+  - generic: 1 / 3
+  - generic: Ещё 2
+  - strong: Containers & Orchestration
+  - generic: 1 / 3
+  - generic: Ещё 2
+  - strong: Application Security
+  - generic: 2 / 3
+  - generic: Ещё 1
+  - strong: Leadership
+  - generic: 1 / 2
+  - generic: Ещё 1
+  - strong: Mentoring
+  - generic: 2 / 3
+  - generic: Ещё 1
+  - strong: Observability
+  - generic: 2 / 3
+  - generic: Ещё 1
+  - strong: Problem Solving
+  - generic: 3 / 4
+  - generic: Ещё 1
+  - strong: Python
+  - generic: 3 / 4
+  - generic: Ещё 1
+  - strong: SQL
+  - generic: 3 / 4
+  - generic: Ещё 1
+  - strong: Stakeholder Management
+  - generic: 1 / 2
+  - generic: Ещё 1
+  - strong: Teamwork
+  - generic: 2 / 3
+  - generic: Ещё 1
+  - strong: CI/CD
+  - generic: 3 / 3
+  - generic: Достигнут ✓
+  - strong: Communication
+  - generic: 4 / 3
+  - generic: Достигнут ✓
+  - strong: Public Speaking
+  - generic: 2 / 2
+  - generic: Достигнут ✓
+  - paragraph: Шкала 0–5. Прогресс = сумма min(текущий, требуемый) / сумма требуемых уровней. Навык растёт по gain и max_level из каталога.
+  - generic: ТВОЙ ОПЫТ
+  - heading "История активностей" [level=2]
+  - generic: 17 записей
+  - table:
+    - rowgroup:
+      - row "Активность Дата Тип участия Результат":
+        - columnheader "Активность"
+        - columnheader "Дата"
+        - columnheader "Тип участия"
+        - columnheader "Результат"
+    - rowgroup:
+      - row "Designing High-Load Systems EV_006 · R002692 08.09.2026 Добровольная Завершено":
+        - cell "Designing High-Load Systems EV_006 · R002692":
+          - link "Designing High-Load Systems":
+            - /url: /people/E0028/events/EV_006/
+            - strong: Designing High-Load Systems
+          - generic: EV_006 · R002692
+        - cell "08.09.2026"
+        - cell "Добровольная"
+        - cell "Завершено"
+      - row "API & Performance Testing Workshop EV_019 · R002623 14.08.2026 Добровольная Завершено":
+        - cell "API & Performance Testing Workshop EV_019 · R002623":
+          - link "API & Performance Testing Workshop":
+            - /url: /people/E0028/events/EV_019/
+            - strong: API & Performance Testing Workshop
+          - generic: EV_019 · R002623
+        - cell "14.08.2026"
+        - cell "Добровольная"
+        - cell "Завершено"
+      - row "Time & Priority Management EV_039 · R002551 20.07.2026 Добровольная Завершено":
+        - cell "Time & Priority Management EV_039 · R002551":
+          - link "Time & Priority Management":
+            - /url: /people/E0028/events/EV_039/
+            - strong: Time & Priority Management
+          - generic: EV_039 · R002551
+        - cell "20.07.2026"
+        - cell "Добровольная"
+        - cell "Завершено"
+      - row "Code of Conduct & Workplace Safety EV_003 · R002277 01.06.2026 Обязательная Завершено":
+        - cell "Code of Conduct & Workplace Safety EV_003 · R002277":
+          - link "Code of Conduct & Workplace Safety":
+            - /url: /people/E0028/events/EV_003/
+            - strong: Code of Conduct & Workplace Safety
+          - generic: EV_003 · R002277
+        - cell "01.06.2026"
+        - cell "Обязательная"
+        - cell "Завершено"
+      - row "Cloud Certification Prep EV_009 · R002118 08.04.2026 Добровольная Прервано":
+        - cell "Cloud Certification Prep EV_009 · R002118":
+          - link "Cloud Certification Prep":
+            - /url: /people/E0028/events/EV_009/
+            - strong: Cloud Certification Prep
+          - generic: EV_009 · R002118
+        - cell "08.04.2026"
+        - cell "Добровольная"
+        - cell "Прервано"
+      - row "Cloud Certification Prep EV_009 · R002057 23.03.2026 Добровольная Прервано":
+        - cell "Cloud Certification Prep EV_009 · R002057":
+          - link "Cloud Certification Prep":
+            - /url: /people/E0028/events/EV_009/
+            - strong: Cloud Certification Prep
+          - generic: EV_009 · R002057
+        - cell "23.03.2026"
+        - cell "Добровольная"
+        - cell "Прервано"
+      - row "Secure Coding Workshop EV_011 · R001861 02.03.2026 Добровольная Завершено":
+        - cell "Secure Coding Workshop EV_011 · R001861":
+          - link "Secure Coding Workshop":
+            - /url: /people/E0028/events/EV_011/
+            - strong: Secure Coding Workshop
+          - generic: EV_011 · R001861
+        - cell "02.03.2026"
+        - cell "Добровольная"
+        - cell "Завершено"
+      - row "Personal Data Protection EV_002 · R001860 02.03.2026 Обязательная Завершено":
+        - cell "Personal Data Protection EV_002 · R001860":
+          - link "Personal Data Protection":
+            - /url: /people/E0028/events/EV_002/
+            - strong: Personal Data Protection
+          - generic: EV_002 · R001860
+        - cell "02.03.2026"
+        - cell "Обязательная"
+        - cell "Завершено"
+      - row "Advanced Python EV_012 · R001655 25.12.2025 Добровольная Завершено":
+        - cell "Advanced Python EV_012 · R001655":
+          - link "Advanced Python":
+            - /url: /people/E0028/events/EV_012/
+            - strong: Advanced Python
+          - generic: EV_012 · R001655
+        - cell "25.12.2025"
+        - cell "Добровольная"
+        - cell "Завершено"
+      - row "Kubernetes in Practice EV_010 · R001518 06.11.2025 Добровольная Прервано":
+        - cell "Kubernetes in Practice EV_010 · R001518":
+          - link "Kubernetes in Practice":
+            - /url: /people/E0028/events/EV_010/
+            - strong: Kubernetes in Practice
+          - generic: EV_010 · R001518
+        - cell "06.11.2025"
+        - cell "Добровольная"
+        - cell "Прервано"
+      - row "Information Security Awareness EV_001 · R001368 03.11.2025 Обязательная Завершено":
+        - cell "Information Security Awareness EV_001 · R001368":
+          - link "Information Security Awareness":
+            - /url: /people/E0028/events/EV_001/
+            - strong: Information Security Awareness
+          - generic: EV_001 · R001368
+        - cell "03.11.2025"
+        - cell "Обязательная"
+        - cell "Завершено"
+      - row "Structured Problem Solving EV_040 · R001166 28.08.2025 Добровольная Завершено":
+        - cell "Structured Problem Solving EV_040 · R001166":
+          - link "Structured Problem Solving":
+            - /url: /people/E0028/events/EV_040/
+            - strong: Structured Problem Solving
+          - generic: EV_040 · R001166
+        - cell "28.08.2025"
+        - cell "Добровольная"
+        - cell "Завершено"
+      - row "Architecture Review Circle EV_007 · R001097 29.07.2025 Добровольная Завершено":
+        - cell "Architecture Review Circle EV_007 · R001097":
+          - link "Architecture Review Circle":
+            - /url: /people/E0028/events/EV_007/
+            - strong: Architecture Review Circle
+          - generic: EV_007 · R001097
+        - cell "29.07.2025"
+        - cell "Добровольная"
+        - cell "Завершено"
+      - row "Code of Conduct & Workplace Safety EV_003 · R000835 02.06.2025 Обязательная Завершено":
+        - cell "Code of Conduct & Workplace Safety EV_003 · R000835":
+          - link "Code of Conduct & Workplace Safety":
+            - /url: /people/E0028/events/EV_003/
+            - strong: Code of Conduct & Workplace Safety
+          - generic: EV_003 · R000835
+        - cell "02.06.2025"
+        - cell "Обязательная"
+        - cell "Завершено"
+      - row "Personal Data Protection EV_002 · R000485 03.03.2025 Обязательная Завершено":
+        - cell "Personal Data Protection EV_002 · R000485":
+          - link "Personal Data Protection":
+            - /url: /people/E0028/events/EV_002/
+            - strong: Personal Data Protection
+          - generic: EV_002 · R000485
+        - cell "03.03.2025"
+        - cell "Обязательная"
+        - cell "Завершено"
+      - row "Information Security Awareness EV_001 · R000086 04.11.2024 Обязательная Завершено":
+        - cell "Information Security Awareness EV_001 · R000086":
+          - link "Information Security Awareness":
+            - /url: /people/E0028/events/EV_001/
+            - strong: Information Security Awareness
+          - generic: EV_001 · R000086
+        - cell "04.11.2024"
+        - cell "Обязательная"
+        - cell "Завершено"
+      - row "Architecture Review Circle EV_007 · R000031 18.10.2024 Добровольная Пропуск":
+        - cell "Architecture Review Circle EV_007 · R000031":
+          - link "Architecture Review Circle":
+            - /url: /people/E0028/events/EV_007/
+            - strong: Architecture Review Circle
+          - generic: EV_007 · R000031
+        - cell "18.10.2024"
+        - cell "Добровольная"
+        - cell "Пропуск"
+- contentinfo:
+  - text: Career Quest
+  - generic: HackAlem AI · Meta Juniors · Halyk Bank case

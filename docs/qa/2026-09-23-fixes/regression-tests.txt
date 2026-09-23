@@ -1,0 +1,52 @@
+Found 8 test(s).
+Creating test database for alias 'default' ('test_career_quest')...
+Operations to perform:
+  Synchronize unmigrated apps: messages, rest_framework, staticfiles
+  Apply all migrations: admin, auth, contenttypes, quest, sessions
+Synchronizing apps without migrations:
+  Creating tables...
+    Running deferred SQL...
+Running migrations:
+  Applying contenttypes.0001_initial... OK
+  Applying auth.0001_initial... OK
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying admin.0003_logentry_add_action_flag_choices... OK
+  Applying contenttypes.0002_remove_content_type_name... OK
+  Applying auth.0002_alter_permission_name_max_length... OK
+  Applying auth.0003_alter_user_email_max_length... OK
+  Applying auth.0004_alter_user_username_opts... OK
+  Applying auth.0005_alter_user_last_login_null... OK
+  Applying auth.0006_require_contenttypes_0002... OK
+  Applying auth.0007_alter_validators_add_error_messages... OK
+  Applying auth.0008_alter_user_username_max_length... OK
+  Applying auth.0009_alter_user_last_name_max_length... OK
+  Applying auth.0010_alter_group_name_max_length... OK
+  Applying auth.0011_update_proxy_permissions... OK
+  Applying auth.0012_alter_user_first_name_max_length... OK
+  Applying quest.0001_initial... OK
+  Applying quest.0002_importdraft_developmentplanitem... OK
+  Applying quest.0003_existing_progress_to_plan... OK
+  Applying quest.0004_existing_demo_completions... OK
+  Applying sessions.0001_initial... OK
+System check identified no issues (0 silenced).
+test_01_plan_stages_and_idempotency_with_csrf (qa_stage2.Stage2Audit.test_01_plan_stages_and_idempotency_with_csrf) ... ok
+test_02_plan_owner_and_csrf (qa_stage2.Stage2Audit.test_02_plan_owner_and_csrf) ... ok
+test_03_preview_confirm_repeat_with_csrf (qa_stage2.Stage2Audit.test_03_preview_confirm_repeat_with_csrf) ... ok
+WRONG_HEADER draft_created False revision 1 1
+test_04_wrong_csv_header_is_rejected (qa_stage2.Stage2Audit.test_04_wrong_csv_header_is_rejected) ... ok
+test_05_nonrepeatable_history_cannot_award_twice (qa_stage2.Stage2Audit.test_05_nonrepeatable_history_cannot_award_twice) ... ok
+NON_OBJECT_JSON [] 400
+NON_OBJECT_JSON 'bad' 400
+NON_OBJECT_JSON 42 400
+NON_OBJECT_JSON True 400
+NON_OBJECT_JSON None 400
+test_06_completion_non_object_json_is_400 (qa_stage2.Stage2Audit.test_06_completion_non_object_json_is_400) ... ok
+test_07_invalid_bundle_is_atomic (qa_stage2.Stage2Audit.test_07_invalid_bundle_is_atomic) ... ok
+test_08_goal_invalid_json_is_400 (qa_stage2.Stage2Audit.test_08_goal_invalid_json_is_400) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 28.816s
+
+OK
+Destroying test database for alias 'default' ('test_career_quest')...
