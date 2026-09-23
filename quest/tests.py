@@ -1,18 +1,31 @@
 import copy
+import importlib
 import json
 import uuid
-from datetime import date
+from datetime import date, timedelta
 from pathlib import Path
 from unittest.mock import patch
 
+from django.apps import apps
 from django.conf import settings
 from django.contrib.auth.models import Group, User
 from django.core.files.uploadedfile import SimpleUploadedFile
 from django.test import Client, TestCase, override_settings
+from django.utils import timezone
 
-from quest.models import Employee, Event, Participation, RecommendationCache, RoleProfile, Skill
+from quest.models import (
+    DatasetState,
+    DevelopmentPlanItem,
+    Employee,
+    Event,
+    ImportDraft,
+    Participation,
+    RecommendationCache,
+    RoleProfile,
+    Skill,
+)
 from quest.services.career import apply_gain, candidates_for, current_skills, profile_context
-from quest.services.importer import ImportFailure, import_dataset
+from quest.services.importer import ImportFailure, import_dataset, preview_dataset
 from quest.services.recommendations import Choice, Decision, get_recommendations, validate_decision
 
 
@@ -245,6 +258,8 @@ class CareerQuestTests(TestCase):
         self.assertFalse(RecommendationCache.objects.filter(employee=self.employee).exists())
 
     def test_completion_is_idempotent_and_recalculates(self):
+        self.plan_action("add")
+        self.plan_action("start")
         url = "/api/people/E0028/complete/EV_009/"
         data = {"request_id": str(uuid.uuid4())}
         before = profile_context(self.employee)["levels"]
@@ -350,3 +365,230 @@ class CareerQuestTests(TestCase):
         self.assertContains(page, "Твои следующие шаги")
         self.assertContains(page, "SK_SYSTEM_DESIGN", count=0)
         self.assertEqual(self.client.get("/api/people/E0028/").json()["skills"]["SK_SYSTEM_DESIGN"], 3)
+
+    def plan_action(self, action, event="EV_009", expected=200):
+        response = self.client.post(
+            f"/api/people/E0028/plan/{event}/{action}/", {}, content_type="application/json"
+        )
+        self.assertEqual(response.status_code, expected, response.content)
+        return response
+
+    def test_planning_and_starting_do_not_award_skills_or_duplicate_history(self):
+        before = profile_context(self.employee)["levels"]
+        history_count = Participation.objects.count()
+        get_recommendations(profile_context(self.employee))
+        self.plan_action("add")
+        self.plan_action("add")
+        self.assertEqual(Participation.objects.count(), history_count)
+        self.assertFalse(RecommendationCache.objects.filter(employee=self.employee).exists())
+        self.assertNotIn("EV_009", {c["event_id"] for c in candidates_for(profile_context(self.employee))[0]})
+        self.plan_action("start")
+        self.plan_action("start")
+        self.assertEqual(Participation.objects.count(), history_count + 1)
+        self.assertEqual(profile_context(self.employee)["levels"], before)
+        self.assertEqual(
+            DevelopmentPlanItem.objects.filter(employee=self.employee, event_id="EV_009").count(), 1
+        )
+
+    def test_cancelled_step_returns_to_recommendations(self):
+        self.plan_action("add")
+        self.plan_action("cancel")
+        self.plan_action("cancel")
+        self.assertIn("EV_009", {c["event_id"] for c in candidates_for(profile_context(self.employee))[0]})
+        self.plan_action("add")
+        self.plan_action("start")
+        self.plan_action("cancel", expected=409)
+
+    def test_cannot_skip_plan_stages_or_add_mandatory_event(self):
+        self.plan_action("start", expected=409)
+        self.plan_action("add", "EV_001", expected=409)
+        self.plan_action("add")
+        response = self.client.post("/api/people/E0028/complete/EV_009/", {"request_id": str(uuid.uuid4())})
+        self.assertEqual(response.status_code, 409)
+
+    def test_plan_and_event_access_control(self):
+        for url in ["/people/E0028/plan/", "/people/E0028/events/EV_009/"]:
+            self.assertEqual(self.client.get(url).status_code, 200)
+            self.assertEqual(self.client.get(url.replace("E0028", "E0001")).status_code, 404)
+        self.assertEqual(self.client.post("/api/people/E0001/plan/EV_009/add/").status_code, 404)
+        self.client.force_login(self.hr_user)
+        self.assertContains(self.client.get("/people/E0028/events/EV_009/"), "Как изменятся навыки")
+        self.plan_action("add", expected=403)
+
+    @override_settings(DEMO_MODE=False)
+    def test_plan_is_available_but_simulation_is_disabled_without_demo(self):
+        self.plan_action("add")
+        self.plan_action("start", expected=403)
+        self.assertNotContains(self.client.get("/people/E0028/plan/"), "Начать в демо")
+
+    def test_goal_change_revalidates_planned_step(self):
+        self.plan_action("add")
+        self.client.post(
+            "/api/people/E0028/goal/",
+            {"target_role": "Backend Engineer", "target_grade": "Junior"},
+            content_type="application/json",
+        )
+        self.plan_action("start", expected=409)
+        self.assertContains(self.client.get("/people/E0028/plan/"), "Шаг больше не подходит")
+        self.assertEqual(
+            DevelopmentPlanItem.objects.get(employee=self.employee, event_id="EV_009").status, "planned"
+        )
+
+    def test_started_activity_can_finish_after_goal_change(self):
+        self.plan_action("add")
+        self.plan_action("start")
+        self.client.post(
+            "/api/people/E0028/goal/",
+            {"target_role": "Backend Engineer", "target_grade": "Junior"},
+            content_type="application/json",
+        )
+        response = self.client.post("/api/people/E0028/complete/EV_009/", {"request_id": str(uuid.uuid4())})
+        self.assertEqual(response.status_code, 200, response.content)
+        self.assertEqual(
+            DevelopmentPlanItem.objects.get(employee=self.employee, event_id="EV_009").status, "completed"
+        )
+
+    def test_imported_in_progress_is_in_plan(self):
+        rows = Participation.objects.filter(status="in_progress", event__mandatory=False)
+        self.assertTrue(rows.exists())
+        for row in rows:
+            self.assertTrue(
+                DevelopmentPlanItem.objects.filter(
+                    employee=row.employee, event=row.event, status="in_progress"
+                ).exists()
+            )
+
+    def test_migration_preserves_preexisting_demo_completions(self):
+        record = Participation.objects.create(
+            record_id="DEMO_OLD_VERSION",
+            employee=self.employee,
+            event_id="EV_009",
+            date=date(2026, 10, 1),
+            status="completed",
+            completion_pct=100,
+            assigned_by="self",
+            request_id=uuid.uuid4(),
+        )
+        before = profile_context(self.employee)["levels"]
+        migration = importlib.import_module("quest.migrations.0004_existing_demo_completions")
+        migration.include_previous_demo_steps(apps, None)
+        migration.include_previous_demo_steps(apps, None)
+        item = DevelopmentPlanItem.objects.get(employee=self.employee, event_id="EV_009")
+        self.assertEqual(item.status, "completed")
+        self.assertEqual(item.participation, record)
+        self.assertEqual(profile_context(self.employee)["levels"], before)
+
+    def test_import_preview_does_not_write_and_counts_actual_changes(self):
+        revision = DatasetState.objects.get().revision
+        row = copy.deepcopy(json.loads(self.files["employees"])["employees"][27])
+        updated, new = copy.deepcopy(row), copy.deepcopy(row)
+        updated["full_name"] = "Changed name"
+        new["employee_id"] = "JUDGE_PREVIEW"
+        unchanged = json.loads(self.files["employees"])["employees"][0]
+        files = {"employees": json.dumps({"employees": [updated, new, unchanged]})}
+        preview = preview_dataset(**files)
+        self.assertEqual(
+            preview["counts"]["Employee"], {"processed": 3, "created": 1, "updated": 1, "unchanged": 1}
+        )
+        self.assertEqual(DatasetState.objects.get().revision, revision)
+        self.assertFalse(Employee.objects.filter(pk="JUDGE_PREVIEW").exists())
+        self.assertEqual(Employee.objects.get(pk="E0028").full_name, row["full_name"])
+        import_dataset(expected_fingerprint=preview["fingerprint"], **files)
+        self.assertTrue(Employee.objects.filter(pk="JUDGE_PREVIEW").exists())
+
+    def test_stale_import_preview_rejected_after_profile_change(self):
+        row = json.loads(self.files["employees"])["employees"][27]
+        files = {"employees": json.dumps({"employees": [row]})}
+        preview = preview_dataset(**files)
+        Employee.objects.filter(pk="E0028").update(full_name="Changed since preview")
+        with self.assertRaisesMessage(ImportFailure, "после предпросмотра"):
+            import_dataset(expected_fingerprint=preview["fingerprint"], **files)
+        self.assertEqual(Employee.objects.get(pk="E0028").full_name, "Changed since preview")
+
+    def make_import_draft(self):
+        self.client.force_login(self.hr_user)
+        row = copy.deepcopy(json.loads(self.files["employees"])["employees"][27])
+        row["employee_id"] = "JUDGE_WEB"
+        response = self.client.post(
+            "/hr/import/",
+            {"employees": SimpleUploadedFile("employees.json", json.dumps({"employees": [row]}).encode())},
+            follow=True,
+        )
+        self.assertContains(response, "данные ещё не изменены")
+        self.assertFalse(Employee.objects.filter(pk="JUDGE_WEB").exists())
+        return ImportDraft.objects.get()
+
+    def test_import_web_preview_confirm_and_retry(self):
+        draft = self.make_import_draft()
+        data = {"action": "confirm", "draft": str(draft.pk)}
+        response = self.client.post("/hr/import/", data, follow=True)
+        self.assertContains(response, "/people/JUDGE_WEB/")
+        self.assertContains(response, "Загрузка завершена")
+        revision = DatasetState.objects.get().revision
+        self.client.post("/hr/import/", data)
+        self.assertEqual(DatasetState.objects.get().revision, revision)
+        self.assertEqual(Employee.objects.filter(pk="JUDGE_WEB").count(), 1)
+        draft.refresh_from_db()
+        self.assertEqual(draft.files, {})
+
+    def test_import_draft_is_private_and_expires(self):
+        draft = self.make_import_draft()
+        other = User.objects.create_user("other-hr")
+        other.groups.add(Group.objects.get(name="HR"))
+        self.client.force_login(other)
+        self.assertEqual(self.client.get(f"/hr/import/?draft={draft.pk}").status_code, 404)
+        self.assertEqual(
+            self.client.post("/hr/import/", {"action": "confirm", "draft": str(draft.pk)}).status_code, 404
+        )
+        self.client.force_login(self.hr_user)
+        ImportDraft.objects.filter(pk=draft.pk).update(created_at=timezone.now() - timedelta(minutes=31))
+        self.assertContains(
+            self.client.post("/hr/import/", {"action": "confirm", "draft": str(draft.pk)}),
+            "Предпросмотр устарел",
+        )
+        self.assertFalse(Employee.objects.filter(pk="JUDGE_WEB").exists())
+
+    def test_hr_filters_and_aggregates_use_same_group(self):
+        self.client.force_login(self.hr_user)
+        page = self.client.get("/hr/", {"grade": "Middle", "skill": "SK_CLOUD", "attention": "1"})
+        rows = page.context["profiles"]
+        self.assertGreater(len(rows), 0)
+        self.assertEqual(page.context["count"], len(rows))
+        self.assertEqual(page.context["attention_count"], len(rows))
+        for row in rows:
+            self.assertEqual(row["employee"].grade, "Middle")
+            self.assertTrue(row["attention"])
+            self.assertTrue(
+                any(g["skill_id"] == "SK_CLOUD" for g in profile_context(row["employee"])["open_gaps"])
+            )
+        self.assertEqual(self.client.get("/hr/", {"q": "E0028"}).context["count"], 1)
+        self.assertContains(self.client.get("/hr/", {"q": "NONEXISTENTPERSON"}), "сотрудников не найдено")
+
+    def test_repeated_skips_lower_score_and_are_explained(self):
+        before = next(
+            c for c in candidates_for(profile_context(self.employee))[0] if c["event_id"] == "EV_009"
+        )
+        for number in range(3):
+            Participation.objects.create(
+                record_id=f"SKIP_{number}",
+                employee=self.employee,
+                event_id="EV_009",
+                date=date(2026, 9, 20 + number),
+                status="no_show",
+                assigned_by="self",
+            )
+        after = next(
+            c for c in candidates_for(profile_context(self.employee))[0] if c["event_id"] == "EV_009"
+        )
+        self.assertLess(after["score"], before["score"])
+        self.assertEqual(after["same_event_failures"], before["same_event_failures"] + 3)
+        self.assertTrue(any("Причины в данных не указаны" in f["text"] for f in after["facts"]))
+
+    def test_fully_met_goal_does_not_recommend_pointless_training(self):
+        self.employee.skills = {key: 5 for key in Skill.objects.values_list("pk", flat=True)}
+        self.employee.save()
+        ctx = profile_context(self.employee)
+        self.assertEqual(ctx["coverage"], 100)
+        result = get_recommendations(ctx)
+        self.assertEqual(result["steps"], [])
+        self.assertIn("Требования выбранного профиля по навыкам выполнены", result["notice"])

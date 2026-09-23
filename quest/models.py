@@ -1,3 +1,5 @@
+import uuid
+
 from django.conf import settings
 from django.db import models
 
@@ -95,3 +97,33 @@ class RecommendationCache(models.Model):
     fingerprint = models.CharField(max_length=64)
     payload = models.JSONField()
     created_at = models.DateTimeField(auto_now=True)
+
+
+class DevelopmentPlanItem(models.Model):
+    employee = models.ForeignKey(Employee, related_name="plan_items", on_delete=models.CASCADE)
+    event = models.ForeignKey(Event, on_delete=models.PROTECT)
+    status = models.CharField(max_length=20, default="planned")
+    participation = models.OneToOneField(
+        Participation, null=True, blank=True, on_delete=models.SET_NULL, related_name="plan_item"
+    )
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ["created_at", "pk"]
+        constraints = [
+            models.UniqueConstraint(fields=["employee", "event"], name="unique_employee_plan_event"),
+            models.CheckConstraint(
+                condition=models.Q(status__in=["planned", "in_progress", "completed", "cancelled"]),
+                name="valid_plan_status",
+            ),
+        ]
+
+
+class ImportDraft(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    owner = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    files = models.JSONField()
+    preview = models.JSONField()
+    created_at = models.DateTimeField(auto_now_add=True)
+    confirmed_at = models.DateTimeField(null=True, blank=True)

@@ -1,4 +1,5 @@
 import csv
+import hashlib
 import io
 import json
 from datetime import date
@@ -67,15 +68,13 @@ def unique(rows, field):
     return seen
 
 
-@transaction.atomic
-def import_dataset(*, employees=None, history=None, skills=None, events=None):
+def prepare_dataset(*, employees=None, history=None, skills=None, events=None):
     erows, esnap = parse_rows(employees, "employees", EmployeeInput)
     hrows, _ = parse_rows(history, "activity_history", HistoryInput, csv_mode=True)
     srows, ssnap = parse_rows(skills, "skills", SkillInput)
     rrows, _ = parse_rows(skills, "role_profiles", RoleInput)
     vrows, vsnap = parse_rows(events, "events", EventInput)
-    state, _ = DatasetState.objects.get_or_create(key="main")
-    state = DatasetState.objects.select_for_update().get(pk=state.pk)
+    state = DatasetState.objects.filter(key="main").first() or DatasetState(as_of_date=date(2026, 10, 1))
     snapshots = {x for x in (esnap, ssnap, vsnap) if x}
     if len(snapshots) > 1 or (snapshots and Employee.objects.exists() and state.as_of_date not in snapshots):
         raise ImportFailure("Дата среза должна совпадать с текущим набором данных.")
@@ -120,29 +119,92 @@ def import_dataset(*, employees=None, history=None, skills=None, events=None):
         if date.fromisoformat(h["date"]) > state.as_of_date:
             raise ImportFailure(f"{h['record_id']}: история позже даты среза")
         old = existing.get(h["record_id"])
-        if old and (old.employee_id != h["employee_id"] or old.event_id != h["event_id"] or old.request_id):
+        if old and (
+            old.employee_id != h["employee_id"]
+            or old.event_id != h["event_id"]
+            or old.request_id
+            or old.pk.startswith("PLAN_")
+        ):
             raise ImportFailure(f"{h['record_id']}: конфликт с существующей записью")
+    groups = [
+        (Skill, srows, ("skill_id",)),
+        (Event, vrows, ("event_id",)),
+        (Employee, erows, ("employee_id",)),
+        (Participation, hrows, ("record_id",)),
+        (RoleProfile, rrows, ("role", "grade")),
+    ]
+    return state, groups
+
+
+def summarize_dataset(state, groups):
     counts = {}
-    for model, rows, key in [
-        (Skill, srows, "skill_id"),
-        (Event, vrows, "event_id"),
-        (Employee, erows, "employee_id"),
-        (Participation, hrows, "record_id"),
-    ]:
-        created = 0
+    baseline = {"revision": state.revision, "as_of_date": str(state.as_of_date), "rows": []}
+    affected = set()
+    incoming_people = {}
+    for model, rows, keys in groups:
+        counts[model.__name__] = {"processed": len(rows), "created": 0, "updated": 0, "unchanged": 0}
+        existing = {
+            tuple(str(getattr(obj, k)) for k in keys): obj
+            for obj in model.objects.filter(**{f"{keys[0]}__in": [r[keys[0]] for r in rows]})
+        }
         for row in rows:
-            values = dict(row)
-            pk = values.pop(key)
-            _, new = model.objects.update_or_create(**{key: pk}, defaults=values)
-            created += int(new)
-        counts[model.__name__] = {"processed": len(rows), "created": created}
-    for r in rrows:
-        RoleProfile.objects.update_or_create(
-            role=r["role"],
-            grade=r["grade"],
-            defaults={"required_skills": r["required_skills"], "critical_skills": r["critical_skills"]},
+            key = tuple(str(row[k]) for k in keys)
+            old = existing.get(key)
+            values = {k: getattr(old, k) for k in row} if old else None
+            values = json.loads(json.dumps(values, default=str))
+            status = "created" if old is None else "unchanged" if values == row else "updated"
+            counts[model.__name__][status] += 1
+            baseline["rows"].append([model.__name__, key, values])
+            if model == Employee:
+                incoming_people[row["employee_id"]] = row
+                affected.add(row["employee_id"])
+            if model == Participation:
+                affected.add(row["employee_id"])
+    current_people = {e.pk: e for e in Employee.objects.filter(pk__in=affected)}
+    profiles = []
+    for pk in sorted(affected):
+        row, old = incoming_people.get(pk), current_people.get(pk)
+        profiles.append(
+            {"employee_id": pk, "full_name": row["full_name"] if row else old.full_name, "new": old is None}
         )
-    counts["RoleProfile"] = {"processed": len(rrows)}
+    fingerprint = hashlib.sha256(json.dumps(baseline, sort_keys=True, default=str).encode()).hexdigest()
+    return {
+        "counts": counts,
+        "profiles": profiles,
+        "fingerprint": fingerprint,
+        "as_of_date": str(state.as_of_date),
+    }
+
+
+def preview_dataset(**files):
+    return summarize_dataset(*prepare_dataset(**files))
+
+
+@transaction.atomic
+def import_dataset(*, expected_fingerprint=None, **files):
+    DatasetState.objects.get_or_create(key="main")
+    DatasetState.objects.select_for_update().get(key="main")
+    state, groups = prepare_dataset(**files)
+    employee_ids = {
+        row["employee_id"] for model, rows, _ in groups if model in {Employee, Participation} for row in rows
+    }
+    list(Employee.objects.select_for_update().filter(pk__in=employee_ids).order_by("pk"))
+    # Revalidate after acquiring locks: a completion may have happened while waiting.
+    state, groups = prepare_dataset(**files)
+    summary = summarize_dataset(state, groups)
+    if expected_fingerprint and summary["fingerprint"] != expected_fingerprint:
+        raise ImportFailure(
+            "Данные изменились после предпросмотра. Загрузите файлы заново и проверьте изменения."
+        )
+    for model, rows, keys in groups:
+        for row in rows:
+            model.objects.update_or_create(
+                **{k: row[k] for k in keys}, defaults={k: v for k, v in row.items() if k not in keys}
+            )
+    from quest.services.plans import sync_plan_history
+
+    record_ids = [r["record_id"] for model, rows, _ in groups if model == Participation for r in rows]
+    sync_plan_history(Participation.objects.filter(pk__in=record_ids).select_related("employee", "event"))
     state.revision += 1
     state.save()
-    return counts
+    return summary["counts"]

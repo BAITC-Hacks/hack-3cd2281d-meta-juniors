@@ -51,22 +51,13 @@ async function loadRecommendations() {
         <p class="priority">${escapeHTML(step.priority)}</p>
         <ul class="evidence">${step.explanation.map(f => `<li>${escapeHTML(f.text)}</li>`).join("")}</ul>
         <p class="card-session">Ближайшая возможность: ${escapeHTML(step.next_session)}</p>
-        ${recommendationSection.dataset.canComplete === "true" ? `<button class="button secondary complete-event" data-event-id="${escapeHTML(step.event_id)}">Завершить в демо <span>✓</span></button>` : ""}
+        <div class="card-actions"><a class="button secondary" href="/people/${encodeURIComponent(recommendationSection.dataset.employeeId)}/events/${encodeURIComponent(step.event_id)}/">Подробнее</a>
+        ${recommendationSection.dataset.canManage === "true" ? `<button class="button primary" data-plan-url="/api/people/${encodeURIComponent(recommendationSection.dataset.employeeId)}/plan/${encodeURIComponent(step.event_id)}/add/" data-message="Шаг добавлен в личный план.">В мой план +</button>` : ""}</div>
       </article>`).join("") : `<div class="empty-state"><strong>${escapeHTML(data.mode_label)}</strong>${escapeHTML(data.notice)}</div>`;
     if (data.uncovered.length) {
-      uncovered.textContent = `Каталог пока не закрывает эти разрывы доступными активностями: ${data.uncovered.join(", ")}. Их стоит обсудить с HR.`;
+      uncovered.textContent = `Для этих разрывов нет новых доступных шагов вне плана: ${data.uncovered.join(", ")}. Проверь личный план или обсуди варианты с HR.`;
       uncovered.hidden = false;
     }
-    box.querySelectorAll(".complete-event").forEach(button => button.addEventListener("click", async () => {
-      button.disabled = true; button.textContent = "Обновляем прогресс…";
-      button.dataset.requestId ||= crypto.randomUUID();
-      const url = `/api/people/${encodeURIComponent(recommendationSection.dataset.employeeId)}/complete/${encodeURIComponent(button.dataset.eventId)}/`;
-      try {
-        const result = await postJSON(url, {request_id:button.dataset.requestId});
-        sessionStorage.setItem("careerquest-message", result.already_completed ? "Эта операция уже учтена. Прогресс не начислен повторно." : `Шаг завершён. Покрытие навыков: ${result.coverage_before}% → ${result.coverage_after}%.`);
-        location.reload();
-      } catch (error) { toast(error.message); button.disabled = false; button.textContent = "Повторить завершение"; }
-    }));
   } catch (error) {
     status.textContent = error.message;
     box.innerHTML = '<div class="empty-state">Подбор временно недоступен. Нажми «Обновить подбор», чтобы повторить.</div>';
@@ -76,10 +67,21 @@ if (recommendationSection) {
   loadRecommendations();
   document.getElementById("refresh-recommendations").addEventListener("click", loadRecommendations);
 }
-const search = document.getElementById("people-search");
-search?.addEventListener("input", () => {
-  const term = search.value.toLowerCase();
-  document.querySelectorAll("#people-table tbody tr").forEach(row => row.hidden = !row.textContent.toLowerCase().includes(term));
+document.addEventListener("click", async event => {
+  const button = event.target.closest("[data-plan-url]");
+  if (!button || button.disabled) return;
+  const previousText = button.textContent;
+  button.disabled = true; button.textContent = "Сохраняем…";
+  try {
+    button.dataset.requestId ||= crypto.randomUUID();
+    const result = await postJSON(button.dataset.planUrl, {request_id:button.dataset.requestId});
+    const message = button.dataset.completion
+      ? result.already_completed ? "Эта операция уже учтена. Повторного начисления нет." : `Шаг завершён. Покрытие навыков: ${result.coverage_before}% → ${result.coverage_after}%.`
+      : button.dataset.message;
+    sessionStorage.setItem("careerquest-message", message || "План обновлён.");
+    if (button.dataset.redirect) location.assign(button.dataset.redirect);
+    else location.reload();
+  } catch (error) { toast(error.message); button.disabled = false; button.textContent = previousText; }
 });
 const savedMessage = sessionStorage.getItem("careerquest-message");
 if (savedMessage) { sessionStorage.removeItem("careerquest-message"); toast(savedMessage); }

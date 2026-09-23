@@ -1,5 +1,6 @@
 import uuid
 from collections import defaultdict
+from datetime import timedelta
 
 from django.conf import settings
 from django.contrib import messages
@@ -7,18 +8,38 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.views import LoginView
 from django.core.exceptions import PermissionDenied
 from django.db import transaction
-from django.db.models import Prefetch
+from django.db.models import Prefetch, Q
 from django.http import JsonResponse
 from django.shortcuts import get_object_or_404, redirect, render
+from django.utils import timezone
 from django.views.decorators.http import require_GET, require_http_methods
 from pydantic import ValidationError
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 
-from .models import Employee, Event, Participation, RecommendationCache, RoleProfile
+from .models import (
+    DevelopmentPlanItem,
+    Employee,
+    Event,
+    ImportDraft,
+    Participation,
+    RecommendationCache,
+    RoleProfile,
+    Skill,
+)
 from .schemas import GoalInput
-from .services.career import STATUS_NAMES, candidates_for, hr_summary, profile_context
-from .services.importer import ImportFailure, import_dataset
+from .services.career import (
+    FORMAT_NAMES,
+    GRADES,
+    STATUS_NAMES,
+    apply_gain,
+    candidates_for,
+    eligibility,
+    hr_summary,
+    profile_context,
+)
+from .services.importer import ImportFailure, import_dataset, preview_dataset
+from .services.plans import PlanConflict, change_plan
 from .services.recommendations import get_recommendations
 
 
@@ -64,6 +85,8 @@ def profile(request, employee_id):
     ctx["goal_options"] = dict(options)
     ctx["page"] = "profile"
     ctx["can_complete"] = employee.user_id == request.user.id and settings.DEMO_MODE
+    ctx["can_manage"] = employee.user_id == request.user.id
+    ctx["plan_count"] = employee.plan_items.filter(status__in=["planned", "in_progress"]).count()
     ctx["history_rows"] = [
         {"record": h, "label": STATUS_NAMES.get(h.status, h.status)}
         for h in sorted(ctx["history"], key=lambda r: (r.date, r.record_id), reverse=True)
@@ -79,13 +102,37 @@ def hr_dashboard(request):
         Prefetch("history", queryset=Participation.objects.select_related("event"))
     )
     department = request.GET.get("department", "")
+    grade = request.GET.get("grade", "")
+    attention = request.GET.get("attention") == "1"
+    skill_id = request.GET.get("skill", "")
+    query = request.GET.get("q", "").strip()
     departments = list(
         Employee.objects.order_by("department").values_list("department", flat=True).distinct()
     )
     if department:
         employees = employees.filter(department=department)
-    ctx = hr_summary(employees)
-    ctx.update(page="hr", departments=departments, department=department)
+    if grade:
+        employees = employees.filter(grade=grade)
+    if query:
+        employees = employees.filter(
+            Q(full_name__icontains=query) | Q(employee_id__icontains=query) | Q(role__icontains=query)
+        )
+    ctx = hr_summary(employees, attention_only=attention, skill_id=skill_id)
+    for deficit in ctx["deficits"]:
+        params = request.GET.copy()
+        params["skill"] = deficit["skill_id"]
+        deficit["query"] = params.urlencode()
+    ctx.update(
+        page="hr",
+        departments=departments,
+        department=department,
+        grades=GRADES,
+        grade=grade,
+        attention=attention,
+        selected_skill=skill_id,
+        skill_options=Skill.objects.order_by("name"),
+        query=query,
+    )
     return render(request, "quest/hr.html", ctx)
 
 
@@ -94,9 +141,35 @@ def hr_dashboard(request):
 def import_page(request):
     if not is_hr(request.user):
         raise PermissionDenied
-    result = None
+    draft = None
+    if request.GET.get("draft"):
+        try:
+            draft_id = uuid.UUID(request.GET["draft"])
+        except ValueError:
+            return redirect("import")
+        draft = get_object_or_404(ImportDraft, pk=draft_id, owner=request.user)
     if request.method == "POST":
         try:
+            if request.POST.get("action") == "confirm":
+                try:
+                    draft_id = uuid.UUID(request.POST.get("draft", ""))
+                except ValueError:
+                    raise ImportFailure("Предпросмотр не найден. Загрузите файлы заново.") from None
+                with transaction.atomic():
+                    draft = get_object_or_404(
+                        ImportDraft.objects.select_for_update(), pk=draft_id, owner=request.user
+                    )
+                    if not draft.confirmed_at:
+                        if timezone.now() - draft.created_at > timedelta(minutes=30):
+                            raise ImportFailure("Предпросмотр устарел. Загрузите файлы заново.")
+                        import_dataset(expected_fingerprint=draft.preview["fingerprint"], **draft.files)
+                        draft.confirmed_at = timezone.now()
+                        draft.files = {}
+                        draft.save(update_fields=["confirmed_at", "files"])
+                        messages.success(
+                            request, "Данные загружены. Откройте профиль для проверки рекомендаций."
+                        )
+                return redirect(f"{request.path}?draft={draft.pk}")
             if not request.FILES:
                 raise ImportFailure("Выберите хотя бы один файл.")
             data = {}
@@ -105,14 +178,129 @@ def import_page(request):
                 if uploaded:
                     if uploaded.size > 10 * 1024 * 1024:
                         raise ImportFailure("Размер файла не должен превышать 10 МБ.")
-                    data[key] = uploaded.read()
+                    try:
+                        data[key] = uploaded.read().decode("utf-8-sig")
+                    except UnicodeDecodeError:
+                        raise ImportFailure("Файл должен быть в кодировке UTF-8.") from None
             if not data:
                 raise ImportFailure("Файлы не распознаны.")
-            result = import_dataset(**data)
-            messages.success(request, "Данные загружены. Новые профили доступны на HR-экране.")
+            preview = preview_dataset(**data)
+            ImportDraft.objects.filter(
+                owner=request.user, created_at__lt=timezone.now() - timedelta(minutes=30)
+            ).delete()
+            draft = ImportDraft.objects.create(owner=request.user, files=data, preview=preview)
+            return redirect(f"{request.path}?draft={draft.pk}")
         except ImportFailure as exc:
             messages.error(request, str(exc))
-    return render(request, "quest/import.html", {"page": "import", "result": result})
+    labels = {
+        "Employee": "Сотрудники",
+        "Participation": "История",
+        "Event": "Мероприятия",
+        "Skill": "Навыки",
+        "RoleProfile": "Профили ролей",
+    }
+    counts = (
+        [{"label": labels[k], **v} for k, v in draft.preview["counts"].items() if v["processed"]]
+        if draft
+        else []
+    )
+    return render(request, "quest/import.html", {"page": "import", "draft": draft, "counts": counts})
+
+
+@login_required
+def development_plan(request, employee_id):
+    employee = accessible_employee(request.user, employee_id)
+    ctx = profile_context(employee)
+    candidates, _, _ = candidates_for(ctx, include_planned=True)
+    eligible = {c["event_id"] for c in candidates}
+    columns = [
+        {"status": s, "title": title, "items": []}
+        for s, title in [
+            ("planned", "Запланировано"),
+            ("in_progress", "В процессе"),
+            ("completed", "Завершено"),
+        ]
+    ]
+    by_status = {c["status"]: c["items"] for c in columns}
+    for item in employee.plan_items.select_related("event", "participation").exclude(status="cancelled"):
+        item.can_start = item.event_id in eligible
+        by_status[item.status].append(item)
+    total = sum(len(c["items"]) for c in columns)
+    completed = len(by_status["completed"])
+    ctx.update(
+        page="plan",
+        columns=columns,
+        plan_total=total,
+        plan_completed=completed,
+        plan_progress=round(completed / total * 100) if total else 0,
+        can_manage=employee.user_id == request.user.id,
+        can_complete=employee.user_id == request.user.id and settings.DEMO_MODE,
+    )
+    return render(request, "quest/plan.html", ctx)
+
+
+@login_required
+def event_detail(request, employee_id, event_id):
+    employee = accessible_employee(request.user, employee_id)
+    event = get_object_or_404(Event, pk=event_id)
+    ctx = profile_context(employee)
+    candidates, _, _ = candidates_for(ctx, include_planned=True)
+    candidate = next((c for c in candidates if c["event_id"] == event_id), None)
+    after = apply_gain(ctx["levels"], event)
+    effects = [
+        {
+            "name": ctx["cat"]["skills"][e["skill_id"]].name,
+            "before": ctx["levels"].get(e["skill_id"], 0),
+            "after": after[e["skill_id"]],
+            "cap": e["max_level"],
+        }
+        for e in event.develops_skills
+    ]
+    prerequisites = [
+        {
+            "name": ctx["cat"]["skills"][key].name,
+            "required": required,
+            "current": ctx["levels"].get(key, 0),
+            "met": ctx["levels"].get(key, 0) >= required,
+        }
+        for key, required in event.prerequisites.items()
+    ]
+    reasons = eligibility(employee, event, ctx["levels"], ctx["history"], ctx["cat"]["today"])
+    if not candidate and not reasons:
+        reasons.append("Активность не сокращает текущий разрыв к карьерной цели.")
+    item = employee.plan_items.filter(event=event).exclude(status="cancelled").first()
+    ctx.update(
+        page="event",
+        event=event,
+        candidate=candidate,
+        effects=effects,
+        prerequisites=prerequisites,
+        reasons=reasons,
+        item=item,
+        event_format=FORMAT_NAMES.get(event.format, event.format),
+        sessions=[s for s in event.upcoming_sessions if s >= str(ctx["cat"]["today"])],
+        can_manage=employee.user_id == request.user.id,
+    )
+    return render(request, "quest/event.html", ctx)
+
+
+@api_view(["POST"])
+def plan_api(request, employee_id, event_id, action):
+    employee = accessible_employee(request.user, employee_id)
+    if employee.user_id != request.user.id:
+        return Response({"detail": "План изменяет сам сотрудник."}, status=403)
+    if action not in {"add", "start", "cancel"}:
+        return Response({"detail": "Неизвестное действие."}, status=400)
+    if action == "start" and not settings.DEMO_MODE:
+        return Response({"detail": "Запуск учебной активности доступен в демо-режиме."}, status=403)
+    with transaction.atomic():
+        employee = Employee.objects.select_for_update().get(pk=employee.pk)
+        event = get_object_or_404(Event, pk=event_id)
+        try:
+            item = change_plan(employee, event, action)
+        except PlanConflict as exc:
+            return Response({"detail": str(exc)}, status=409)
+    return Response({"status": item.status, "event_id": event.pk})
 
 
 @api_view(["GET"])
@@ -178,24 +366,34 @@ def complete_api(request, employee_id, event_id):
             return Response({"completed": True, "already_completed": True, "record_id": previous.pk})
         event = get_object_or_404(Event, pk=event_id)
         ctx = profile_context(employee)
-        candidates, _, _ = candidates_for(ctx)
-        if event_id not in {c["event_id"] for c in candidates}:
+        item = (
+            DevelopmentPlanItem.objects.filter(employee=employee, event=event, status="in_progress")
+            .select_related("participation")
+            .first()
+        )
+        if (
+            not item
+            or not item.participation
+            or item.participation.status != "in_progress"
+            or event.mandatory
+        ):
             return Response(
-                {
-                    "detail": "Активность уже завершена или больше не подходит текущему профилю. Обновите рекомендации."
-                },
+                {"detail": "Завершить можно активность со статусом «В процессе» в личном плане."},
                 status=409,
             )
-        record = Participation.objects.create(
-            record_id=f"DEMO_{request_id.hex}",
-            request_id=request_id,
-            employee=employee,
-            event=event,
-            date=ctx["cat"]["today"],
-            status="completed",
-            completion_pct=100,
-            assigned_by="self",
-        )
+        completed = Participation.objects.filter(employee=employee, event=event, status="completed")
+        if (
+            completed.filter(date=ctx["cat"]["today"]).exists()
+            if event.pk == "EV_036"
+            else completed.exists()
+        ):
+            return Response({"detail": "Эта активность уже учтена как завершённая."}, status=409)
+        record = item.participation
+        record.request_id, record.status, record.completion_pct = request_id, "completed", 100
+        record.date = ctx["cat"]["today"]
+        record.save(update_fields=["request_id", "status", "completion_pct", "date"])
+        item.status = "completed"
+        item.save(update_fields=["status", "updated_at"])
         RecommendationCache.objects.filter(employee=employee).delete()
         updated = profile_context(employee)
         return Response(

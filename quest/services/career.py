@@ -1,7 +1,7 @@
 from collections import Counter
 from datetime import date
 
-from quest.models import DatasetState, Event, RoleProfile, Skill
+from quest.models import DatasetState, DevelopmentPlanItem, Event, RoleProfile, Skill
 
 GRADES = ["Junior", "Middle", "Senior", "Lead"]
 FORMAT_NAMES = {"online": "онлайн", "offline": "очно", "self_paced": "в своём темпе"}
@@ -132,12 +132,23 @@ def profile_context(employee, cat=None, history=None):
     }
 
 
-def candidates_for(ctx):
+def candidates_for(ctx, include_planned=False):
     employee, cat, levels, history = ctx["employee"], ctx["cat"], ctx["levels"], ctx["history"]
     gaps = {g["skill_id"]: g for g in ctx["gaps"] if g["gap"]}
     candidates, exclusions = [], Counter()
+    planned = (
+        set()
+        if include_planned
+        else set(
+            DevelopmentPlanItem.objects.filter(employee=employee, status="planned").values_list(
+                "event_id", flat=True
+            )
+        )
+    )
     for event in cat["events"].values():
         reasons = eligibility(employee, event, levels, history, cat["today"])
+        if event.pk in planned:
+            reasons.append("Уже в личном плане")
         if reasons:
             exclusions.update(reasons)
             continue
@@ -226,7 +237,7 @@ def candidates_for(ctx):
     return candidates, dict(exclusions), uncovered
 
 
-def hr_summary(employees):
+def hr_summary(employees, *, attention_only=False, skill_id=""):
     cat = catalog()
     profiles = []
     deficits = {}
@@ -236,9 +247,20 @@ def hr_summary(employees):
         unfinished = sum(r.status in {"no_show", "dropped", "declined"} for r in recent)
         completed = sum(r.status == "completed" for r in recent)
         attention = unfinished >= 2 or completed == 0
+        if attention_only and not attention:
+            continue
+        if skill_id and not any(g["skill_id"] == skill_id for g in ctx["open_gaps"]):
+            continue
         for g in ctx["open_gaps"]:
             entry = deficits.setdefault(
-                g["skill_id"], {"name": g["name"], "people": 0, "critical_people": 0, "total_gap": 0}
+                g["skill_id"],
+                {
+                    "skill_id": g["skill_id"],
+                    "name": g["name"],
+                    "people": 0,
+                    "critical_people": 0,
+                    "total_gap": 0,
+                },
             )
             entry["people"] += 1
             entry["critical_people"] += int(g["critical"])
