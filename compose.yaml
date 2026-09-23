@@ -1,0 +1,46 @@
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-career_quest}
+      POSTGRES_USER: ${POSTGRES_USER:-career_quest}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-career-local-2026}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "127.0.0.1:${POSTGRES_PORT:-5433}:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $$POSTGRES_USER -d $$POSTGRES_DB"]
+      interval: 3s
+      timeout: 3s
+      retries: 20
+  web:
+    build: .
+    ports:
+      - "${HOST_BIND:-127.0.0.1}:${APP_PORT:-8000}:8000"
+    environment:
+      DJANGO_DEBUG: "0"
+      DJANGO_SECRET_KEY: ${DJANGO_SECRET_KEY:-local-hackathon-demo-change-before-public-deploy}
+      DJANGO_ALLOWED_HOSTS: ${DJANGO_ALLOWED_HOSTS:-localhost,127.0.0.1,[::1]}
+      DB_HOST: db
+      DB_PORT: "5432"
+      POSTGRES_DB: ${POSTGRES_DB:-career_quest}
+      POSTGRES_USER: ${POSTGRES_USER:-career_quest}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-career-local-2026}
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+      OPENAI_MODEL: ${OPENAI_MODEL:-gpt-4.1-mini}
+      AI_TIMEOUT_SECONDS: ${AI_TIMEOUT_SECONDS:-7}
+      DEMO_MODE: ${DEMO_MODE:-1}
+      DEMO_PASSWORD: ${DEMO_PASSWORD:-career-demo-2026}
+    depends_on:
+      db:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/health/')"]
+      interval: 15s
+      timeout: 3s
+      start_period: 30s
+      retries: 3
+volumes:
+  postgres_data:
+
