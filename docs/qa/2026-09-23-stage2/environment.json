@@ -1,0 +1,42 @@
+{
+  "date": "2026-09-23",
+  "application_commit": "e4a146e6fa068fecb208ecdbc92b7298fc5fc34e",
+  "checkout": "ae5bfadb49369d7e56b6834e8218ba398e764f14",
+  "compose_project": "career-quest-qa-stage2-20260923",
+  "base_url": "http://127.0.0.1:8011",
+  "db_port": 5444,
+  "employees": 203,
+  "history": 2750,
+  "revision": 2,
+  "e0028_history": 18,
+  "e0028_plan": [
+    {
+      "event_id": "EV_009",
+      "status": "completed"
+    }
+  ],
+  "standard_tests": {
+    "total": 46,
+    "passed": 46,
+    "seconds": 60.475
+  },
+  "independent_tests": {
+    "total": 8,
+    "passed": 5,
+    "failed_methods": 3,
+    "failed_assertions": 7,
+    "seconds": 32.069
+  },
+  "live_ai": false,
+  "ui_sla_measured": false,
+  "final_container_health": {
+    "web": "healthy",
+    "db": "healthy"
+  },
+  "publishing_base": "8792c21 (documentation-only changes after checked checkout)",
+  "browser_viewport": {
+    "width": 1265,
+    "scrollWidth": 1265,
+    "page": "filtered HR"
+  }
+}

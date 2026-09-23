@@ -1,0 +1,310 @@
+- complementary:
+  - link "cq ↗ Career Quest РАСТИ ОСОЗНАННО":
+    - /url: /
+    - text: cq
+    - generic: ↗
+    - text: Career Quest
+    - generic: РАСТИ ОСОЗНАННО
+  - generic: РАБОЧЕЕ ПРОСТРАНСТВО
+  - navigation "Главное меню":
+    - link "Обзор команды":
+      - /url: /hr/
+      - text: Обзор команды
+    - link "Загрузка данных":
+      - /url: /hr/import/
+      - text: Загрузка данных
+  - generic: ↗
+  - strong:
+    - text: Маленькие шаги.
+    - text: Заметный рост.
+  - paragraph: Твой путь развития начинается с понятного следующего шага.
+  - generic: HR
+  - strong: HR-пространство
+  - text: hr
+  - button "Выйти": ↪
+- banner:
+  - text: Рабочее пространство /
+  - strong: Команда
+  - generic: Демо · синтетические данные
+- main:
+  - generic: HR-ПРОСТРАНСТВО
+  - heading "Развитие команды." [level=1]
+  - paragraph: Компетенции, которым нужна поддержка. Люди, с которыми стоит поговорить.
+  - link "Загрузить данные":
+    - /url: /hr/import/
+    - text: Загрузить данные
+  - generic: Подразделение
+  - combobox "Подразделение":
+    - option "Все подразделения" [selected]
+    - option "Backend Development"
+    - option "Customer Support"
+    - option "Data & Analytics"
+    - option "Frontend Development"
+    - option "Human Resources"
+    - option "Product Management"
+    - option "Quality Assurance"
+    - option "Sales"
+  - generic: Грейд
+  - combobox "Грейд":
+    - option "Все грейды"
+    - option "Junior"
+    - option "Middle" [selected]
+    - option "Senior"
+    - option "Lead"
+  - generic: Разрыв в навыке
+  - combobox "Разрыв в навыке":
+    - option "Любой навык"
+    - option "A/B Testing"
+    - option "API Design"
+    - option "API Testing"
+    - option "Account Management"
+    - option "Adaptability"
+    - option "Agile Practices"
+    - option "Application Security"
+    - option "BI Tools"
+    - option "CI/CD"
+    - option "CRM Systems"
+    - option "Cloud Platforms" [selected]
+    - option "Communication"
+    - option "Compensation & Benefits"
+    - option "Conflict Resolution"
+    - option "Containers & Orchestration"
+    - option "Critical Thinking"
+    - option "Customer Service"
+    - option "Data Modeling"
+    - option "Data Visualization"
+    - option "Emotional Intelligence"
+    - option "Employee Relations"
+    - option "Feedback"
+    - option "HR Analytics"
+    - option "HTML & CSS"
+    - option "Java"
+    - option "JavaScript"
+    - option "Labor Law"
+    - option "Leadership"
+    - option "Learning Program Design"
+    - option "Load Testing"
+    - option "Machine Learning Fundamentals"
+    - option "Mentoring"
+    - option "Negotiation"
+    - option "Observability"
+    - option "Problem Solving"
+    - option "Product Analytics"
+    - option "Product Discovery"
+    - option "Product Knowledge"
+    - option "Project Management"
+    - option "Prospecting"
+    - option "Public Speaking"
+    - option "Python"
+    - option "React"
+    - option "Requirements Writing"
+    - option "Roadmapping & Prioritization"
+    - option "SQL"
+    - option "Stakeholder Management"
+    - option "Statistics"
+    - option "System Design"
+    - option "Talent Acquisition"
+    - option "Teamwork"
+    - option "Technical Troubleshooting"
+    - option "Test Automation"
+    - option "Test Design"
+    - option "Time Management"
+    - option "TypeScript"
+    - option "UX Research"
+    - option "Web Accessibility"
+    - option "Web Performance"
+    - option "Written Communication"
+  - generic: Сотрудник или роль
+  - searchbox "Сотрудник или роль"
+  - checkbox "Нужна поддержка" [checked]
+  - text: Нужна поддержка
+  - button "Применить фильтры"
+  - link "Сбросить":
+    - /url: /hr/
+  - generic: Срез на 01.10.2026
+  - article:
+    - generic: В выбранной группе
+    - strong: 6сотрудников
+    - paragraph: Профили из загруженного набора
+  - article:
+    - generic: Среднее покрытие цели
+    - strong: 64% навыков
+    - paragraph: Среди сотрудников с целевым профилем
+  - article:
+    - generic: Повод для разговора
+    - strong: 6сотрудников
+    - paragraph: Сигнал поддержки, не оценка человека
+  - generic: ПРИОРИТЕТЫ ОБУЧЕНИЯ
+  - heading "Где команде нужна поддержка" [level=2]
+  - paragraph: Число сотрудников с разрывом относительно их карьерной цели.
+  - link "System Design ↗":
+    - /url: "?department=&grade=Middle&skill=SK_SYSTEM_DESIGN&q=&attention=1"
+  - generic: 6 чел.
+  - generic: Критичен для 6
+  - link "API Design ↗":
+    - /url: "?department=&grade=Middle&skill=SK_API_DESIGN&q=&attention=1"
+  - generic: 3 чел.
+  - generic: Критичен для 3
+  - link "Cloud Platforms ↗":
+    - /url: "?department=&grade=Middle&skill=SK_CLOUD&q=&attention=1"
+  - generic: 6 чел.
+  - generic: Критичен для 0
+  - link "Mentoring ↗":
+    - /url: "?department=&grade=Middle&skill=SK_MENTORING&q=&attention=1"
+  - generic: 6 чел.
+  - generic: Критичен для 0
+  - link "Problem Solving ↗":
+    - /url: "?department=&grade=Middle&skill=SK_PROBLEM_SOLVING&q=&attention=1"
+  - generic: 6 чел.
+  - generic: Критичен для 0
+  - link "Application Security ↗":
+    - /url: "?department=&grade=Middle&skill=SK_APP_SECURITY&q=&attention=1"
+  - generic: 5 чел.
+  - generic: Критичен для 0
+  - link "CI/CD ↗":
+    - /url: "?department=&grade=Middle&skill=SK_CICD&q=&attention=1"
+  - generic: 5 чел.
+  - generic: Критичен для 0
+  - link "Leadership ↗":
+    - /url: "?department=&grade=Middle&skill=SK_LEADERSHIP&q=&attention=1"
+  - generic: 5 чел.
+  - generic: Критичен для 0
+  - link "Observability ↗":
+    - /url: "?department=&grade=Middle&skill=SK_OBSERVABILITY&q=&attention=1"
+  - generic: 5 чел.
+  - generic: Критичен для 0
+  - link "Public Speaking ↗":
+    - /url: "?department=&grade=Middle&skill=SK_PUBLIC_SPEAKING&q=&attention=1"
+  - generic: 5 чел.
+  - generic: Критичен для 0
+  - generic: ИНДИВИДУАЛЬНАЯ ПОДДЕРЖКА
+  - heading "Профили сотрудников" [level=2]
+  - generic: 6 в выборке
+  - table:
+    - rowgroup:
+      - row "Сотрудник Цель Покрытие За 90 дней Поддержка":
+        - columnheader "Сотрудник"
+        - columnheader "Цель"
+        - columnheader "Покрытие"
+        - columnheader "За 90 дней"
+        - columnheader "Поддержка"
+        - columnheader
+    - rowgroup:
+      - 'row "Togzhan Yessenova E0005 · Backend Engineer · Middle Backend Engineer Senior 68% Критичных разрывов: 2 0 завершено 0 пропусков / отказов / прерываний Обсудить развитие Профиль Togzhan Yessenova"':
+        - cell "Togzhan Yessenova E0005 · Backend Engineer · Middle":
+          - strong: Togzhan Yessenova
+          - generic: E0005 · Backend Engineer · Middle
+        - cell "Backend Engineer Senior":
+          - text: Backend Engineer
+          - generic: Senior
+        - 'cell "68% Критичных разрывов: 2"':
+          - strong: 68%
+          - generic: "Критичных разрывов: 2"
+        - cell "0 завершено 0 пропусков / отказов / прерываний":
+          - text: 0 завершено
+          - generic: 0 пропусков / отказов / прерываний
+        - cell "Обсудить развитие":
+          - generic: Обсудить развитие
+        - cell "Профиль Togzhan Yessenova":
+          - link "Профиль Togzhan Yessenova":
+            - /url: /people/E0005/
+            - text: ↗
+      - 'row "Symbat Baimukhanova E0047 · Backend Engineer · Middle Backend Engineer Senior 56% Критичных разрывов: 2 0 завершено 1 пропусков / отказов / прерываний Обсудить развитие Профиль Symbat Baimukhanova"':
+        - cell "Symbat Baimukhanova E0047 · Backend Engineer · Middle":
+          - strong: Symbat Baimukhanova
+          - generic: E0047 · Backend Engineer · Middle
+        - cell "Backend Engineer Senior":
+          - text: Backend Engineer
+          - generic: Senior
+        - 'cell "56% Критичных разрывов: 2"':
+          - strong: 56%
+          - generic: "Критичных разрывов: 2"
+        - cell "0 завершено 1 пропусков / отказов / прерываний":
+          - text: 0 завершено
+          - generic: 1 пропусков / отказов / прерываний
+        - cell "Обсудить развитие":
+          - generic: Обсудить развитие
+        - cell "Профиль Symbat Baimukhanova":
+          - link "Профиль Symbat Baimukhanova":
+            - /url: /people/E0047/
+            - text: ↗
+      - 'row "Daniyar Sadykov E0092 · Backend Engineer · Middle Backend Engineer Senior 66% Критичных разрывов: 1 0 завершено 1 пропусков / отказов / прерываний Обсудить развитие Профиль Daniyar Sadykov"':
+        - cell "Daniyar Sadykov E0092 · Backend Engineer · Middle":
+          - strong: Daniyar Sadykov
+          - generic: E0092 · Backend Engineer · Middle
+        - cell "Backend Engineer Senior":
+          - text: Backend Engineer
+          - generic: Senior
+        - 'cell "66% Критичных разрывов: 1"':
+          - strong: 66%
+          - generic: "Критичных разрывов: 1"
+        - cell "0 завершено 1 пропусков / отказов / прерываний":
+          - text: 0 завершено
+          - generic: 1 пропусков / отказов / прерываний
+        - cell "Обсудить развитие":
+          - generic: Обсудить развитие
+        - cell "Профиль Daniyar Sadykov":
+          - link "Профиль Daniyar Sadykov":
+            - /url: /people/E0092/
+            - text: ↗
+      - 'row "Natalia Sokolova E0137 · Backend Engineer · Middle Backend Engineer Senior 64% Критичных разрывов: 2 0 завершено 1 пропусков / отказов / прерываний Обсудить развитие Профиль Natalia Sokolova"':
+        - cell "Natalia Sokolova E0137 · Backend Engineer · Middle":
+          - strong: Natalia Sokolova
+          - generic: E0137 · Backend Engineer · Middle
+        - cell "Backend Engineer Senior":
+          - text: Backend Engineer
+          - generic: Senior
+        - 'cell "64% Критичных разрывов: 2"':
+          - strong: 64%
+          - generic: "Критичных разрывов: 2"
+        - cell "0 завершено 1 пропусков / отказов / прерываний":
+          - text: 0 завершено
+          - generic: 1 пропусков / отказов / прерываний
+        - cell "Обсудить развитие":
+          - generic: Обсудить развитие
+        - cell "Профиль Natalia Sokolova":
+          - link "Профиль Natalia Sokolova":
+            - /url: /people/E0137/
+            - text: ↗
+      - 'row "Daria Kozlova E0150 · Backend Engineer · Middle Backend Engineer Senior 62% Критичных разрывов: 1 0 завершено 0 пропусков / отказов / прерываний Обсудить развитие Профиль Daria Kozlova"':
+        - cell "Daria Kozlova E0150 · Backend Engineer · Middle":
+          - strong: Daria Kozlova
+          - generic: E0150 · Backend Engineer · Middle
+        - cell "Backend Engineer Senior":
+          - text: Backend Engineer
+          - generic: Senior
+        - 'cell "62% Критичных разрывов: 1"':
+          - strong: 62%
+          - generic: "Критичных разрывов: 1"
+        - cell "0 завершено 0 пропусков / отказов / прерываний":
+          - text: 0 завершено
+          - generic: 0 пропусков / отказов / прерываний
+        - cell "Обсудить развитие":
+          - generic: Обсудить развитие
+        - cell "Профиль Daria Kozlova":
+          - link "Профиль Daria Kozlova":
+            - /url: /people/E0150/
+            - text: ↗
+      - 'row "Saule Omarova E0184 · Backend Engineer · Middle Backend Engineer Senior 66% Критичных разрывов: 1 3 завершено 2 пропусков / отказов / прерываний Обсудить развитие Профиль Saule Omarova"':
+        - cell "Saule Omarova E0184 · Backend Engineer · Middle":
+          - strong: Saule Omarova
+          - generic: E0184 · Backend Engineer · Middle
+        - cell "Backend Engineer Senior":
+          - text: Backend Engineer
+          - generic: Senior
+        - 'cell "66% Критичных разрывов: 1"':
+          - strong: 66%
+          - generic: "Критичных разрывов: 1"
+        - cell "3 завершено 2 пропусков / отказов / прерываний":
+          - text: 3 завершено
+          - generic: 2 пропусков / отказов / прерываний
+        - cell "Обсудить развитие":
+          - generic: Обсудить развитие
+        - cell "Профиль Saule Omarova":
+          - link "Профиль Saule Omarova":
+            - /url: /people/E0184/
+            - text: ↗
+  - paragraph: "Сигнал: за 90 дней нет завершённых добровольных активностей или есть ≥2 пропуска, отказа или прерывания. Причины неизвестны; это повод предложить помощь. Список отсортирован по ID, а не результативности."
+- contentinfo:
+  - text: Career Quest
+  - generic: HackAlem AI · Meta Juniors · Halyk Bank case

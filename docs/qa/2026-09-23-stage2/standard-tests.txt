@@ -1,0 +1,85 @@
+Found 46 test(s).
+Creating test database for alias 'default' ('test_career_quest')...
+Operations to perform:
+  Synchronize unmigrated apps: messages, rest_framework, staticfiles
+  Apply all migrations: admin, auth, contenttypes, quest, sessions
+Synchronizing apps without migrations:
+  Creating tables...
+    Running deferred SQL...
+Running migrations:
+  Applying contenttypes.0001_initial... OK
+  Applying auth.0001_initial... OK
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying admin.0003_logentry_add_action_flag_choices... OK
+  Applying contenttypes.0002_remove_content_type_name... OK
+  Applying auth.0002_alter_permission_name_max_length... OK
+  Applying auth.0003_alter_user_email_max_length... OK
+  Applying auth.0004_alter_user_username_opts... OK
+  Applying auth.0005_alter_user_last_login_null... OK
+  Applying auth.0006_require_contenttypes_0002... OK
+  Applying auth.0007_alter_validators_add_error_messages... OK
+  Applying auth.0008_alter_user_username_max_length... OK
+  Applying auth.0009_alter_user_last_name_max_length... OK
+  Applying auth.0010_alter_group_name_max_length... OK
+  Applying auth.0011_update_proxy_permissions... OK
+  Applying auth.0012_alter_user_first_name_max_length... OK
+  Applying quest.0001_initial... OK
+  Applying quest.0002_importdraft_developmentplanitem... OK
+  Applying quest.0003_existing_progress_to_plan... OK
+  Applying quest.0004_existing_demo_completions... OK
+  Applying sessions.0001_initial... OK
+System check identified no issues (0 silenced).
+test_ai_error_falls_back (quest.tests.CareerQuestTests.test_ai_error_falls_back) ... AI fallback: RuntimeError
+ok
+test_ai_selection_is_used_and_cached (quest.tests.CareerQuestTests.test_ai_selection_is_used_and_cached) ... ok
+test_anonymous_access_denied (quest.tests.CareerQuestTests.test_anonymous_access_denied) ... ok
+test_bad_reference_rolls_back_whole_upload (quest.tests.CareerQuestTests.test_bad_reference_rolls_back_whole_upload) ... ok
+test_cancelled_step_returns_to_recommendations (quest.tests.CareerQuestTests.test_cancelled_step_returns_to_recommendations) ... ok
+test_candidates_have_real_gain_and_valid_audience (quest.tests.CareerQuestTests.test_candidates_have_real_gain_and_valid_audience) ... ok
+test_cannot_skip_plan_stages_or_add_mandatory_event (quest.tests.CareerQuestTests.test_cannot_skip_plan_stages_or_add_mandatory_event) ... ok
+test_completion_is_idempotent_and_recalculates (quest.tests.CareerQuestTests.test_completion_is_idempotent_and_recalculates) ... ok
+test_critical_career_gap_beats_lowest_skill (quest.tests.CareerQuestTests.test_critical_career_gap_beats_lowest_skill) ... ok
+test_csrf_enforced_on_state_change (quest.tests.CareerQuestTests.test_csrf_enforced_on_state_change) ... ok
+test_demo_completion_on_review_date_counts (quest.tests.CareerQuestTests.test_demo_completion_on_review_date_counts) ... ok
+test_duplicate_ids_rejected (quest.tests.CareerQuestTests.test_duplicate_ids_rejected) ... ok
+test_e0028_replays_only_after_review (quest.tests.CareerQuestTests.test_e0028_replays_only_after_review) ... ok
+test_employee_cannot_read_other_employee_or_hr (quest.tests.CareerQuestTests.test_employee_cannot_read_other_employee_or_hr) ... ok
+test_empty_candidates_do_not_invent_events (quest.tests.CareerQuestTests.test_empty_candidates_do_not_invent_events) ... ok
+test_fully_met_goal_does_not_recommend_pointless_training (quest.tests.CareerQuestTests.test_fully_met_goal_does_not_recommend_pointless_training) ... ok
+test_goal_change_revalidates_planned_step (quest.tests.CareerQuestTests.test_goal_change_revalidates_planned_step) ... ok
+test_goal_change_validates_role_and_invalidates_recommendations (quest.tests.CareerQuestTests.test_goal_change_validates_role_and_invalidates_recommendations) ... ok
+test_hidden_profile_and_history_import (quest.tests.CareerQuestTests.test_hidden_profile_and_history_import) ... ok
+test_history_id_cannot_be_reassigned (quest.tests.CareerQuestTests.test_history_id_cannot_be_reassigned) ... ok
+test_hr_can_view_and_import_but_not_complete_for_employee (quest.tests.CareerQuestTests.test_hr_can_view_and_import_but_not_complete_for_employee) ... ok
+test_hr_filters_and_aggregates_use_same_group (quest.tests.CareerQuestTests.test_hr_filters_and_aggregates_use_same_group) ... ok
+test_import_draft_is_private_and_expires (quest.tests.CareerQuestTests.test_import_draft_is_private_and_expires) ... ok
+test_import_out_of_range_rejected (quest.tests.CareerQuestTests.test_import_out_of_range_rejected) ... ok
+test_import_preview_does_not_write_and_counts_actual_changes (quest.tests.CareerQuestTests.test_import_preview_does_not_write_and_counts_actual_changes) ... ok
+test_import_web_error_is_clear (quest.tests.CareerQuestTests.test_import_web_error_is_clear) ... ok
+test_import_web_preview_confirm_and_retry (quest.tests.CareerQuestTests.test_import_web_preview_confirm_and_retry) ... ok
+test_imported_in_progress_is_in_plan (quest.tests.CareerQuestTests.test_imported_in_progress_is_in_plan) ... ok
+test_lead_without_goal_has_no_invented_grade (quest.tests.CareerQuestTests.test_lead_without_goal_has_no_invented_grade) ... ok
+test_llm_cannot_invent_event_or_evidence (quest.tests.CareerQuestTests.test_llm_cannot_invent_event_or_evidence) ... ok
+test_malformed_metadata_is_validation_error (quest.tests.CareerQuestTests.test_malformed_metadata_is_validation_error) ... ok
+test_mandatory_completion_is_not_gamified (quest.tests.CareerQuestTests.test_mandatory_completion_is_not_gamified) ... ok
+test_migration_preserves_preexisting_demo_completions (quest.tests.CareerQuestTests.test_migration_preserves_preexisting_demo_completions) ... ok
+test_missing_goal_defaults_to_next_grade (quest.tests.CareerQuestTests.test_missing_goal_defaults_to_next_grade) ... ok
+test_plan_and_event_access_control (quest.tests.CareerQuestTests.test_plan_and_event_access_control) ... ok
+test_plan_is_available_but_simulation_is_disabled_without_demo (quest.tests.CareerQuestTests.test_plan_is_available_but_simulation_is_disabled_without_demo) ... ok
+test_planning_and_starting_do_not_award_skills_or_duplicate_history (quest.tests.CareerQuestTests.test_planning_and_starting_do_not_award_skills_or_duplicate_history) ... ok
+test_profile_html_and_api (quest.tests.CareerQuestTests.test_profile_html_and_api) ... ok
+test_repeated_skips_lower_score_and_are_explained (quest.tests.CareerQuestTests.test_repeated_skips_lower_score_and_are_explained) ... ok
+test_rules_fallback_is_labelled_and_multifactor (quest.tests.CareerQuestTests.test_rules_fallback_is_labelled_and_multifactor) ... ok
+test_same_history_reimport_does_not_change_levels (quest.tests.CareerQuestTests.test_same_history_reimport_does_not_change_levels) ... ok
+test_skill_caps_never_reduce_existing_level (quest.tests.CareerQuestTests.test_skill_caps_never_reduce_existing_level) ... ok
+test_stale_import_preview_rejected_after_profile_change (quest.tests.CareerQuestTests.test_stale_import_preview_rejected_after_profile_change) ... ok
+test_started_activity_can_finish_after_goal_change (quest.tests.CareerQuestTests.test_started_activity_can_finish_after_goal_change) ... ok
+test_starter_counts (quest.tests.CareerQuestTests.test_starter_counts) ... ok
+test_unmet_prerequisite_excludes_event (quest.tests.CareerQuestTests.test_unmet_prerequisite_excludes_event) ... ok
+
+----------------------------------------------------------------------
+Ran 46 tests in 60.475s
+
+OK
+Destroying test database for alias 'default' ('test_career_quest')...

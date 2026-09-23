@@ -1,0 +1,115 @@
+Found 8 test(s).
+Creating test database for alias 'default' ('test_career_quest')...
+Operations to perform:
+  Synchronize unmigrated apps: messages, rest_framework, staticfiles
+  Apply all migrations: admin, auth, contenttypes, quest, sessions
+Synchronizing apps without migrations:
+  Creating tables...
+    Running deferred SQL...
+Running migrations:
+  Applying contenttypes.0001_initial... OK
+  Applying auth.0001_initial... OK
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying admin.0003_logentry_add_action_flag_choices... OK
+  Applying contenttypes.0002_remove_content_type_name... OK
+  Applying auth.0002_alter_permission_name_max_length... OK
+  Applying auth.0003_alter_user_email_max_length... OK
+  Applying auth.0004_alter_user_username_opts... OK
+  Applying auth.0005_alter_user_last_login_null... OK
+  Applying auth.0006_require_contenttypes_0002... OK
+  Applying auth.0007_alter_validators_add_error_messages... OK
+  Applying auth.0008_alter_user_username_max_length... OK
+  Applying auth.0009_alter_user_last_name_max_length... OK
+  Applying auth.0010_alter_group_name_max_length... OK
+  Applying auth.0011_update_proxy_permissions... OK
+  Applying auth.0012_alter_user_first_name_max_length... OK
+  Applying quest.0001_initial... OK
+  Applying quest.0002_importdraft_developmentplanitem... OK
+  Applying quest.0003_existing_progress_to_plan... OK
+  Applying quest.0004_existing_demo_completions... OK
+  Applying sessions.0001_initial... OK
+System check identified no issues (0 silenced).
+test_01_plan_stages_and_idempotency_with_csrf (qa_stage2.Stage2Audit.test_01_plan_stages_and_idempotency_with_csrf) ... ok
+test_02_plan_owner_and_csrf (qa_stage2.Stage2Audit.test_02_plan_owner_and_csrf) ... ok
+test_03_preview_confirm_repeat_with_csrf (qa_stage2.Stage2Audit.test_03_preview_confirm_repeat_with_csrf) ... ok
+WRONG_HEADER draft_created True revision 1 2
+test_04_wrong_csv_header_is_rejected (qa_stage2.Stage2Audit.test_04_wrong_csv_header_is_rejected) ... FAIL
+test_05_nonrepeatable_history_cannot_award_twice (qa_stage2.Stage2Audit.test_05_nonrepeatable_history_cannot_award_twice) ... FAIL
+NONREPEATABLE_HISTORY baseline 1 actual 3 expected_max 2
+NON_OBJECT_JSON [] 500
+test_06_completion_non_object_json_is_400 (qa_stage2.Stage2Audit.test_06_completion_non_object_json_is_400) ...
+  test_06_completion_non_object_json_is_400 (qa_stage2.Stage2Audit.test_06_completion_non_object_json_is_400) (value=[]) ... FAIL
+NON_OBJECT_JSON 'bad' 500
+  test_06_completion_non_object_json_is_400 (qa_stage2.Stage2Audit.test_06_completion_non_object_json_is_400) (value='bad') ... FAIL
+NON_OBJECT_JSON 42 500
+  test_06_completion_non_object_json_is_400 (qa_stage2.Stage2Audit.test_06_completion_non_object_json_is_400) (value=42) ... FAIL
+  test_06_completion_non_object_json_is_400 (qa_stage2.Stage2Audit.test_06_completion_non_object_json_is_400) (value=True) ... FAIL
+NON_OBJECT_JSON True 500
+NON_OBJECT_JSON None 500
+  test_06_completion_non_object_json_is_400 (qa_stage2.Stage2Audit.test_06_completion_non_object_json_is_400) (value=None) ... FAIL
+test_07_invalid_bundle_is_atomic (qa_stage2.Stage2Audit.test_07_invalid_bundle_is_atomic) ... ok
+test_08_goal_invalid_json_is_400 (qa_stage2.Stage2Audit.test_08_goal_invalid_json_is_400) ... ok
+
+======================================================================
+FAIL: test_04_wrong_csv_header_is_rejected (qa_stage2.Stage2Audit.test_04_wrong_csv_header_is_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/qa_stage2.py", line 105, in test_04_wrong_csv_header_is_rejected
+    self.assertContains(response,'class="notice error"')
+AssertionError: False is not true : Couldn't find 'class="notice error"' in the following response
+b'<!doctype html>\n<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">\n<title>Career Quest \xe2\x80\x94 \xd1\x81\xd0\xbb\xd0\xb5\xd0\xb4\xd1\x83\xd1\x8e\xd1\x89\xd0\xb8\xd0\xb9 \xd1\x88\xd0\xb0\xd0\xb3</title>\n<link rel="stylesheet" href="/static/app.css"><script defer src="/static/app.js"></script>\n</head><body>\n<svg class="svg-defs" xmlns="http://www.w3.org/2000/svg"><symbol id="i-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="2"/><rect x="14" y="3" width="7" height="7" rx="2"/><rect x="3" y="14" width="7" height="7" rx="2"/><rect x="14" y="14" width="7" height="7" rx="2"/></symbol><symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></symbol><symbol id="i-spark" viewBox="0 0 24 24"><path d="m12 3 2.7 6.3L21 12l-6.3 2.7L12 21l-2.7-6.3L3 12l6.3-2.7L12 3Z"/></symbol><symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3 21v-3a6 6 0 0 1 12 0v3m1-16a3 3 0 0 1 0 6m2 4a5 5 0 0 1 3 5"/></symbol><symbol id="i-upload" viewBox="0 0 24 24"><path d="M12 16V3m-5 5 5-5 5 5M3 15v6h18v-6"/></symbol><symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol><symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol></svg>\n\n<aside class="sidebar">\n<a class="brand" href="/"><span class="brand-mark">cq<span>\xe2\x86\x97</span></span><span>Career Quest<small>\xd0\xa0\xd0\x90\xd0\xa1\xd0\xa2\xd0\x98 \xd0\x9e\xd0\xa1\xd0\x9e\xd0\x97\xd0\x9d\xd0\x90\xd0\x9d\xd0\x9d\xd0\x9e</small></span></a>\n<div class="workspace-label">\xd0\xa0\xd0\x90\xd0\x91\xd0\x9e\xd0\xa7\xd0\x95\xd0\x95 \xd0\x9f\xd0\xa0\xd0\x9e\xd0\xa1\xd0\xa2\xd0\xa0\xd0\x90\xd0\x9d\xd0\xa1\xd0\xa2\xd0\x92\xd0\x9e</div>\n<nav aria-label="\xd0\x93\xd0\xbb\xd0\xb0\xd0\xb2\xd0\xbd\xd0\xbe\xd0\xb5 \xd0\xbc\xd0\xb5\xd0\xbd\xd1\x8e">\n<a class="nav-link " href="/hr/"><svg><use href="#i-grid"/></svg>\xd0\x9e\xd0\xb1\xd0\xb7\xd0\xbe\xd1\x80 \xd0\xba\xd0\xbe\xd0\xbc\xd0\xb0\xd0\xbd\xd0\xb4\xd1\x8b</a><a class="nav-link active" href="/hr/import/"><svg><use href="#i-upload"/></svg>\xd0\x97\xd0\xb0\xd0\xb3\xd1\x80\xd1\x83\xd0\xb7\xd0\xba\xd0\xb0 \xd0\xb4\xd0\xb0\xd0\xbd\xd0\xbd\xd1\x8b\xd1\x85</a>\n</nav>\n<div class="sidebar-note"><span class="leaf">\xe2\x86\x97</span><strong>\xd0\x9c\xd0\xb0\xd0\xbb\xd0\xb5\xd0\xbd\xd1\x8c\xd0\xba\xd0\xb8\xd0\xb5 \xd1\x88\xd0\xb0\xd0\xb3\xd0\xb8.<br>\xd0\x97\xd0\xb0\xd0\xbc\xd0\xb5\xd1\x82\xd0\xbd\xd1\x8b\xd0\xb9 \xd1\x80\xd0\xbe\xd1\x81\xd1\x82.</strong><p>\xd0\xa2\xd0\xb2\xd0\xbe\xd0\xb9 \xd0\xbf\xd1\x83\xd1\x82\xd1\x8c \xd1\x80\xd0\xb0\xd0\xb7\xd0\xb2\xd0\xb8\xd1\x82\xd0\xb8\xd1\x8f \xd0\xbd\xd0\xb0\xd1\x87\xd0\xb8\xd0\xbd\xd0\xb0\xd0\xb5\xd1\x82\xd1\x81\xd1\x8f \xd1\x81 \xd0\xbf\xd0\xbe\xd0\xbd\xd1\x8f\xd1\x82\xd0\xbd\xd0\xbe\xd0\xb3\xd0\xbe \xd1\x81\xd0\xbb\xd0\xb5\xd0\xb4\xd1\x83\xd1\x8e\xd1\x89\xd0\xb5\xd0\xb3\xd0\xbe \xd1\x88\xd0\xb0\xd0\xb3\xd0\xb0.</p></div>\n<div class="sidebar-bottom"><span class="avatar small">HR</span><div><strong>HR-\xd0\xbf\xd1\x80\xd0\xbe\xd1\x81\xd1\x82\xd1\x80\xd0\xb0\xd0\xbd\xd1\x81\xd1\x82\xd0\xb2\xd0\xbe</strong><small>hr-tester</small></div><form method="post" action="/logout/"><input type="hidden" name="csrfmiddlewaretoken" value="[REDACTED_TEST_CSRF]"><button class="icon-button" title="\xd0\x92\xd1\x8b\xd0\xb9\xd1\x82\xd0\xb8" aria-label="\xd0\x92\xd1\x8b\xd0\xb9\xd1\x82\xd0\xb8">\xe2\x86\xaa</button></form></div>\n</aside>\n<div class="main-shell"><header class="topbar"><span>\xd0\xa0\xd0\xb0\xd0\xb1\xd0\xbe\xd1\x87\xd0\xb5\xd0\xb5 \xd0\xbf\xd1\x80\xd0\xbe\xd1\x81\xd1\x82\xd1\x80\xd0\xb0\xd0\xbd\xd1\x81\xd1\x82\xd0\xb2\xd0\xbe <span class="divider">/</span> <strong>\xd0\x94\xd0\xb0\xd0\xbd\xd0\xbd\xd1\x8b\xd0\xb5</strong></span><span class="tag muted"><span class="dot"></span> \xd0\x94\xd0\xb5\xd0\xbc\xd0\xbe \xc2\xb7 \xd1\x81\xd0\xb8\xd0\xbd\xd1\x82\xd0\xb5\xd1\x82\xd0\xb8\xd1\x87\xd0\xb5\xd1\x81\xd0\xba\xd0\xb8\xd0\xb5 \xd0\xb4\xd0\xb0\xd0\xbd\xd0\xbd\xd1\x8b\xd0\xb5</span></header>\n<main class="content"><div class="notice success" role="status">\xd0\x94\xd0\xb0\xd0\xbd\xd0\xbd\xd1\x8b\xd0\xb5 \xd0\xb7\xd0\xb0\xd0\xb3\xd1\x80\xd1\x83\xd0\xb6\xd0\xb5\xd0\xbd\xd1\x8b. \xd0\x9e\xd1\x82\xd0\xba\xd1\x80\xd0\xbe\xd0\xb9\xd1\x82\xd0\xb5 \xd0\xbf\xd1\x80\xd0\xbe\xd1\x84\xd0\xb8\xd0\xbb\xd1\x8c \xd0\xb4\xd0\xbb\xd1\x8f \xd0\xbf\xd1\x80\xd0\xbe\xd0\xb2\xd0\xb5\xd1\x80\xd0\xba\xd0\xb8 \xd1\x80\xd0\xb5\xd0\xba\xd0\xbe\xd0\xbc\xd0\xb5\xd0\xbd\xd0\xb4\xd0\xb0\xd1\x86\xd0\xb8\xd0\xb9.</div>\n<div class="page-heading"><div><span class="eyebrow">\xd0\x94\xd0\x90\xd0\x9d\xd0\x9d\xd0\xab\xd0\x95 \xd0\x94\xd0\x9b\xd0\xaf \xd0\xa0\xd0\x90\xd0\x97\xd0\x92\xd0\x98\xd0\xa2\xd0\x98\xd0\xaf</span><h1>\xd0\x9d\xd0\xbe\xd0\xb2\xd1\x8b\xd0\xb5 \xd0\xbf\xd1\x80\xd0\xbe\xd1\x84\xd0\xb8\xd0\xbb\xd0\xb8. \xd0\x9d\xd0\xbe\xd0\xb2\xd1\x8b\xd0\xb9 \xd0\xba\xd0\xbe\xd0\xbd\xd1\x82\xd0\xb5\xd0\xba\xd1\x81\xd1\x82<span class="heading-dot">.</span></h1><p>\xd0\x97\xd0\xb0\xd0\xb3\xd1\x80\xd1\x83\xd0\xb7\xd0\xb8 \xd0\xbf\xd1\x80\xd0\xbe\xd0\xb2\xd0\xb5\xd1\x80\xd0\xbe\xd1\x87\xd0\xbd\xd1\x8b\xd0\xb5 \xd0\xbf\xd1\x80\xd0\xbe\xd1\x84\xd0\xb8\xd0\xbb\xd0\xb8 \xd0\xb8 \xd0\xb8\xd1\x81\xd1\x82\xd0\xbe\xd1\x80\xd0\xb8\xd1\x8e \xd0\xb2 \xd1\x84\xd0\xbe\xd1\x80\xd0\xbc\xd0\xb0\xd1\x82\xd0\xb5 \xd1\x81\xd1\x82\xd0\xb0\xd1\x80\xd1\x82\xd0\xbe\xd0\xb2\xd0\xbe\xd0\xb3\xd0\xbe \xd0\xbd\xd0\xb0\xd0\xb1\xd0\xbe\xd1\x80\xd0\xb0.</p></div></div>\n<section class="panel import-result"><span class="tag green">\xd0\x97\xd0\xb0\xd0\xb3\xd1\x80\xd1\x83\xd0\xb7\xd0\xba\xd0\xb0 \xd0\xb7\xd0\xb0\xd0\xb2\xd0\xb5\xd1\x80\xd1\x88\xd0\xb5\xd0\xbd\xd0\xb0</span><h2>\xd0\xa0\xd0\xb5\xd0\xb7\xd1\x83\xd0\xbb\xd1\x8c\xd1\x82\xd0\xb0\xd1\x82 \xd0\xb7\xd0\xb0\xd0\xb3\xd1\x80\xd1\x83\xd0\xb7\xd0\xba\xd0\xb8</h2><div class="table-wrap"><table><thead><tr><th>\xd0\xa0\xd0\xb0\xd0\xb7\xd0\xb4\xd0\xb5\xd0\xbb</th><th>\xd0\x92\xd1\x81\xd0\xb5\xd0\xb3\xd0\xbe</th><th>\xd0\x9d\xd0\xbe\xd0\xb2\xd1\x8b\xd0\xb5</th><th>\xd0\x9e\xd0\xb1\xd0\xbd\xd0\xbe\xd0\xb2\xd0\xbb\xd0\xb5\xd0\xbd\xd1\x8b</th><th>\xd0\x91\xd0\xb5\xd0\xb7 \xd0\xb8\xd0\xb7\xd0\xbc\xd0\xb5\xd0\xbd\xd0\xb5\xd0\xbd\xd0\xb8\xd0\xb9</th></tr></thead><tbody><tr><td colspan="5">\xd0\x92 \xd1\x84\xd0\xb0\xd0\xb9\xd0\xbb\xd0\xb0\xd1\x85 \xd0\xbd\xd0\xb5\xd1\x82 \xd0\xb7\xd0\xb0\xd0\xbf\xd0\xb8\xd1\x81\xd0\xb5\xd0\xb9.</td></tr></tbody></table></div>\n\n<div class="card-actions"><a class="button secondary" href="/hr/import/">\xd0\x92\xd1\x8b\xd0\xb1\xd1\x80\xd0\xb0\xd1\x82\xd1\x8c \xd0\xb4\xd1\x80\xd1\x83\xd0\xb3\xd0\xb8\xd0\xb5 \xd1\x84\xd0\xb0\xd0\xb9\xd0\xbb\xd1\x8b</a><a class="button secondary" href="/hr/">\xd0\x9e\xd1\x82\xd0\xba\xd1\x80\xd1\x8b\xd1\x82\xd1\x8c HR-\xd0\xbe\xd0\xb1\xd0\xb7\xd0\xbe\xd1\x80 \xe2\x86\x97</a></div></section>\n\n</main>\n<footer class="footer">Career Quest <span>HackAlem AI \xc2\xb7 Meta Juniors \xc2\xb7 Halyk Bank case</span></footer></div>\n<div id="toast" role="status" aria-live="polite" hidden></div>\n</body></html>\n\n'
+
+======================================================================
+FAIL: test_05_nonrepeatable_history_cannot_award_twice (qa_stage2.Stage2Audit.test_05_nonrepeatable_history_cannot_award_twice)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/qa_stage2.py", line 121, in test_05_nonrepeatable_history_cannot_award_twice
+    self.assertLessEqual(cloud,2)
+AssertionError: 3 not less than or equal to 2
+
+======================================================================
+FAIL: test_06_completion_non_object_json_is_400 (qa_stage2.Stage2Audit.test_06_completion_non_object_json_is_400) (value=[])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/qa_stage2.py", line 131, in test_06_completion_non_object_json_is_400
+    self.assertEqual(response.status_code,400)
+AssertionError: 500 != 400
+
+======================================================================
+FAIL: test_06_completion_non_object_json_is_400 (qa_stage2.Stage2Audit.test_06_completion_non_object_json_is_400) (value='bad')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/qa_stage2.py", line 131, in test_06_completion_non_object_json_is_400
+    self.assertEqual(response.status_code,400)
+AssertionError: 500 != 400
+
+======================================================================
+FAIL: test_06_completion_non_object_json_is_400 (qa_stage2.Stage2Audit.test_06_completion_non_object_json_is_400) (value=42)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/qa_stage2.py", line 131, in test_06_completion_non_object_json_is_400
+    self.assertEqual(response.status_code,400)
+AssertionError: 500 != 400
+
+======================================================================
+FAIL: test_06_completion_non_object_json_is_400 (qa_stage2.Stage2Audit.test_06_completion_non_object_json_is_400) (value=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/qa_stage2.py", line 131, in test_06_completion_non_object_json_is_400
+    self.assertEqual(response.status_code,400)
+AssertionError: 500 != 400
+
+======================================================================
+FAIL: test_06_completion_non_object_json_is_400 (qa_stage2.Stage2Audit.test_06_completion_non_object_json_is_400) (value=None)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/qa_stage2.py", line 131, in test_06_completion_non_object_json_is_400
+    self.assertEqual(response.status_code,400)
+AssertionError: 500 != 400
+
+----------------------------------------------------------------------
+Ran 8 tests in 32.069s
+
+FAILED (failures=7)
+Destroying test database for alias 'default' ('test_career_quest')...

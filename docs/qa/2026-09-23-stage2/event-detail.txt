@@ -1,0 +1,80 @@
+- complementary:
+  - link "cq ↗ Career Quest РАСТИ ОСОЗНАННО":
+    - /url: /
+    - text: cq
+    - generic: ↗
+    - text: Career Quest
+    - generic: РАСТИ ОСОЗНАННО
+  - generic: РАБОЧЕЕ ПРОСТРАНСТВО
+  - navigation "Главное меню":
+    - link "Моё развитие":
+      - /url: /
+      - text: Моё развитие
+    - link "Мой план":
+      - /url: /people/E0028/plan/
+      - text: Мой план
+    - link "Следующие шаги":
+      - /url: /#next-steps
+      - text: Следующие шаги
+    - link "История активностей":
+      - /url: /#history
+      - text: История активностей
+  - generic: ↗
+  - strong:
+    - text: Маленькие шаги.
+    - text: Заметный рост.
+  - paragraph: Твой путь развития начинается с понятного следующего шага.
+  - generic: Я
+  - strong: Личный кабинет
+  - text: employee
+  - button "Выйти": ↪
+- banner:
+  - text: Рабочее пространство /
+  - strong: Развитие
+  - generic: Демо · синтетические данные
+- main:
+  - link "← Рекомендации":
+    - /url: /people/E0028/#next-steps
+  - link "Мой план ↗":
+    - /url: /people/E0028/plan/
+  - generic: EV_009 · МЕРОПРИЯТИЕ
+  - heading "Cloud Certification Prep." [level=1]
+  - paragraph: В своём темпе · 40 ч · Akmaral Ismailova
+  - generic: ОБ АКТИВНОСТИ
+  - heading "Что тебя ждёт" [level=2]
+  - paragraph: Preparation track for an associate-level cloud certification, with final exam.
+  - term: Формат
+  - definition: В своём темпе
+  - term: Нагрузка
+  - definition: 40 ч
+  - term: Ближайшие сессии
+  - definition: В любое время
+  - term: Для ролей
+  - definition: Backend Engineer, Frontend Engineer, QA Engineer, Data Analyst
+  - term: Для грейдов
+  - definition: Middle, Senior
+  - heading "Требования к участию" [level=2]
+  - paragraph: Дополнительных требований к навыкам нет.
+  - heading "Как изменятся навыки" [level=2]
+  - text: Cloud Platforms
+  - generic: "Потолок мероприятия: 3 из 5"
+  - strong: 1 → 2
+  - text: CI/CD
+  - generic: "Потолок мероприятия: 3 из 5"
+  - strong: 3 → 3
+  - paragraph: Ожидаемый эффект после успешного завершения, исходя из текущих навыков. Другие завершения могут изменить этот прогноз.
+  - complementary:
+    - generic: СВЯЗЬ С ТВОЕЙ ЦЕЛЬЮ
+    - heading "Почему этот шаг" [level=2]
+    - list:
+      - listitem: "Cloud Platforms: 1 → 2 при требуемых 3."
+      - listitem: "За 180 дней в активностях такого типа и формата: завершено 0, пропусков/отказов/прерываний 1."
+      - listitem: В истории этой активности есть 2 пропусков, отказов или прерываний. Причины в данных не указаны.
+      - listitem: "Нагрузка: 40 ч. Формат: в своём темпе."
+    - button "Добавить в мой план +"
+    - paragraph: При выборе учитывается текущая роль и грейд. Польза оценивается относительно карьерной цели.
+    - link "Посмотреть историю участия →":
+      - /url: /people/E0028/#history
+- contentinfo:
+  - text: Career Quest
+  - generic: HackAlem AI · Meta Juniors · Halyk Bank case
